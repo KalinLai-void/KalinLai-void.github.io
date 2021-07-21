@@ -22,16 +22,24 @@
     var CONFIG = {"hostname":"karlunlai-void.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":false,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Karlun&#39;s Blog">
-<meta property="og:url" content="https://karlunlai-void.github.io/tags/Procedural-Generation/index.html">
+  <meta name="description" content="講者：達哥&#x2F;Kelvin Lo 演講影片此筆記不會介紹如何使用，不過影片內講師有操作，或自行上網找資源。 其實就是 Unity 中的藍圖系統 (Blueprint System)、可視化程式 (Visual Scripting)。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【TGDF2021】Unity可視化程式（Visual Scripting）專案開發">
+<meta property="og:url" content="https://karlunlai-void.github.io/2021/07/10/TGDF2021_unity-visual-scripting/index.html">
 <meta property="og:site_name" content="Karlun&#39;s Blog">
+<meta property="og:description" content="講者：達哥&#x2F;Kelvin Lo 演講影片此筆記不會介紹如何使用，不過影片內講師有操作，或自行上網找資源。 其實就是 Unity 中的藍圖系統 (Blueprint System)、可視化程式 (Visual Scripting)。">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-07-10T03:58:56.000Z">
+<meta property="article:modified_time" content="2021-07-21T22:49:08.964Z">
 <meta property="article:author" content="Karlun Lai">
-<meta property="article:tag" content="Karlun, KarlunLai, blog , 部落格, programming, coding, UE4">
+<meta property="article:tag" content="TGDF台北遊戲開發者論壇">
+<meta property="article:tag" content="TGDF2021">
+<meta property="article:tag" content="遊戲程式">
+<meta property="article:tag" content="Unity">
+<meta property="article:tag" content="Visual Scripting">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://karlunlai-void.github.io/tags/Procedural-Generation/">
+<link rel="canonical" href="https://karlunlai-void.github.io/2021/07/10/TGDF2021_unity-visual-scripting/">
 
 
 <script id="page-configurations">
@@ -39,13 +47,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 <link href="/css/dark.css" rel="alternate stylesheet" type="text/css" title="dark">
 <script type="text/javascript" src="/js/darkmode.js"></script><link rel="stylesheet" type="text/css" href="/css/injector.css" />
-  <title>Tags: Procedural Generation | Karlun's Blog</title>
+  <title>【TGDF2021】Unity可視化程式（Visual Scripting）專案開發 | Karlun's Blog</title>
   
 
 
@@ -190,57 +198,195 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Procedural Generation
-          <small>Tags</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://karlunlai-void.github.io/2021/07/10/TGDF2021_unity-visual-scripting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Karlun Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Karlun's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【TGDF2021】Unity可視化程式（Visual Scripting）專案開發
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-07-10 11:58:56" itemprop="dateCreated datePublished" datetime="2021-07-10T11:58:56+08:00">2021-07-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-07-22 06:49:08" itemprop="dateModified" datetime="2021-07-22T06:49:08+08:00">2021-07-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TGDF2021-%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/" itemprop="url" rel="index"><span itemprop="name">TGDF2021_台北遊戲開發者論壇</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <p>講者：達哥/Kelvin Lo</p>
+<p><a target="_blank" rel="noopener" href="https://youtu.be/bQ7ClW_nsdk">演講影片</a><br>此筆記不會介紹如何使用，不過影片內講師有操作，或自行上網找資源。</p>
+<p>其實就是 Unity 中的藍圖系統 (Blueprint System)、可視化程式 (Visual Scripting)。</p>
+<span id="more"></span>
+
+<h2 id="講者介紹"><a href="#講者介紹" class="headerlink" title="講者介紹"></a>講者介紹</h2><p>服務於 Unity 已經有 8 年，主要任務為提供台灣開發者使用 Unity 上的技術支援，同時也在各大平台推廣 Unity。同時也是 TGDF 的常客，致力於把最新的 Unity 內容同步的傳達到台灣開發者社群。</p>
+<h2 id="Unity-Visual-Scripting"><a href="#Unity-Visual-Scripting" class="headerlink" title="Unity Visual Scripting"></a>Unity Visual Scripting</h2><ul>
+<li>跨功能的節點式 (Node-based) 設計系統<ul>
+<li>Shader Graph</li>
+<li>Visual Effect Graph</li>
+<li><strong>Visual Scripting Tool</strong> &lt;- 本次議程重點</li>
+</ul>
+</li>
+<li>之前的 Unity 若想使用這類可式化節點設計工具，需安裝第三方套件<ul>
+<li>e.g. PlayMaker, Bolt, etc.</li>
+</ul>
+</li>
+<li><strong>而在 Unity 收購 Bolt 這個套件，並整合至 Unity2021</strong><ul>
+<li>但若是2021以前的版本想要使用 Visual Scripting，可以直接去 Unity Asset Store 下載 Bolt<ul>
+<li>雖然有些功能會和整合進來的不太一樣，但邏輯相通</li>
+<li><strong>舊版檔案格式與新版檔案格式並不相容</strong>，後面會介紹如何轉換</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如何運作？<ul>
+<li>圖形化的程式產生器，可以不用coding</li>
+<li>相當於 Unreal 中的藍圖系統 (Blueprint System)</li>
+</ul>
+</li>
+</ul>
+<h2 id="部分功能與名詞介紹"><a href="#部分功能與名詞介紹" class="headerlink" title="部分功能與名詞介紹"></a>部分功能與名詞介紹</h2><ul>
+<li>Scrip Machine 表示單一的腳本狀態</li>
+<li>State Machine 有包含狀態機控制，適合怪物 AI</li>
+<li>Backboard 裡面會定義不同生命週期的變數<ul>
+<li>Graph: 只有自己這張圖可以使用</li>
+<li>Object: 可以在同個物件，但不同圖使用</li>
+<li>Scene: 可以在同個場景內共用，無法跨場景</li>
+<li>App: 整個 App 內都可以用</li>
+<li>Saved: 會在遊戲結束後也會儲存著</li>
+</ul>
+</li>
+</ul>
+<h2 id="專案轉換舊版本-Bolt-至-Unity-2021"><a href="#專案轉換舊版本-Bolt-至-Unity-2021" class="headerlink" title="專案轉換舊版本 Bolt 至 Unity 2021"></a>專案轉換舊版本 Bolt 至 Unity 2021</h2><ul>
+<li>在網路上搜尋 Unity Visual Scripting 或 Bolt，會找到很多網路教學或專案，但很多專案在 Unity 2021 前就分享了，所以現在用 Unity 2021 開啟這些專案可能會壞掉。</li>
+<li>可以在 Unity 內的 <code>Project Setting -&gt; Visual Scripting</code> 裡面 <strong>Fix Missing Scripts</strong><ul>
+<li>會嘗試把舊版本 Bolt 升級成 Unity 2021 的版本</li>
+</ul>
+</li>
+</ul>
+<h2 id="講者觀點"><a href="#講者觀點" class="headerlink" title="講者觀點"></a>講者觀點</h2><ul>
+<li>Visual Scripting 誰適合使用？<ul>
+<li><strong>程式設計師</strong><ul>
+<li>因為概念邏輯相通，也很程式導向，能最快進入狀況。</li>
+<li>但排斥感可能也最大，因為有限制。</li>
+</ul>
+</li>
+<li>PM / 企劃人員<ul>
+<li><strong>適合做 Prototype 開發</strong> ，因為搭建很快，不需寫code，也不用麻煩程式設計師。</li>
+</ul>
+</li>
+<li>任何想要開發遊戲的開發者<ul>
+<li>可能對自己的程式能力沒有信心</li>
+<li>多了個開發方法，降低了門檻</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>會取代傳統程式碼嗎？<ul>
+<li>不會，應該會共生。</li>
+<li>也可能產生出「<strong>可式化程式設計師</strong>」xD</li>
+</ul>
+</li>
+</ul>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q &amp; A"></a>Q &amp; A</h2><ol>
+<li>我問的問題：請問 Unity 的 Visual Scripting 是否能串聯(讀取) C# script內的function和變數（像 Unreal 的 Blueprint 那樣）<ul>
+<li>可以在同一個物件寫另外的 C# 腳本，變數可以直接取用。</li>
+</ul>
+</li>
+<li>Visual Scripting 在多人工作上的 Merge 是否有問題，檔案是文本基礎嗎？（因為 Unreal 的 Blueprint 就有這種問題）<ul>
+<li>他是 Component based，所以是以元件的形式跟著物件的，跟其他元件邏輯一樣，並非文本格式就是了。多人工作建議還是一個人負責編輯。</li>
+</ul>
+</li>
+<li>請問如用 Visual Scripting 做完 Prototype 後，想轉成 C# Script 可以直接轉換？或需要手工重寫？<ul>
+<li>如果你點元件旁的「…」，可以看到一個「Edit script」，裡面會顯示腳本，但是這個腳本是含框架的，所以會比較難讀懂，有可能會比你重寫來的慢，取決於圖的複雜度。</li>
+</ul>
+</li>
+</ol>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-28T19:25:00+08:00"
-              content="2021-01-28">
-          01-28
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/" rel="tag"># TGDF台北遊戲開發者論壇</a>
+              <a href="/tags/TGDF2021/" rel="tag"># TGDF2021</a>
+              <a href="/tags/%E9%81%8A%E6%88%B2%E7%A8%8B%E5%BC%8F/" rel="tag"># 遊戲程式</a>
+              <a href="/tags/Unity/" rel="tag"># Unity</a>
+              <a href="/tags/Visual-Scripting/" rel="tag"># Visual Scripting</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/28/APGS2021_Using-third-party-tools-to-lower-indie-development-costs/" itemprop="url">
-            <span itemprop="name">【APGS2021】Using third-party tools to lower indie development costs, a case of M.A.S.S. Builder</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/10/TGDF2021_thinking-outside-Superliminal/" rel="prev" title="【TGDF2021】跳脫框架思考─《Superliminal》開發經驗談">
+      <i class="fa fa-chevron-left"></i> 【TGDF2021】跳脫框架思考─《Superliminal》開發經驗談
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -287,6 +433,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AC%9B%E8%80%85%E4%BB%8B%E7%B4%B9"><span class="nav-number">1.</span> <span class="nav-text">講者介紹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unity-Visual-Scripting"><span class="nav-number">2.</span> <span class="nav-text">Unity Visual Scripting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E5%88%86%E5%8A%9F%E8%83%BD%E8%88%87%E5%90%8D%E8%A9%9E%E4%BB%8B%E7%B4%B9"><span class="nav-number">3.</span> <span class="nav-text">部分功能與名詞介紹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%88%E6%A1%88%E8%BD%89%E6%8F%9B%E8%88%8A%E7%89%88%E6%9C%AC-Bolt-%E8%87%B3-Unity-2021"><span class="nav-number">4.</span> <span class="nav-text">專案轉換舊版本 Bolt 至 Unity 2021</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AC%9B%E8%80%85%E8%A7%80%E9%BB%9E"><span class="nav-number">5.</span> <span class="nav-text">講者觀點</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">6.</span> <span class="nav-text">Q &amp; A</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -431,6 +578,25 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'd4d527dcec1ec91415b4',
+      clientSecret: '7ddda799fc5e5b91d632ed2c892f26de2376653f',
+      repo        : 'KarlunLai-void.github.io',
+      owner       : 'KarlunLai-void',
+      admin       : ['KarlunLai-void'],
+      id          : 'ed6d42751527e2b08034022daf81dfaf',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 <div class="moon-menu">
   <div class="moon-menu-items">
     

@@ -6,7 +6,7 @@
   <link href="https://karlunlai-void.github.io/atom.xml" rel="self"/>
   
   <link href="https://karlunlai-void.github.io/"/>
-  <updated>2021-07-17T11:42:00.671Z</updated>
+  <updated>2021-07-21T22:49:08.964Z</updated>
   <id>https://karlunlai-void.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【TGDF2021】Unity可視化程式（Visual Scripting）專案開發</title>
+    <link href="https://karlunlai-void.github.io/2021/07/10/TGDF2021_unity-visual-scripting/"/>
+    <id>https://karlunlai-void.github.io/2021/07/10/TGDF2021_unity-visual-scripting/</id>
+    <published>2021-07-10T03:58:56.000Z</published>
+    <updated>2021-07-21T22:49:08.964Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;講者：達哥/Kelvin Lo&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/bQ7ClW_nsdk&quot;&gt;演講影片&lt;/a&gt;&lt;br&gt;此筆記不會介紹如何使用，不過影片內講師有操作，或自行上網找資源。&lt;/p&gt;
+&lt;p&gt;其實就是 Unity 中的藍圖系統 (Blueprint System)、可視化程式 (Visual Scripting)。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="TGDF2021_台北遊戲開發者論壇" scheme="https://karlunlai-void.github.io/categories/TGDF2021-%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
+    
+    
+    <category term="TGDF台北遊戲開發者論壇" scheme="https://karlunlai-void.github.io/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
+    
+    <category term="TGDF2021" scheme="https://karlunlai-void.github.io/tags/TGDF2021/"/>
+    
+    <category term="遊戲程式" scheme="https://karlunlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E7%A8%8B%E5%BC%8F/"/>
+    
+    <category term="Unity" scheme="https://karlunlai-void.github.io/tags/Unity/"/>
+    
+    <category term="Visual Scripting" scheme="https://karlunlai-void.github.io/tags/Visual-Scripting/"/>
+    
+  </entry>
   
   <entry>
     <title>【TGDF2021】跳脫框架思考─《Superliminal》開發經驗談</title>
