@@ -69,7 +69,7 @@
         <tag>TGDF2020</tag>
         <tag>TGDF台北遊戲開發者論壇</tag>
         <tag>遊戲行銷與商務</tag>
-        <tag>製程與管理</tag>
+        <tag>遊戲製程與管理</tag>
       </tags>
   </entry>
   <entry>
@@ -319,7 +319,7 @@
       <tags>
         <tag>TGDF2020</tag>
         <tag>TGDF台北遊戲開發者論壇</tag>
-        <tag>製程與管理</tag>
+        <tag>遊戲製程與管理</tag>
       </tags>
   </entry>
   <entry>
@@ -582,8 +582,8 @@
       <tags>
         <tag>TGDF2020</tag>
         <tag>TGDF台北遊戲開發者論壇</tag>
-        <tag>製程與管理</tag>
         <tag>遊戲設計</tag>
+        <tag>遊戲製程與管理</tag>
       </tags>
   </entry>
   <entry>
@@ -2082,6 +2082,114 @@
         <tag>遊戲程式</tag>
         <tag>Unity</tag>
         <tag>Visual Scripting</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【TGDF2021】遊戲線上內容的管理與交付（Unity）</title>
+    <url>/2021/07/10/TGDF2021_Addressables-and-Cloud-Content-Delivery/</url>
+    <content><![CDATA[<p>講者：Arturo Nereu</p>
+<p><a href="https://youtu.be/u2ng_19lYvY">演講影片</a></p>
+<p>本議程較偏 Demo，使用 Unity，以手遊為例。<br>使用 Unity 的 <strong>Addressable Asset System</strong> 來管理素材；<br>使用 Unity 的<strong>雲端內容交付系統（Cloud Content Delivery，CCD）</strong>來推送遊戲內容給玩家們。</p>
+<p>本篇筆記無紀錄 Demo 內容。</p>
+<span id="more"></span>
+
+<h2 id="講者介紹"><a href="#講者介紹" class="headerlink" title="講者介紹"></a>講者介紹</h2><ul>
+<li>Unity 營運解決方案的技術推廣工程師</li>
+<li>講者Email：<a href="mailto:&#x61;&#x72;&#x74;&#x75;&#x72;&#111;&#x40;&#x75;&#x6e;&#x69;&#x74;&#x79;&#51;&#x64;&#46;&#99;&#111;&#x6d;">&#x61;&#x72;&#x74;&#x75;&#x72;&#111;&#x40;&#x75;&#x6e;&#x69;&#x74;&#x79;&#51;&#x64;&#46;&#99;&#111;&#x6d;</a></li>
+<li><a href="https://twitter.com/arturonereu">Twitter</a></li>
+</ul>
+<h2 id="為什麼需要管理素材？"><a href="#為什麼需要管理素材？" class="headerlink" title="為什麼需要管理素材？"></a>為什麼需要管理素材？</h2><ul>
+<li>editor 允許我們把所有素材放進去了</li>
+<li>然而現在的遊戲越來越複雜 -&gt; <strong>素材量增加</strong></li>
+<li>提供更好的玩家體驗，因此需進行素材管理<ul>
+<li>e.g. 日後更新，只需透過雲端安裝即可</li>
+</ul>
+</li>
+<li>本議程以手遊做示範，當然也可適用於 PC / Console<ul>
+<li><strong>只是方式與今天介紹的較為不同</strong>，不過想法上是相同的</li>
+</ul>
+</li>
+</ul>
+<h2 id="Unity-Cloud-Content-Delivery-CCD"><a href="#Unity-Cloud-Content-Delivery-CCD" class="headerlink" title="Unity Cloud Content Delivery (CCD)"></a>Unity Cloud Content Delivery (CCD)</h2><p><a href="https://unity.com/products/cloud-content-delivery">官網</a><br><a href="https://docs.unity3d.com/Manual/UnityCCD.html">官方文件</a></p>
+<ul>
+<li>此 Unity 服務支援「<strong>跨引擎</strong>」，但針對 unity 有較好的整合</li>
+<li>後端有強大的內容傳遞網路 (Content Delivery Network，CDN) 支援</li>
+</ul>
+<h3 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works?"></a>How it works?</h3><ol>
+<li>將執行檔和遊戲資源分開<ul>
+<li>執行檔上傳至遊戲商店</li>
+<li>遊戲資源上傳至 CCD</li>
+</ul>
+</li>
+<li>遊戲發行後，獲得某資源的玩家會自行從 CCD 下載<ul>
+<li>只將內容傳遞給需要的使用者</li>
+</ul>
+</li>
+</ol>
+<h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><ul>
+<li>Bucket （儲存桶）<ul>
+<li>Container of Asset</li>
+<li>儲存資料的最大單位</li>
+<li>可以擁有多個 Bucket<ul>
+<li>可依環境區分。e.g. 測試版與正式版</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Entry<ul>
+<li>相當於在 Bucket 內的檔案</li>
+</ul>
+</li>
+<li>Release<ul>
+<li>一個 Bucket 內的 Entry 的快照 (snapshot)，可以做為版本釋出</li>
+</ul>
+</li>
+<li>Badge<ul>
+<li>用來標註 Release 用，用戶端的 App 可以透過 Badge 來下載特定 Release</li>
+<li>一個 Release 只能指派一個 Badge</li>
+</ul>
+</li>
+<li>The promotion process（推進流程）<br><img src="/images/TGDF2021_Addressables-and-Cloud-Content-Delivery/The-promotion-process.png"></li>
+</ul>
+<h2 id="Unity-Addressable-Asset-System"><a href="#Unity-Addressable-Asset-System" class="headerlink" title="Unity Addressable Asset System"></a>Unity Addressable Asset System</h2><ul>
+<li>可以從 Package Manager 安裝套件<ul>
+<li><code>Window -&gt; Package Manager</code>，確認 Addressable 是否安裝</li>
+<li>安裝完後在<code>Window -&gt; Asset Management</code>內會看到 Addressable 選項</li>
+</ul>
+</li>
+<li>用單一網址去存取資源，可以設定是要從本地或者其他網址存取</li>
+<li>可以將不必在執行時就需要的資源先分裝在外部伺服器，需要時再載入</li>
+<li>可以對不同種類資源做分組</li>
+<li>協助管理資源相依性問題，比如打包一個場景，他會把場景需要的素材也打包進去</li>
+<li>要把資源加入到 Addressable，可以拖曳到視窗內，或者在 inspector 上勾選 Addressable</li>
+<li>Addressable 主要是使用非同步方式進行載入或下載<ul>
+<li>非同步：如果想載入一個場景，當開始載入場景時，若場景不存在，會嘗試下載，但遊戲接下來的畫面更新仍可正常執行，直到場景載入完成並出現。</li>
+<li>同步：如果想載入一個場景，需等到所有內容都載入完畢才能繼續。</li>
+<li><img src="/images/TGDF2021_Addressables-and-Cloud-Content-Delivery/Addressable-API.png"></li>
+</ul>
+</li>
+<li>用 <code>Addressable.AsyncOperationHandle</code> 來監聽 addressable 作業完成的事件</li>
+</ul>
+<h2 id="Cloud-Content-Delivery"><a href="#Cloud-Content-Delivery" class="headerlink" title="Cloud Content Delivery"></a>Cloud Content Delivery</h2><ul>
+<li>前往 <a href="https://dashboard.unity3d.com/">Unity Dashboard</a></li>
+<li>先在 Dashboard 建立專案</li>
+<li><code>展開左上角的圖示 -&gt; Cloud Content Delivery -&gt; Project -&gt; 選擇專案</code>，然後點左邊的 Onboarding 就會引導所有流程</li>
+<li>創建好 Bucket 後就可以拿到 Addressables remote path，在 Unity 設定貼上後就可以開始用</li>
+<li>接著在 Addressables -&gt; Group 裡做 build，就會產生對應平台的 Asset Bundles，產生的就上傳到 Bucket</li>
+<li>增加 Release 與 Badge 後就可以回到 Unity 測試</li>
+<li>可以再 Addressables -&gt; Group 中，修改執行模式成 Existing Builds，就會實際使用到雲端上的資料</li>
+</ul>
+]]></content>
+      <categories>
+        <category>TGDF2021_台北遊戲開發者論壇</category>
+      </categories>
+      <tags>
+        <tag>TGDF台北遊戲開發者論壇</tag>
+        <tag>TGDF2021</tag>
+        <tag>Unity</tag>
+        <tag>遊戲製程與管理</tag>
+        <tag>Addressable Asset System</tag>
+        <tag>Cloud Content Delivery Network</tag>
       </tags>
   </entry>
 </search>

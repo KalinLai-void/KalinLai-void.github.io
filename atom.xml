@@ -6,7 +6,7 @@
   <link href="https://karlunlai-void.github.io/atom.xml" rel="self"/>
   
   <link href="https://karlunlai-void.github.io/"/>
-  <updated>2021-07-21T22:49:08.964Z</updated>
+  <updated>2021-07-22T00:50:41.631Z</updated>
   <id>https://karlunlai-void.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【TGDF2021】遊戲線上內容的管理與交付（Unity）</title>
+    <link href="https://karlunlai-void.github.io/2021/07/10/TGDF2021_Addressables-and-Cloud-Content-Delivery/"/>
+    <id>https://karlunlai-void.github.io/2021/07/10/TGDF2021_Addressables-and-Cloud-Content-Delivery/</id>
+    <published>2021-07-10T04:56:33.000Z</published>
+    <updated>2021-07-22T00:50:41.631Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;講者：Arturo Nereu&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/u2ng_19lYvY&quot;&gt;演講影片&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本議程較偏 Demo，使用 Unity，以手遊為例。&lt;br&gt;使用 Unity 的 &lt;strong&gt;Addressable Asset System&lt;/strong&gt; 來管理素材；&lt;br&gt;使用 Unity 的&lt;strong&gt;雲端內容交付系統（Cloud Content Delivery，CCD）&lt;/strong&gt;來推送遊戲內容給玩家們。&lt;/p&gt;
+&lt;p&gt;本篇筆記無紀錄 Demo 內容。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="TGDF2021_台北遊戲開發者論壇" scheme="https://karlunlai-void.github.io/categories/TGDF2021-%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
+    
+    
+    <category term="TGDF台北遊戲開發者論壇" scheme="https://karlunlai-void.github.io/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
+    
+    <category term="TGDF2021" scheme="https://karlunlai-void.github.io/tags/TGDF2021/"/>
+    
+    <category term="Unity" scheme="https://karlunlai-void.github.io/tags/Unity/"/>
+    
+    <category term="遊戲製程與管理" scheme="https://karlunlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A3%BD%E7%A8%8B%E8%88%87%E7%AE%A1%E7%90%86/"/>
+    
+    <category term="Addressable Asset System" scheme="https://karlunlai-void.github.io/tags/Addressable-Asset-System/"/>
+    
+    <category term="Cloud Content Delivery Network" scheme="https://karlunlai-void.github.io/tags/Cloud-Content-Delivery-Network/"/>
+    
+  </entry>
   
   <entry>
     <title>【TGDF2021】Unity可視化程式（Visual Scripting）專案開發</title>
@@ -316,7 +348,7 @@
     <link href="https://karlunlai-void.github.io/2020/07/12/TGDF2020_RESIDENT-EVIL-RESISTANCE-development-experience-share/"/>
     <id>https://karlunlai-void.github.io/2020/07/12/TGDF2020_RESIDENT-EVIL-RESISTANCE-development-experience-share/</id>
     <published>2020-07-12T01:28:00.000Z</published>
-    <updated>2021-07-10T12:52:15.142Z</updated>
+    <updated>2021-07-21T22:59:50.046Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者: 李健源, AL Yang&lt;/p&gt;</summary>
@@ -330,9 +362,9 @@
     
     <category term="TGDF台北遊戲開發者論壇" scheme="https://karlunlai-void.github.io/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
     
-    <category term="製程與管理" scheme="https://karlunlai-void.github.io/tags/%E8%A3%BD%E7%A8%8B%E8%88%87%E7%AE%A1%E7%90%86/"/>
-    
     <category term="遊戲設計" scheme="https://karlunlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A8%AD%E8%A8%88/"/>
+    
+    <category term="遊戲製程與管理" scheme="https://karlunlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A3%BD%E7%A8%8B%E8%88%87%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
@@ -389,7 +421,7 @@
     <link href="https://karlunlai-void.github.io/2020/07/11/TGDF2020_from-negative-to-zero/"/>
     <id>https://karlunlai-void.github.io/2020/07/11/TGDF2020_from-negative-to-zero/</id>
     <published>2020-07-11T07:34:00.000Z</published>
-    <updated>2021-07-10T12:52:00.800Z</updated>
+    <updated>2021-07-21T22:59:08.404Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者: 周子修&lt;/p&gt;</summary>
@@ -403,7 +435,7 @@
     
     <category term="TGDF台北遊戲開發者論壇" scheme="https://karlunlai-void.github.io/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
     
-    <category term="製程與管理" scheme="https://karlunlai-void.github.io/tags/%E8%A3%BD%E7%A8%8B%E8%88%87%E7%AE%A1%E7%90%86/"/>
+    <category term="遊戲製程與管理" scheme="https://karlunlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A3%BD%E7%A8%8B%E8%88%87%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
@@ -442,7 +474,7 @@
     <link href="https://karlunlai-void.github.io/2020/07/11/TGDF2020_How-to-use-friendly-and-efficiently-Q-A-to-reduce-development-costs/"/>
     <id>https://karlunlai-void.github.io/2020/07/11/TGDF2020_How-to-use-friendly-and-efficiently-Q-A-to-reduce-development-costs/</id>
     <published>2020-07-11T03:31:00.000Z</published>
-    <updated>2021-07-10T12:43:41.754Z</updated>
+    <updated>2021-07-21T23:00:13.747Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者: 沈建佑&lt;/p&gt;</summary>
@@ -458,7 +490,7 @@
     
     <category term="遊戲行銷與商務" scheme="https://karlunlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A1%8C%E9%8A%B7%E8%88%87%E5%95%86%E5%8B%99/"/>
     
-    <category term="製程與管理" scheme="https://karlunlai-void.github.io/tags/%E8%A3%BD%E7%A8%8B%E8%88%87%E7%AE%A1%E7%90%86/"/>
+    <category term="遊戲製程與管理" scheme="https://karlunlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A3%BD%E7%A8%8B%E8%88%87%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
@@ -484,31 +516,6 @@
     <category term="遊戲行銷與商務" scheme="https://karlunlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A1%8C%E9%8A%B7%E8%88%87%E5%95%86%E5%8B%99/"/>
     
     <category term="職涯發展" scheme="https://karlunlai-void.github.io/tags/%E8%81%B7%E6%B6%AF%E7%99%BC%E5%B1%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【TGDF2020】從團隊到公司：那些你總要面對的事</title>
-    <link href="https://karlunlai-void.github.io/2020/07/11/TGDF2020_from-group-to-company/"/>
-    <id>https://karlunlai-void.github.io/2020/07/11/TGDF2020_from-group-to-company/</id>
-    <published>2020-07-11T01:13:00.000Z</published>
-    <updated>2021-04-21T16:06:38.295Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;講者：高偉家&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="TGDF2020_台北遊戲開發者論壇" scheme="https://karlunlai-void.github.io/categories/TGDF2020-%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
-    
-    
-    <category term="TGDF2020" scheme="https://karlunlai-void.github.io/tags/TGDF2020/"/>
-    
-    <category term="TGDF台北遊戲開發者論壇" scheme="https://karlunlai-void.github.io/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
-    
-    <category term="遊戲行銷與商務" scheme="https://karlunlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A1%8C%E9%8A%B7%E8%88%87%E5%95%86%E5%8B%99/"/>
-    
-    <category term="遊戲開發補助" scheme="https://karlunlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%A3%9C%E5%8A%A9/"/>
     
   </entry>
   
