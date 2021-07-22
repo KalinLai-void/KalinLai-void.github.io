@@ -6,7 +6,7 @@
   <link href="https://karlunlai-void.github.io/atom.xml" rel="self"/>
   
   <link href="https://karlunlai-void.github.io/"/>
-  <updated>2021-07-22T00:50:41.631Z</updated>
+  <updated>2021-07-22T00:52:34.231Z</updated>
   <id>https://karlunlai-void.github.io/</id>
   
   <author>
@@ -21,13 +21,12 @@
     <link href="https://karlunlai-void.github.io/2021/07/10/TGDF2021_Addressables-and-Cloud-Content-Delivery/"/>
     <id>https://karlunlai-void.github.io/2021/07/10/TGDF2021_Addressables-and-Cloud-Content-Delivery/</id>
     <published>2021-07-10T04:56:33.000Z</published>
-    <updated>2021-07-22T00:50:41.631Z</updated>
+    <updated>2021-07-22T00:52:34.231Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者：Arturo Nereu&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://youtu.be/u2ng_19lYvY&quot;&gt;演講影片&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;本議程較偏 Demo，使用 Unity，以手遊為例。&lt;br&gt;使用 Unity 的 &lt;strong&gt;Addressable Asset System&lt;/strong&gt; 來管理素材；&lt;br&gt;使用 Unity 的&lt;strong&gt;雲端內容交付系統（Cloud Content Delivery，CCD）&lt;/strong&gt;來推送遊戲內容給玩家們。&lt;/p&gt;
-&lt;p&gt;本篇筆記無紀錄 Demo 內容。&lt;/p&gt;</summary>
+&lt;p&gt;本議程較偏 Demo，使用 Unity，以手遊為例。&lt;br&gt;使用 Unity 的 &lt;strong&gt;Addressable Asset System&lt;/strong&gt; 來管理素材；&lt;br&gt;使用 Unity 的&lt;strong&gt;雲端內容交付系統（Cloud Content Delivery，CCD）&lt;/strong&gt;來推送遊戲內容給玩家們。&lt;/p&gt;</summary>
     
     
     

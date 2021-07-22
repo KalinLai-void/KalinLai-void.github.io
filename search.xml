@@ -2090,12 +2090,11 @@
     <content><![CDATA[<p>講者：Arturo Nereu</p>
 <p><a href="https://youtu.be/u2ng_19lYvY">演講影片</a></p>
 <p>本議程較偏 Demo，使用 Unity，以手遊為例。<br>使用 Unity 的 <strong>Addressable Asset System</strong> 來管理素材；<br>使用 Unity 的<strong>雲端內容交付系統（Cloud Content Delivery，CCD）</strong>來推送遊戲內容給玩家們。</p>
-<p>本篇筆記無紀錄 Demo 內容。</p>
 <span id="more"></span>
 
 <h2 id="講者介紹"><a href="#講者介紹" class="headerlink" title="講者介紹"></a>講者介紹</h2><ul>
 <li>Unity 營運解決方案的技術推廣工程師</li>
-<li>講者Email：<a href="mailto:&#x61;&#x72;&#x74;&#x75;&#x72;&#111;&#x40;&#x75;&#x6e;&#x69;&#x74;&#x79;&#51;&#x64;&#46;&#99;&#111;&#x6d;">&#x61;&#x72;&#x74;&#x75;&#x72;&#111;&#x40;&#x75;&#x6e;&#x69;&#x74;&#x79;&#51;&#x64;&#46;&#99;&#111;&#x6d;</a></li>
+<li>講者Email：<a href="mailto:&#x61;&#114;&#x74;&#x75;&#114;&#111;&#x40;&#x75;&#x6e;&#105;&#116;&#x79;&#x33;&#x64;&#x2e;&#99;&#111;&#x6d;">&#x61;&#114;&#x74;&#x75;&#114;&#111;&#x40;&#x75;&#x6e;&#105;&#116;&#x79;&#x33;&#x64;&#x2e;&#99;&#111;&#x6d;</a></li>
 <li><a href="https://twitter.com/arturonereu">Twitter</a></li>
 </ul>
 <h2 id="為什麼需要管理素材？"><a href="#為什麼需要管理素材？" class="headerlink" title="為什麼需要管理素材？"></a>為什麼需要管理素材？</h2><ul>
