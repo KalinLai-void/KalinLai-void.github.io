@@ -6,7 +6,7 @@
   <link href="https://karlunlai-void.github.io/atom.xml" rel="self"/>
   
   <link href="https://karlunlai-void.github.io/"/>
-  <updated>2021-07-22T00:52:34.231Z</updated>
+  <updated>2021-09-12T16:21:44.113Z</updated>
   <id>https://karlunlai-void.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【TGDF2021】《Dusk Diver 酉閃町》遊戲結合實名地區的開發經驗分享</title>
+    <link href="https://karlunlai-void.github.io/2021/07/10/TGDF2021-Dusk-Diver-experience/"/>
+    <id>https://karlunlai-void.github.io/2021/07/10/TGDF2021-Dusk-Diver-experience/</id>
+    <published>2021-07-10T04:57:34.000Z</published>
+    <updated>2021-09-12T16:21:44.113Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;講者：朱彥儒&lt;/p&gt;
+&lt;p&gt;此議程是講者第一次負責&lt;strong&gt;原創遊戲&lt;/strong&gt;的心得&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="TGDF2021_台北遊戲開發者論壇" scheme="https://karlunlai-void.github.io/categories/TGDF2021-%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
+    
+    
+    <category term="TGDF台北遊戲開發者論壇" scheme="https://karlunlai-void.github.io/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
+    
+    <category term="遊戲設計" scheme="https://karlunlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A8%AD%E8%A8%88/"/>
+    
+    <category term="TGDF2021" scheme="https://karlunlai-void.github.io/tags/TGDF2021/"/>
+    
+  </entry>
   
   <entry>
     <title>【TGDF2021】遊戲線上內容的管理與交付（Unity）</title>
@@ -490,31 +514,6 @@
     <category term="遊戲行銷與商務" scheme="https://karlunlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A1%8C%E9%8A%B7%E8%88%87%E5%95%86%E5%8B%99/"/>
     
     <category term="遊戲製程與管理" scheme="https://karlunlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A3%BD%E7%A8%8B%E8%88%87%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【TGDF2020】人文科系的我進入遊戲業實習是否搞錯了什麼？</title>
-    <link href="https://karlunlai-void.github.io/2020/07/11/TGDF2020_Did-I-make-a-mistake-when-I-entered-game-industry-internship-in-the-humanities-department/"/>
-    <id>https://karlunlai-void.github.io/2020/07/11/TGDF2020_Did-I-make-a-mistake-when-I-entered-game-industry-internship-in-the-humanities-department/</id>
-    <published>2020-07-11T01:55:00.000Z</published>
-    <updated>2021-07-10T12:41:49.453Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;講者： 許禎&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="TGDF2020_台北遊戲開發者論壇" scheme="https://karlunlai-void.github.io/categories/TGDF2020-%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
-    
-    
-    <category term="TGDF2020" scheme="https://karlunlai-void.github.io/tags/TGDF2020/"/>
-    
-    <category term="TGDF台北遊戲開發者論壇" scheme="https://karlunlai-void.github.io/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
-    
-    <category term="遊戲行銷與商務" scheme="https://karlunlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A1%8C%E9%8A%B7%E8%88%87%E5%95%86%E5%8B%99/"/>
-    
-    <category term="職涯發展" scheme="https://karlunlai-void.github.io/tags/%E8%81%B7%E6%B6%AF%E7%99%BC%E5%B1%95/"/>
     
   </entry>
   

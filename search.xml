@@ -2191,4 +2191,162 @@
         <tag>Cloud Content Delivery Network</tag>
       </tags>
   </entry>
+  <entry>
+    <title>【TGDF2021】《Dusk Diver 酉閃町》遊戲結合實名地區的開發經驗分享</title>
+    <url>/2021/07/10/TGDF2021-Dusk-Diver-experience/</url>
+    <content><![CDATA[<p>講者：朱彥儒</p>
+<p>此議程是講者第一次負責<strong>原創遊戲</strong>的心得</p>
+<span id="more"></span>
+
+<h2 id="講者介紹"><a href="#講者介紹" class="headerlink" title="講者介紹"></a>講者介紹</h2><ul>
+<li>網銀國際：台灣遊戲研發公司，也協助打造媒體、電競等</li>
+<li>從業：2000~至今</li>
+<li>歷任職務：遊戲企劃、助理製作人、副創意總監、遊戲總監、遊戲製作人</li>
+<li>Dusk Diver 酉閃町官方社群：<ul>
+<li><a href="https://duskdiver.wanin.tw/">官方網站</a></li>
+<li><a href="https://www.facebook.com/DuskDiver/">粉絲專頁</a></li>
+<li><a href="https://store.steampowered.com/app/911220/Dusk_Diver/?l=tchinese">Steam商店</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Dusk-Diver-酉閃町"><a href="#Dusk-Diver-酉閃町" class="headerlink" title="Dusk Diver 酉閃町"></a>Dusk Diver 酉閃町</h2><ul>
+<li>動漫風格的動作遊戲</li>
+<li>高度還原西門町場景</li>
+<li>網銀國際開發、傑仕登發行</li>
+<li>三平台（Switch、PS4、PC）全球同步發行，並具備台/日配音</li>
+<li>一言以蔽之：「<strong>PC/家用平台上以西門町為背景的動漫風格動作遊戲</strong>」</li>
+</ul>
+<h2 id="為什麼選擇西門町"><a href="#為什麼選擇西門町" class="headerlink" title="為什麼選擇西門町"></a>為什麼選擇西門町</h2><ul>
+<li>最根本原因在於，團隊成員有新有舊，但都是第一次做原創作品</li>
+<li>兩個考量面向<ul>
+<li>對內製成 -&gt; <strong>讓團隊快速進入狀況</strong></li>
+<li>產品對外 -&gt; <strong>追求產品可見度</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="考量：產品對外"><a href="#考量：產品對外" class="headerlink" title="考量：產品對外"></a>考量：產品對外</h4><ul>
+<li>如何追求產品特色？</li>
+<li>本土化 = 國際化 -&gt; 找出產品的<strong>標的物</strong><ul>
+<li>外國朋友熟悉，或是可以迅速取得資訊的地方</li>
+<li>調查發現西門町排名外國人最愛景點前三</li>
+</ul>
+</li>
+</ul>
+<h4 id="考量：對內製成"><a href="#考量：對內製成" class="headerlink" title="考量：對內製成"></a>考量：對內製成</h4><ul>
+<li>首次成軍，需避免過於發散的討論</li>
+<li>第一次使用商用引擎（Unreal），所以成員都很陌生，需讓程式/企劃/美術都能快速進入實作</li>
+<li>因此，<strong>需要能夠引起共鳴，且方便取財的景點</strong><ul>
+<li>西門町距離網銀台北分公司捷運路程僅10分鐘</li>
+</ul>
+</li>
+</ul>
+<h4 id="第一支遊戲宣傳影片"><a href="#第一支遊戲宣傳影片" class="headerlink" title="第一支遊戲宣傳影片"></a>第一支遊戲宣傳影片</h4><iframe width="1280" height="720" src="https://www.youtube.com/embed/Bl3OvmnztoY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<blockquote>
+<p>透過這樣<strong>大家熟悉的標的物</strong>，團隊才<strong>真正踏出了第一步</strong></p>
+</blockquote>
+<h2 id="結合實名地點在開發上的影響"><a href="#結合實名地點在開發上的影響" class="headerlink" title="結合實名地點在開發上的影響"></a>結合實名地點在開發上的影響</h2><p>決定了兩件事：</p>
+<ul>
+<li>風格<ul>
+<li>若採用<strong>寫實風格場景</strong>，團隊無法負荷</li>
+<li>因此採用<strong>風格化的真實場景</strong><ul>
+<li>賽璐璐風格角色</li>
+<li><u>從真實感簡化後的明亮風格場景</u></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>素材限縮<ul>
+<li>設法將場景多次利用</li>
+<li><u>採用「表裡世界」切換的概念，並增加場景變化</u></li>
+</ul>
+</li>
+</ul>
+<h2 id="開發歷程"><a href="#開發歷程" class="headerlink" title="開發歷程"></a>開發歷程</h2><h4 id="Step-1：場景尺寸估算"><a href="#Step-1：場景尺寸估算" class="headerlink" title="Step 1：場景尺寸估算"></a>Step 1：場景尺寸估算</h4><ul>
+<li>使用 Google map + 現場場勘，製作估算用粗模</li>
+<li>摸索「裡世界」的呈現方式<ul>
+<li>如何在同個模型，並且套用不同材質下來呈現？</li>
+</ul>
+</li>
+</ul>
+<h4 id="Step-2：戰鬥玩法「召喚」逐漸確立"><a href="#Step-2：戰鬥玩法「召喚」逐漸確立" class="headerlink" title="Step 2：戰鬥玩法「召喚」逐漸確立"></a>Step 2：戰鬥玩法「召喚」逐漸確立</h4><ul>
+<li>「少女+神明」的玩法，需要不小的戰鬥空間<ul>
+<li>決定將主要街道放大 1.5 倍</li>
+<li>為了彌補街道的空曠感，加強街景的精細度</li>
+</ul>
+</li>
+<li>建築物的精細度大致底定</li>
+<li>「完蛋了」：美術製作難度看不到盡頭<ul>
+<li>場勘結果：光是三條街的建築物就五光十色</li>
+<li>保持場景品質，又要把整個西門町街區做完 -&gt; <strong>成本很高</strong></li>
+<li>決定縮小製作範圍，但該如何展現<strong>產品價值</strong>？</li>
+</ul>
+</li>
+</ul>
+<h4 id="Step-3：尋找價值"><a href="#Step-3：尋找價值" class="headerlink" title="Step 3：尋找價值"></a>Step 3：尋找價值</h4><ul>
+<li>前往西門町，拜訪西門徒步區發展協會</li>
+<li>想與實名店家合作，但不得其門而入</li>
+</ul>
+<h5 id="西門徒步區發展協會建議"><a href="#西門徒步區發展協會建議" class="headerlink" title="西門徒步區發展協會建議"></a>西門徒步區發展協會建議</h5><p>得到兩個結論、一個幫助</p>
+<ol>
+<li>邊際效益最高的 -&gt; 6 號出口一帶（蛋黃區）</li>
+<li>蛋黃區有著許多知名老店 -&gt; 具有足夠的代表性，確保遊戲發布後仍存在</li>
+<li>協會理事長協助徵求同意，產生後續的<strong>互惠合作</strong></li>
+</ol>
+<h4 id="Step-4：重新分配製作能量"><a href="#Step-4：重新分配製作能量" class="headerlink" title="Step 4：重新分配製作能量"></a>Step 4：重新分配製作能量</h4><ul>
+<li>製作「裡世界專用場景」來增添變化</li>
+<li>製作加速場景作業流程的工具<ul>
+<li>e.g. 快速拉出一排隨機組合的房子（應該是 UE Marketplace 內的套件）</li>
+</ul>
+</li>
+<li>下定決心製作猶豫許久的<strong>支線系統</strong>與<strong>換裝系統</strong></li>
+</ul>
+<h2 id="推廣與合作策略"><a href="#推廣與合作策略" class="headerlink" title="推廣與合作策略"></a>推廣與合作策略</h2><blockquote>
+<p>定調為<strong>與地方深度結合</strong>的產品後，獲得了重新前進的力量</p>
+</blockquote>
+<ul>
+<li>地方行銷<ul>
+<li>與協會合作<ul>
+<li>參加西門町活動、舉辦 Cosplay 比賽、與捐血單位合作等</li>
+</ul>
+</li>
+<li>與當地店家合作<ul>
+<li>半日店長活動、在店內放立牌等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>異業推廣<ul>
+<li>西門町animate特展</li>
+<li>日本女僕咖啡遊戲主題台灣料理</li>
+</ul>
+</li>
+<li>海外推廣<ul>
+<li>JR 秋葉原車站廣告、秋葉原UDX大電視牆</li>
+</ul>
+</li>
+<li>IP 成績<ul>
+<li>2019 東京電玩展，<strong>新秀遊戲獎入圍</strong></li>
+<li>Fami 通<strong>金殿堂榮譽</strong></li>
+</ul>
+</li>
+<li>媒體報導<ul>
+<li>日本媒體親身飛來台灣，實地拜訪取材，並且報導大量西門町美食</li>
+<li>日本網友反應熱烈</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>用我們擅長的方式，讓世界上所有喜歡玩遊戲朋友，藉由這個遊戲<strong>認識台灣</strong>這個地方</p>
+</blockquote>
+<h2 id="新作宣布：Dusk-Diver-2-崑崙靈動"><a href="#新作宣布：Dusk-Diver-2-崑崙靈動" class="headerlink" title="新作宣布：Dusk Diver 2 崑崙靈動"></a>新作宣布：Dusk Diver 2 崑崙靈動</h2><iframe width="971" height="546" src="https://www.youtube.com/embed/vxFE2XDxIPg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></content>
+      <categories>
+        <category>TGDF2021_台北遊戲開發者論壇</category>
+      </categories>
+      <tags>
+        <tag>TGDF台北遊戲開發者論壇</tag>
+        <tag>遊戲設計</tag>
+        <tag>TGDF2021</tag>
+      </tags>
+  </entry>
 </search>
