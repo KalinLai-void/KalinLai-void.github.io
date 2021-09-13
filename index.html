@@ -223,7 +223,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2021-09-13 17:46:58 / 修改時間：21:34:24" itemprop="dateCreated datePublished" datetime="2021-09-13T17:46:58+08:00">2021-09-13</time>
+              <time title="創建時間：2021-09-13 17:46:58 / 修改時間：21:36:51" itemprop="dateCreated datePublished" datetime="2021-09-13T17:46:58+08:00">2021-09-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,87 +248,14 @@
       
           <h2 id="什麼是-PortAudio？"><a href="#什麼是-PortAudio？" class="headerlink" title="什麼是 PortAudio？"></a>什麼是 PortAudio？</h2><p>PortAudio 是一個免費、跨平台且開源的聲音 I/O 函式庫，讓開發者可以使用 C/C++ 撰寫簡單的聲音程式，並且可以在 Windows、MacOS 及 Unix 等多平台上編譯並執行，且許多應用程式也是使用 PortAudio 作為聲音的I/O。</p>
 <p>PortAudio 提供了非常簡單的API，供開發者錄音、播放聲音等。同時也包括正弦波輸出、處理音頻輸入（吉他Fuzz等）以及列出能夠使用的聲音裝置清單…等。</p>
-<h2 id="安裝-PortAudio"><a href="#安裝-PortAudio" class="headerlink" title="安裝 PortAudio"></a>安裝 PortAudio</h2><ol>
-<li>進入 <a target="_blank" rel="noopener" href="http://www.portaudio.com/">PortAudio 官網</a>下載 PortAudio 壓縮檔</li>
-<li>解壓縮檔案</li>
-</ol>
-<h2 id="環境設定"><a href="#環境設定" class="headerlink" title="環境設定"></a>環境設定</h2><ol>
-<li><p>進入路徑 <code>portaudio\build\msvc</code></p>
-</li>
-<li><p>使用 Visual Studio 打開檔案 <code>portaudio.sln</code></p>
-</li>
-<li><p>開啟專案設定（Project -&gt; Properties）</p>
-<ul>
-<li><p>上方的 Configurations 及 Platforms 設為「All configurations」及「All platforms」</p>
-<ul>
-<li>如下圖紅框所示<br><img src="/images/Speech-Compression-intro/Configs-and-Platforms.png"></li>
-</ul>
-</li>
-<li><p>左方導覽列，進入 <code>C/C++ -&gt; Code Generation</code></p>
-<ul>
-<li>Runtime Library 設為 <strong>Multi-threaded (/MT)</strong><ul>
-<li>語音通訊一定是多執行緒</li>
-</ul>
-</li>
-<li>Floating Point Model 設為 <strong>Precise (/fp:precise)</strong><ul>
-<li>浮點數的模型，這邊設為精確</li>
-</ul>
-</li>
-<li>Struct Number Alignment 設為 <strong>Default</strong> （<u>如遇到問題改為 4 Bytes 應該就可以了</u>）<ul>
-<li>Memeory 的對齊</li>
-</ul>
-</li>
-<li>如下圖紅框所示<br><img src="/images/Speech-Compression-intro/Code-Generation-Settings.png"></li>
-</ul>
-</li>
-<li><p>左方導覽列，進入 <code>C/C++ -&gt; Optimization</code></p>
-<ul>
-<li>將 Omit Frame Pointers 設為 <strong>Yes</strong></li>
-<li>如下圖紅框所示<br><img src="/images/Speech-Compression-intro/Optimization-Settings.png"></li>
-</ul>
-</li>
-<li><p>左方導覽列，進入 <code>C/C++ -&gt; Preprocessor</code></p>
-<ul>
-<li>將 Preprocessor Definition 設為以下： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PA_USE_ASIO&#x3D;0</span><br><span class="line">PA_USE_DS&#x3D;0</span><br><span class="line">PA_USE_WMME&#x3D;1</span><br><span class="line">PA_USE_WASAPI&#x3D;1</span><br><span class="line">PA_USE_WDMKS&#x3D;1</span><br><span class="line">PA_USE_SKELETON&#x3D;0</span><br></pre></td></tr></table></figure></li>
-<li>設為 0 的代表「不使用該功能」，反之，1 則「啟用」<ul>
-<li><strong>而目前我們不需要使用 ASIO，所以將其關閉</strong></li>
-</ul>
-</li>
-<li>而上面那些 ASIO、DS、WMME、WASAPI、WDMKS、SKELETON 就是一些 OS 的驅動程式 (Driver)，可以查看 <strong><a target="_blank" rel="noopener" href="https://www.sweetwater.com/sweetcare/articles/roland-difference-between-asio-wdm-mme-drivers/">參考資料2</a></strong> 來看他們功能的解釋</li>
-<li>如下圖紅框所示<br><img src="/images/Speech-Compression-intro/Preprocessor-Settings.png"></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="建置與問題排解"><a href="#建置與問題排解" class="headerlink" title="建置與問題排解"></a>建置與問題排解</h2><ul>
-<li>此時其實就可以 Build 了，只是 Build 後會發現以下錯誤：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error C1083 Cannot open include file: &#39;asiosys.h&#39;: No such file or directory portaudio portaudio&#x2F;portaudio&#x2F;src&#x2F;hostapi&#x2F;asiopa_asio.cpp 115</span><br></pre></td></tr></table></figure></li>
-<li>主要原因是因為，前面<strong>我們將 ASIO 設為不啟用，所以他也就抓不到該 Driver</strong>，因此我們要將有使用到該 Driver 的部分從專案中移除</li>
-<li>移除與 ASIO 有關的檔案或資料<ul>
-<li>將 <code>Source Files/hostapi/</code> 中的 ASIO 資料夾從專案中移除</li>
-<li>進入路徑 <code>portaudio\build\msvc</code>，把 portaudio.def 檔案打開，並將 <strong>PaAsis_* (@50~@55) 的部分全數移除</strong></li>
-</ul>
-</li>
-<li>接下來就可以再次建置了，如果這邊沒問題了那就成功了，如果有跳錯就繼續往下看<ul>
-<li>可能會跳出以下錯誤，主要是因為這個開源碼在開發時，還是 Win7、XP 的年代，Win10 電腦抓不到此SDK<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Windows SDK Version 8.1 was not found.</span><br></pre></td></tr></table></figure></li>
-<li>因此我們要手動更新一下 SDK<ul>
-<li>打開 Microsoft Visual Studio Installer，<strong>更新版本</strong>（不過事實上去看時可能會發現 Win10 SDK 已經安裝）</li>
-<li>如 Win10 SDK 已安裝（或更新完了），就在 Solution Explorer 視窗中右鍵專案，並選擇 <strong>Retarget Project</strong>，並選擇 Win 10 的 SDK</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Rebuild Solution，理論上就沒問題了</li>
-<li>最後就會發現專案跟目錄（<code>portaudio\build\msvc</code>）底下新增一個 Win32 的資料夾，點到最裡面就會找到 <strong>portaudio_x86.lib 與 portaudio_x86.dll</strong>，即是我們會用到的檔案<ul>
-<li>補充：dll 檔是動態擴充元件，是 lib 檔在執行時會調用的項目，詳細可以參閱系統程式 (System Software) 的資料<br><img src="/images/Speech-Compression-intro/result.png"></li>
-</ul>
-</li>
-</ul>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ol>
-<li>上課用的資料：<a target="_blank" rel="noopener" href="http://ipv6.ncnu.org/Course/RTSP/portaudio.html">http://ipv6.ncnu.org/Course/RTSP/portaudio.html</a></li>
-<li>Windows audio drivers 解釋：<a target="_blank" rel="noopener" href="https://www.sweetwater.com/sweetcare/articles/roland-difference-between-asio-wdm-mme-drivers/">https://www.sweetwater.com/sweetcare/articles/roland-difference-between-asio-wdm-mme-drivers/</a></li>
-</ol>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/13/Speech-Compression-intro/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

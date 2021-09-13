@@ -2354,6 +2354,8 @@
     <url>/2021/09/13/Speech-Compression-intro/</url>
     <content><![CDATA[<h2 id="什麼是-PortAudio？"><a href="#什麼是-PortAudio？" class="headerlink" title="什麼是 PortAudio？"></a>什麼是 PortAudio？</h2><p>PortAudio 是一個免費、跨平台且開源的聲音 I/O 函式庫，讓開發者可以使用 C/C++ 撰寫簡單的聲音程式，並且可以在 Windows、MacOS 及 Unix 等多平台上編譯並執行，且許多應用程式也是使用 PortAudio 作為聲音的I/O。</p>
 <p>PortAudio 提供了非常簡單的API，供開發者錄音、播放聲音等。同時也包括正弦波輸出、處理音頻輸入（吉他Fuzz等）以及列出能夠使用的聲音裝置清單…等。</p>
+<span id="more"></span>
+
 <h2 id="安裝-PortAudio"><a href="#安裝-PortAudio" class="headerlink" title="安裝 PortAudio"></a>安裝 PortAudio</h2><ol>
 <li>進入 <a href="http://www.portaudio.com/">PortAudio 官網</a>下載 PortAudio 壓縮檔</li>
 <li>解壓縮檔案</li>

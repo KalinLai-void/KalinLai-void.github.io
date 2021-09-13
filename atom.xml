@@ -6,7 +6,7 @@
   <link href="https://karlunlai-void.github.io/atom.xml" rel="self"/>
   
   <link href="https://karlunlai-void.github.io/"/>
-  <updated>2021-09-13T13:34:24.973Z</updated>
+  <updated>2021-09-13T13:36:51.116Z</updated>
   <id>https://karlunlai-void.github.io/</id>
   
   <author>
@@ -21,16 +21,11 @@
     <link href="https://karlunlai-void.github.io/2021/09/13/Speech-Compression-intro/"/>
     <id>https://karlunlai-void.github.io/2021/09/13/Speech-Compression-intro/</id>
     <published>2021-09-13T09:46:58.000Z</published>
-    <updated>2021-09-13T13:34:24.973Z</updated>
+    <updated>2021-09-13T13:36:51.116Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;什麼是-PortAudio？&quot;&gt;&lt;a href=&quot;#什麼是-PortAudio？&quot; class=&quot;headerlink&quot; title=&quot;什麼是 PortAudio？&quot;&gt;&lt;/a&gt;什麼是 PortAudio？&lt;/h2&gt;&lt;p&gt;PortAudio</summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;什麼是-PortAudio？&quot;&gt;&lt;a href=&quot;#什麼是-PortAudio？&quot; class=&quot;headerlink&quot; title=&quot;什麼是 PortAudio？&quot;&gt;&lt;/a&gt;什麼是 PortAudio？&lt;/h2&gt;&lt;p&gt;PortAudio 是一個免費、跨平台且開源的聲音 I/O 函式庫，讓開發者可以使用 C/C++ 撰寫簡單的聲音程式，並且可以在 Windows、MacOS 及 Unix 等多平台上編譯並執行，且許多應用程式也是使用 PortAudio 作為聲音的I/O。&lt;/p&gt;
+&lt;p&gt;PortAudio 提供了非常簡單的API，供開發者錄音、播放聲音等。同時也包括正弦波輸出、處理音頻輸入（吉他Fuzz等）以及列出能夠使用的聲音裝置清單…等。&lt;/p&gt;</summary>
     
     
     
