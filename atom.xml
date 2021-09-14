@@ -39,6 +39,31 @@
   </entry>
   
   <entry>
+    <title>【TGDF2021】獨立開發團隊如何找到適合的發行商及怎樣是合理的合約</title>
+    <link href="https://kalinlai-void.github.io/2021/07/10/TGDF2021_how-to-find-a-suitable-publisher/"/>
+    <id>https://kalinlai-void.github.io/2021/07/10/TGDF2021_how-to-find-a-suitable-publisher/</id>
+    <published>2021-07-10T06:07:33.000Z</published>
+    <updated>2021-09-14T17:21:46.369Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;講者：黃仕成&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.google.com/presentation/d/11xlCdAxQ-VWX0zsbGVq0q5AVSEDVfQx5ZS3baHcA_cg/edit#slide=id.p&quot;&gt;演講簡報&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;主要以團隊開發的遊戲企劃《記憶邊境（THYMESIA）》來說明，且這款遊戲是單人遊戲、買斷制、PC &amp;amp; 家機平台，因此內容上手機遊戲、免費遊戲的參考價值較低，不過有些觀念還是有幫助。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="TGDF2021_台北遊戲開發者論壇" scheme="https://kalinlai-void.github.io/categories/TGDF2021-%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
+    
+    
+    <category term="TGDF台北遊戲開發者論壇" scheme="https://kalinlai-void.github.io/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
+    
+    <category term="TGDF2021" scheme="https://kalinlai-void.github.io/tags/TGDF2021/"/>
+    
+    <category term="行銷與商務" scheme="https://kalinlai-void.github.io/tags/%E8%A1%8C%E9%8A%B7%E8%88%87%E5%95%86%E5%8B%99/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【TGDF2021】《Dusk Diver 酉閃町》遊戲結合實名地區的開發經驗分享</title>
     <link href="https://kalinlai-void.github.io/2021/07/10/TGDF2021-Dusk-Diver-experience/"/>
     <id>https://kalinlai-void.github.io/2021/07/10/TGDF2021-Dusk-Diver-experience/</id>
@@ -150,7 +175,7 @@
     <link href="https://kalinlai-void.github.io/2021/07/10/TGDF2021_LevelDesign-using-team-cooperation/"/>
     <id>https://kalinlai-void.github.io/2021/07/10/TGDF2021_LevelDesign-using-team-cooperation/</id>
     <published>2021-07-10T01:17:25.000Z</published>
-    <updated>2021-07-15T16:23:52.289Z</updated>
+    <updated>2021-09-14T16:02:06.550Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者：Josue Benavidez&lt;/p&gt;</summary>
@@ -481,36 +506,6 @@
     <category term="TGDF台北遊戲開發者論壇" scheme="https://kalinlai-void.github.io/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
     
     <category term="遊戲製程與管理" scheme="https://kalinlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A3%BD%E7%A8%8B%E8%88%87%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【TGDF2020】Substance PBR 材質解析 ─ 遊戲材質的下一個革命</title>
-    <link href="https://kalinlai-void.github.io/2020/07/11/TGDF2020_SubstancePBR/"/>
-    <id>https://kalinlai-void.github.io/2020/07/11/TGDF2020_SubstancePBR/</id>
-    <published>2020-07-11T04:59:00.000Z</published>
-    <updated>2021-07-10T12:44:30.945Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;講者: 嚴美子&lt;/p&gt;
-&lt;p&gt;Adobe一個可以用來做模型Texture繪製的軟體，功能強大…&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="TGDF2020_台北遊戲開發者論壇" scheme="https://kalinlai-void.github.io/categories/TGDF2020-%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
-    
-    
-    <category term="TGDF2020" scheme="https://kalinlai-void.github.io/tags/TGDF2020/"/>
-    
-    <category term="TGDF台北遊戲開發者論壇" scheme="https://kalinlai-void.github.io/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
-    
-    <category term="美術工具" scheme="https://kalinlai-void.github.io/tags/%E7%BE%8E%E8%A1%93%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="Texture" scheme="https://kalinlai-void.github.io/tags/Texture/"/>
-    
-    <category term="Adobe Substance" scheme="https://kalinlai-void.github.io/tags/Adobe-Substance/"/>
-    
-    <category term="軟體介紹" scheme="https://kalinlai-void.github.io/tags/%E8%BB%9F%E9%AB%94%E4%BB%8B%E7%B4%B9/"/>
     
   </entry>
   
