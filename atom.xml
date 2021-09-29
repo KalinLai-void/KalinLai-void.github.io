@@ -6,7 +6,7 @@
   <link href="https://kalinlai-void.github.io/atom.xml" rel="self"/>
   
   <link href="https://kalinlai-void.github.io/"/>
-  <updated>2021-09-13T13:36:51.116Z</updated>
+  <updated>2021-09-29T02:39:27.992Z</updated>
   <id>https://kalinlai-void.github.io/</id>
   
   <author>
@@ -17,11 +17,60 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Visula Studio Debug &amp; Release Mode</title>
+    <link href="https://kalinlai-void.github.io/2021/09/29/Visual-Studio-Debug-and-Release-Mode/"/>
+    <id>https://kalinlai-void.github.io/2021/09/29/Visual-Studio-Debug-and-Release-Mode/</id>
+    <published>2021-09-28T21:00:11.000Z</published>
+    <updated>2021-09-29T02:39:27.992Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/Visual-Studio-Debug-and-Release-Mode/Debug-and-Release-Config.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;本篇會來釐清 Visual Studio 中的 Debug &amp;amp; Release Mode，以及其相關設定。&lt;/p&gt;
+&lt;p&gt;其實兩者並無本質上的界線，他們只是一組編譯選項的標籤，編譯器只會按照選項上的設定來執行。也就是說，&lt;strong&gt;兩者僅是不同設定的編譯器設定檔&lt;/strong&gt;。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Visual Studio" scheme="https://kalinlai-void.github.io/tags/Visual-Studio/"/>
+    
+    <category term="Debug Mode" scheme="https://kalinlai-void.github.io/tags/Debug-Mode/"/>
+    
+    <category term="Release Mode" scheme="https://kalinlai-void.github.io/tags/Release-Mode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Speech Compression】PortAudio 程式編譯及連結 portaudio_x86.lib</title>
+    <link href="https://kalinlai-void.github.io/2021/09/27/Speech-Compression-Compile-and-Link/"/>
+    <id>https://kalinlai-void.github.io/2021/09/27/Speech-Compression-Compile-and-Link/</id>
+    <published>2021-09-27T11:10:01.000Z</published>
+    <updated>2021-09-29T00:04:04.513Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;經由上一篇 - &lt;a href=&quot;https://kalinlai-void.github.io/2021/09/13/Speech-Compression-intro/&quot;&gt;PortAudio環境設定 (for Windows using Visual Studio)&lt;/a&gt;，我們已經知道該如何產生出 portaudio_x86.lib 與 portaudio_x86.dll 這兩個檔案。&lt;/p&gt;
+&lt;p&gt;而本篇要將專案連結至 portaudio_x86.lib，並將 PortAudio 專案做為函式庫，在使用 portaudio_x86.dll，嘗試撰寫語音程式。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Speech Compression" scheme="https://kalinlai-void.github.io/categories/Speech-Compression/"/>
+    
+    <category term="PortAudio" scheme="https://kalinlai-void.github.io/categories/Speech-Compression/PortAudio/"/>
+    
+    
+    <category term="語音壓縮" scheme="https://kalinlai-void.github.io/tags/%E8%AA%9E%E9%9F%B3%E5%A3%93%E7%B8%AE/"/>
+    
+    <category term="Speech Compression" scheme="https://kalinlai-void.github.io/tags/Speech-Compression/"/>
+    
+    <category term="PortAudio" scheme="https://kalinlai-void.github.io/tags/PortAudio/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【Speech Compression】PortAudio環境設定 (for Windows using Visual Studio)</title>
     <link href="https://kalinlai-void.github.io/2021/09/13/Speech-Compression-intro/"/>
     <id>https://kalinlai-void.github.io/2021/09/13/Speech-Compression-intro/</id>
     <published>2021-09-13T09:46:58.000Z</published>
-    <updated>2021-09-13T13:36:51.116Z</updated>
+    <updated>2021-09-28T23:37:25.308Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;什麼是-PortAudio？&quot;&gt;&lt;a href=&quot;#什麼是-PortAudio？&quot; class=&quot;headerlink&quot; title=&quot;什麼是 PortAudio？&quot;&gt;&lt;/a&gt;什麼是 PortAudio？&lt;/h2&gt;&lt;p&gt;PortAudio 是一個免費、跨平台且開源的聲音 I/O 函式庫，讓開發者可以使用 C/C++ 撰寫簡單的聲音程式，並且可以在 Windows、MacOS 及 Unix 等多平台上編譯並執行，且許多應用程式也是使用 PortAudio 作為聲音的I/O。&lt;/p&gt;
@@ -31,10 +80,14 @@
     
     <category term="Speech Compression" scheme="https://kalinlai-void.github.io/categories/Speech-Compression/"/>
     
+    <category term="PortAudio" scheme="https://kalinlai-void.github.io/categories/Speech-Compression/PortAudio/"/>
+    
     
     <category term="語音壓縮" scheme="https://kalinlai-void.github.io/tags/%E8%AA%9E%E9%9F%B3%E5%A3%93%E7%B8%AE/"/>
     
     <category term="Speech Compression" scheme="https://kalinlai-void.github.io/tags/Speech-Compression/"/>
+    
+    <category term="PortAudio" scheme="https://kalinlai-void.github.io/tags/PortAudio/"/>
     
   </entry>
   
@@ -43,7 +96,7 @@
     <link href="https://kalinlai-void.github.io/2021/07/10/TGDF2021_how-to-find-a-suitable-publisher/"/>
     <id>https://kalinlai-void.github.io/2021/07/10/TGDF2021_how-to-find-a-suitable-publisher/</id>
     <published>2021-07-10T06:07:33.000Z</published>
-    <updated>2021-09-14T17:28:44.907Z</updated>
+    <updated>2021-09-14T17:28:44.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者：黃仕成&lt;/p&gt;
@@ -68,7 +121,7 @@
     <link href="https://kalinlai-void.github.io/2021/07/10/TGDF2021-Dusk-Diver-experience/"/>
     <id>https://kalinlai-void.github.io/2021/07/10/TGDF2021-Dusk-Diver-experience/</id>
     <published>2021-07-10T04:57:34.000Z</published>
-    <updated>2021-09-14T17:25:28.177Z</updated>
+    <updated>2021-09-14T17:25:28.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者：朱彥儒&lt;/p&gt;
@@ -92,7 +145,7 @@
     <link href="https://kalinlai-void.github.io/2021/07/10/TGDF2021_Addressables-and-Cloud-Content-Delivery/"/>
     <id>https://kalinlai-void.github.io/2021/07/10/TGDF2021_Addressables-and-Cloud-Content-Delivery/</id>
     <published>2021-07-10T04:56:33.000Z</published>
-    <updated>2021-07-22T00:52:34.231Z</updated>
+    <updated>2021-07-22T00:52:34.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者：Arturo Nereu&lt;/p&gt;
@@ -123,7 +176,7 @@
     <link href="https://kalinlai-void.github.io/2021/07/10/TGDF2021_unity-visual-scripting/"/>
     <id>https://kalinlai-void.github.io/2021/07/10/TGDF2021_unity-visual-scripting/</id>
     <published>2021-07-10T03:58:56.000Z</published>
-    <updated>2021-09-13T13:51:55.400Z</updated>
+    <updated>2021-09-13T13:51:55.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者：達哥/Kelvin Lo&lt;/p&gt;
@@ -152,7 +205,7 @@
     <link href="https://kalinlai-void.github.io/2021/07/10/TGDF2021_thinking-outside-Superliminal/"/>
     <id>https://kalinlai-void.github.io/2021/07/10/TGDF2021_thinking-outside-Superliminal/</id>
     <published>2021-07-10T02:54:07.000Z</published>
-    <updated>2021-07-17T11:42:00.671Z</updated>
+    <updated>2021-07-17T11:41:32.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者：Albert Shih&lt;/p&gt;</summary>
@@ -175,7 +228,7 @@
     <link href="https://kalinlai-void.github.io/2021/07/10/TGDF2021_LevelDesign-using-team-cooperation/"/>
     <id>https://kalinlai-void.github.io/2021/07/10/TGDF2021_LevelDesign-using-team-cooperation/</id>
     <published>2021-07-10T01:17:25.000Z</published>
-    <updated>2021-09-14T16:02:06.550Z</updated>
+    <updated>2021-09-14T16:02:06.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者：Josue Benavidez&lt;/p&gt;</summary>
@@ -200,7 +253,7 @@
     <link href="https://kalinlai-void.github.io/2021/07/10/TGDF2021_GameProgramming-parallelization-and-time-slicing/"/>
     <id>https://kalinlai-void.github.io/2021/07/10/TGDF2021_GameProgramming-parallelization-and-time-slicing/</id>
     <published>2021-07-10T01:04:45.000Z</published>
-    <updated>2021-07-10T16:02:09.692Z</updated>
+    <updated>2021-07-10T16:02:09.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者：周明倫&lt;/p&gt;</summary>
@@ -248,7 +301,7 @@
     <link href="https://kalinlai-void.github.io/2021/04/22/System-Software-Chapter1/"/>
     <id>https://kalinlai-void.github.io/2021/04/22/System-Software-Chapter1/</id>
     <published>2021-04-21T16:01:17.000Z</published>
-    <updated>2021-04-23T00:25:58.820Z</updated>
+    <updated>2021-04-23T00:25:58.000Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;Simplified-Instruction-Computer-簡化指令電腦-SIC&quot;&gt;&lt;a href=&quot;#Simplified-Instruction-Computer-簡化指令電腦-SIC&quot; class=&quot;headerlink&quot; title=&quot;Simplified Instruction Computer 簡化指令電腦(SIC)&quot;&gt;&lt;/a&gt;Simplified Instruction Computer 簡化指令電腦(SIC)&lt;/h2&gt;&lt;ul&gt;
@@ -283,7 +336,7 @@
     <link href="https://kalinlai-void.github.io/2021/02/05/UpdateLog/"/>
     <id>https://kalinlai-void.github.io/2021/02/05/UpdateLog/</id>
     <published>2021-02-05T14:05:00.000Z</published>
-    <updated>2021-04-21T17:05:00.063Z</updated>
+    <updated>2021-04-21T17:05:00.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;Update log and TODO list in blog&lt;/p&gt;</summary>
@@ -302,7 +355,7 @@
     <link href="https://kalinlai-void.github.io/2021/01/29/APGS2021_The-power-of-kyaaa-in-game-production/"/>
     <id>https://kalinlai-void.github.io/2021/01/29/APGS2021_The-power-of-kyaaa-in-game-production/</id>
     <published>2021-01-29T12:34:00.000Z</published>
-    <updated>2021-07-10T12:45:36.540Z</updated>
+    <updated>2021-07-10T12:45:36.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者：Shawn Toh／BATTLEBREW PRODUCTIONS&lt;/p&gt;</summary>
@@ -323,7 +376,7 @@
     <link href="https://kalinlai-void.github.io/2021/01/29/APGS2021_Composing-music-for-a-VR-historical-game/"/>
     <id>https://kalinlai-void.github.io/2021/01/29/APGS2021_Composing-music-for-a-VR-historical-game/</id>
     <published>2021-01-29T12:29:00.000Z</published>
-    <updated>2021-07-10T12:52:24.859Z</updated>
+    <updated>2021-07-10T12:52:24.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者：Aurelie Moiroud&lt;/p&gt;
@@ -347,7 +400,7 @@
     <link href="https://kalinlai-void.github.io/2021/01/28/APGS2021_Using-third-party-tools-to-lower-indie-development-costs/"/>
     <id>https://kalinlai-void.github.io/2021/01/28/APGS2021_Using-third-party-tools-to-lower-indie-development-costs/</id>
     <published>2021-01-28T11:25:00.000Z</published>
-    <updated>2021-07-10T12:46:24.252Z</updated>
+    <updated>2021-07-10T12:46:24.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者：Nontawat Thanakiatkrai&lt;/p&gt;</summary>
@@ -370,7 +423,7 @@
     <link href="https://kalinlai-void.github.io/2020/07/12/TGDF2020_hypnotize-you-without-a-trace/"/>
     <id>https://kalinlai-void.github.io/2020/07/12/TGDF2020_hypnotize-you-without-a-trace/</id>
     <published>2020-07-12T09:01:00.000Z</published>
-    <updated>2021-07-10T12:44:58.039Z</updated>
+    <updated>2021-07-10T12:44:58.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者: 林昱廷&lt;br&gt;※ 此篇有大部分會從音樂人角度出發&lt;/p&gt;</summary>
@@ -393,7 +446,7 @@
     <link href="https://kalinlai-void.github.io/2020/07/12/TGDF2020_Can-I-also-become-the-streamer/"/>
     <id>https://kalinlai-void.github.io/2020/07/12/TGDF2020_Can-I-also-become-the-streamer/</id>
     <published>2020-07-12T04:56:00.000Z</published>
-    <updated>2021-07-10T12:44:44.024Z</updated>
+    <updated>2021-07-10T12:44:44.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者: 汪光磊（6tan）&lt;/p&gt;</summary>
@@ -418,7 +471,7 @@
     <link href="https://kalinlai-void.github.io/2020/07/12/TGDF2020_RESIDENT-EVIL-RESISTANCE-development-experience-share/"/>
     <id>https://kalinlai-void.github.io/2020/07/12/TGDF2020_RESIDENT-EVIL-RESISTANCE-development-experience-share/</id>
     <published>2020-07-12T01:28:00.000Z</published>
-    <updated>2021-07-21T22:59:50.046Z</updated>
+    <updated>2021-07-21T22:59:50.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者: 李健源, AL Yang&lt;/p&gt;</summary>
@@ -443,7 +496,7 @@
     <link href="https://kalinlai-void.github.io/2020/07/11/TGDF2020_subscription-share/"/>
     <id>https://kalinlai-void.github.io/2020/07/11/TGDF2020_subscription-share/</id>
     <published>2020-07-11T09:02:00.000Z</published>
-    <updated>2021-07-10T12:44:16.625Z</updated>
+    <updated>2021-07-10T12:44:16.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者: Kuro&lt;br&gt;P.S. 講者是18+國產遊戲《獸人按摩店》開發者&lt;/p&gt;</summary>
@@ -460,52 +513,6 @@
     <category term="遊戲行銷與商務" scheme="https://kalinlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A1%8C%E9%8A%B7%E8%88%87%E5%95%86%E5%8B%99/"/>
     
     <category term="訂閱制" scheme="https://kalinlai-void.github.io/tags/%E8%A8%82%E9%96%B1%E5%88%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【TGDF2020】淺談訂閱式、獨立集資與國內外平台選擇</title>
-    <link href="https://kalinlai-void.github.io/2020/07/11/TGDF2020_subscription-and-independent-fund-raising/"/>
-    <id>https://kalinlai-void.github.io/2020/07/11/TGDF2020_subscription-and-independent-fund-raising/</id>
-    <published>2020-07-11T08:06:00.000Z</published>
-    <updated>2021-07-10T12:44:01.063Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;講者: 鄭祤呈&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="TGDF2020_台北遊戲開發者論壇" scheme="https://kalinlai-void.github.io/categories/TGDF2020-%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
-    
-    
-    <category term="TGDF2020" scheme="https://kalinlai-void.github.io/tags/TGDF2020/"/>
-    
-    <category term="TGDF台北遊戲開發者論壇" scheme="https://kalinlai-void.github.io/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
-    
-    <category term="遊戲行銷與商務" scheme="https://kalinlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A1%8C%E9%8A%B7%E8%88%87%E5%95%86%E5%8B%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【TGDF2020】從負數到零，以《迷霧國度》為例，聊遊戲開發的大失敗與再起</title>
-    <link href="https://kalinlai-void.github.io/2020/07/11/TGDF2020_from-negative-to-zero/"/>
-    <id>https://kalinlai-void.github.io/2020/07/11/TGDF2020_from-negative-to-zero/</id>
-    <published>2020-07-11T07:34:00.000Z</published>
-    <updated>2021-07-21T22:59:08.404Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;講者: 周子修&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="TGDF2020_台北遊戲開發者論壇" scheme="https://kalinlai-void.github.io/categories/TGDF2020-%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
-    
-    
-    <category term="TGDF2020" scheme="https://kalinlai-void.github.io/tags/TGDF2020/"/>
-    
-    <category term="TGDF台北遊戲開發者論壇" scheme="https://kalinlai-void.github.io/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
-    
-    <category term="遊戲製程與管理" scheme="https://kalinlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A3%BD%E7%A8%8B%E8%88%87%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   

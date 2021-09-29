@@ -1459,7 +1459,7 @@
 <li>Spider-Man New York（蜘蛛人：紐約）</li>
 </ul>
 </li>
-<li>Email: <a href="mailto:&#74;&#x6f;&#x73;&#117;&#x65;&#46;&#x4e;&#46;&#66;&#101;&#110;&#97;&#x76;&#105;&#100;&#101;&#x7a;&#x40;&#x67;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#109;">&#74;&#x6f;&#x73;&#117;&#x65;&#46;&#x4e;&#46;&#66;&#101;&#110;&#97;&#x76;&#105;&#100;&#101;&#x7a;&#x40;&#x67;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#109;</a></li>
+<li>Email: <a href="mailto:&#x4a;&#x6f;&#x73;&#117;&#x65;&#46;&#x4e;&#46;&#x42;&#x65;&#x6e;&#x61;&#118;&#105;&#x64;&#101;&#x7a;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">&#x4a;&#x6f;&#x73;&#117;&#x65;&#46;&#x4e;&#46;&#x42;&#x65;&#x6e;&#x61;&#118;&#105;&#x64;&#101;&#x7a;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a></li>
 <li><a href="https://twitter.com/JosueNBenavidez">Twitter</a></li>
 </ul>
 <h2 id="什麼是關卡設計？"><a href="#什麼是關卡設計？" class="headerlink" title="什麼是關卡設計？"></a>什麼是關卡設計？</h2><p>本演講會以「<strong>打造有特定遊戲目標的空間</strong>」的角度來說明關卡設計，因為這仍適用於大多數的遊戲空間設計。儘管遊戲和關卡的概念不斷進化，但基本目標仍然相同，還是會面臨相同的基本設計挑戰 ─ <strong>如何建構一個能給予玩家深刻互動體驗的遊戲空間</strong>。</p>
@@ -1787,7 +1787,7 @@
 <li>一位現居美國西雅圖的獨立遊戲開發者</li>
 <li>他的團隊 Pillow Castle Games</li>
 <li>《Superliminal》遊戲總監</li>
-<li>講者Email: <a href="mailto:&#x61;&#x6c;&#x62;&#x65;&#x72;&#x74;&#x40;&#x70;&#105;&#108;&#x6c;&#111;&#119;&#99;&#97;&#115;&#x74;&#x6c;&#x65;&#103;&#97;&#x6d;&#101;&#115;&#46;&#99;&#x6f;&#x6d;">&#x61;&#x6c;&#x62;&#x65;&#x72;&#x74;&#x40;&#x70;&#105;&#108;&#x6c;&#111;&#119;&#99;&#97;&#115;&#x74;&#x6c;&#x65;&#103;&#97;&#x6d;&#101;&#115;&#46;&#99;&#x6f;&#x6d;</a></li>
+<li>講者Email: <a href="mailto:&#x61;&#108;&#x62;&#101;&#x72;&#x74;&#64;&#112;&#x69;&#108;&#x6c;&#x6f;&#x77;&#x63;&#97;&#115;&#116;&#108;&#101;&#x67;&#97;&#x6d;&#101;&#x73;&#46;&#x63;&#x6f;&#109;">&#x61;&#108;&#x62;&#101;&#x72;&#x74;&#64;&#112;&#x69;&#108;&#x6c;&#x6f;&#x77;&#x63;&#97;&#115;&#116;&#108;&#101;&#x67;&#97;&#x6d;&#101;&#x73;&#46;&#x63;&#x6f;&#109;</a></li>
 <li><a href="https://twitter.com/albertshihgames">Twitter</a></li>
 </ul>
 <h2 id="《Superliminal》"><a href="#《Superliminal》" class="headerlink" title="《Superliminal》"></a>《Superliminal》</h2><ul>
@@ -2094,7 +2094,7 @@
 
 <h2 id="講者介紹"><a href="#講者介紹" class="headerlink" title="講者介紹"></a>講者介紹</h2><ul>
 <li>Unity 營運解決方案的技術推廣工程師</li>
-<li>講者Email：<a href="mailto:&#x61;&#114;&#x74;&#x75;&#114;&#111;&#x40;&#x75;&#x6e;&#105;&#116;&#x79;&#x33;&#x64;&#x2e;&#99;&#111;&#x6d;">&#x61;&#114;&#x74;&#x75;&#114;&#111;&#x40;&#x75;&#x6e;&#105;&#116;&#x79;&#x33;&#x64;&#x2e;&#99;&#111;&#x6d;</a></li>
+<li>講者Email：<a href="mailto:&#97;&#x72;&#x74;&#x75;&#114;&#x6f;&#64;&#x75;&#110;&#x69;&#x74;&#x79;&#51;&#100;&#46;&#99;&#111;&#109;">&#97;&#x72;&#x74;&#x75;&#114;&#x6f;&#64;&#x75;&#110;&#x69;&#x74;&#x79;&#51;&#100;&#46;&#99;&#111;&#109;</a></li>
 <li><a href="https://twitter.com/arturonereu">Twitter</a></li>
 </ul>
 <h2 id="為什麼需要管理素材？"><a href="#為什麼需要管理素材？" class="headerlink" title="為什麼需要管理素材？"></a>為什麼需要管理素材？</h2><ul>
@@ -2427,22 +2427,26 @@
 </ul>
 </li>
 <li>Rebuild Solution，理論上就沒問題了</li>
-<li>最後就會發現專案跟目錄（<code>portaudio\build\msvc</code>）底下新增一個 Win32 的資料夾，點到最裡面就會找到 <strong>portaudio_x86.lib 與 portaudio_x86.dll</strong>，即是我們會用到的檔案<ul>
+<li>最後就會發現專案根目錄（<code>portaudio\build\msvc</code>）底下新增一個 Win32 的資料夾，點到最裡面就會找到 <strong>portaudio_x86.lib 與 portaudio_x86.dll</strong>，即是我們會用到的檔案<ul>
 <li>補充：dll 檔是動態擴充元件，是 lib 檔在執行時會調用的項目，詳細可以參閱系統程式 (System Software) 的資料<br><img src="/images/Speech-Compression-intro/result.png"></li>
 </ul>
 </li>
 </ul>
+<h2 id="官方教學文件"><a href="#官方教學文件" class="headerlink" title="官方教學文件"></a>官方教學文件</h2><p>接下來可以參閱官方提供的教學文件（下方<a href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99">參考資料第2點</a>），裡面也有上面的步驟，不過因有課程需求，所以此篇有改過一些設定，因此可以看看官方是如何帶過下載與編譯的部分！</p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ol>
 <li>上課用的資料：<a href="http://ipv6.ncnu.org/Course/RTSP/portaudio.html">http://ipv6.ncnu.org/Course/RTSP/portaudio.html</a></li>
+<li>官方教學文件：<a href="http://www.portaudio.com/docs/v19-doxydocs/tutorial_start.html">http://www.portaudio.com/docs/v19-doxydocs/tutorial_start.html</a></li>
 <li>Windows audio drivers 解釋：<a href="https://www.sweetwater.com/sweetcare/articles/roland-difference-between-asio-wdm-mme-drivers/">https://www.sweetwater.com/sweetcare/articles/roland-difference-between-asio-wdm-mme-drivers/</a></li>
 </ol>
 ]]></content>
       <categories>
         <category>Speech Compression</category>
+        <category>PortAudio</category>
       </categories>
       <tags>
         <tag>語音壓縮</tag>
         <tag>Speech Compression</tag>
+        <tag>PortAudio</tag>
       </tags>
   </entry>
   <entry>
@@ -2732,6 +2736,200 @@
         <tag>TGDF台北遊戲開發者論壇</tag>
         <tag>TGDF2021</tag>
         <tag>行銷與商務</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【Speech Compression】PortAudio 程式編譯及連結 portaudio_x86.lib</title>
+    <url>/2021/09/27/Speech-Compression-Compile-and-Link/</url>
+    <content><![CDATA[<p>經由上一篇 - <a href="https://kalinlai-void.github.io/2021/09/13/Speech-Compression-intro/">PortAudio環境設定 (for Windows using Visual Studio)</a>，我們已經知道該如何產生出 portaudio_x86.lib 與 portaudio_x86.dll 這兩個檔案。</p>
+<p>而本篇要將專案連結至 portaudio_x86.lib，並將 PortAudio 專案做為函式庫，在使用 portaudio_x86.dll，嘗試撰寫語音程式。</p>
+<span id="more"></span>
+
+<h3 id="電腦如何將-Source-Code-編譯為可執行檔？"><a href="#電腦如何將-Source-Code-編譯為可執行檔？" class="headerlink" title="電腦如何將 Source Code 編譯為可執行檔？"></a>電腦如何將 Source Code 編譯為可執行檔？</h3><p>這是系統程式的內容，這邊簡單複習，就不贅述了。</p>
+<p>如下圖所示，有一 Source Code 為 hello.cpp，內有匯入一些標頭檔 (Header)，會交由編譯器 (Compiler) 去編譯，而後產生出 hello.obj，再藉由連結器 (Linker)，將函式庫 (Library) *.lib 連結，最後產生出 hello.exe 。</p>
+<p>而我們執行 hello.exe 後，會將該執行檔及會使用到的動態連結函式庫 (Dynamic Linking Library) *.dll 檔（可以想像成程式的擴充元件），一起放入載入器 (Loader) 中，最後放到記憶體內執行程式。</p>
+<p><img src="/images/Speech-Compression-Compile-and-Link/Compile-a-Source-Code-to-an-Executable-File.png"></p>
+<p>而接下來我們要來撰寫 Portaudio 的程式了！</p>
+<h3 id="Coding-PortAudio-version"><a href="#Coding-PortAudio-version" class="headerlink" title="Coding : PortAudio version"></a>Coding : PortAudio version</h3><ol>
+<li><p>首先，開啟 Visual Studio，創建一個 C++ 空白專案，並加入一個 C++ File (.cpp)。然後寫入以下程式：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;portaudio.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%x\n&quot;</span>, Pa_GetVersion()); <span class="comment">// the version is represented by hexadecimal.</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, Pa_GetVersionText());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>此時會發現 IDE 在檢查語法時，找不到 portaudio.h，因此我們需要在此專案加入該 Header：</p>
+<ul>
+<li>開啟專案設定，找到 <code>C/C++ -&gt; General -&gt; Addiotnal Include Directories</code>，並將其設定為<strong>PortAudio 專案底下 portaudio.h 之根目錄</strong>。如下圖紅框所示：<br><img src="/images/Speech-Compression-Compile-and-Link/Additional-Include-Directories.png"></li>
+</ul>
+</li>
+</ol>
+<ol start="3">
+<li><p>此時編譯 (Compiler) 出 .obj 檔後，再建置 (Build) 專案時，會發現程式無法建置，會出現以下錯誤訊息：</p>
+<ul>
+<li><code>unresolved external symbol</code></li>
+<li>這是因為 Build 專案會嘗試將所需要的 .lib 檔透過 Linker 與 剛才編譯出的 .obj 檔連結，但此時發現找不到所需的 .lib 檔。</li>
+</ul>
+</li>
+<li><p>那接下來我們需要在專案設定中，加入 portaudio_x86.lib 做為外部函式庫：</p>
+<ul>
+<li>開啟專案設定，找到 <code>Linker -&gt; Input -&gt; Addition Dependencies</code>，並將其設定為 <strong>portaudio_x86.lib 的完整路徑</strong>。如下圖紅框所示:<br><img src="/images/Speech-Compression-Compile-and-Link/Addition-Dependencies.png"></li>
+</ul>
+</li>
+<li><p>此時 Build 就會成功，並產生執行檔 .exe。但此時執行後，他會跟你說「找不到 portaudio_x86.dll」。</p>
+<ul>
+<li>解決辦法很簡單，就是將上次 Build 出來的 portaudio_x86.dll，複製到本專案底下的 Debug 資料夾內（<strong>就是 .dll 與 .exe 檔需位於同一層</strong>）。</li>
+<li>此時執行程式就可以正常 print PortAudio 的版本資訊。（130700h 即代表 19.7.0）<br><img src="/images/Speech-Compression-Compile-and-Link/PA01-result.png"></li>
+</ul>
+</li>
+</ol>
+<h3 id="Programming-with-PortAudio"><a href="#Programming-with-PortAudio" class="headerlink" title="Programming with PortAudio"></a>Programming with PortAudio</h3><ol>
+<li>寫一個會被 PortAudio 用來做聲音處理所需呼叫的 Callback Function。</li>
+<li>初始化 PortAudio Library 並開啟一個聲音 I/O 串流 (Stream)。</li>
+<li>開始串流。此時所撰寫的 Callback Function 將會被 PortAudio 重複呼叫執行。</li>
+<li>在你的 Callback Function 中，可以從 inputBuffer 讀取聲音資料，也可以將資料寫入 outputBuffer。</li>
+<li>透過 CallBack Function retrun 1 或呼叫停止串流的 Function 來停止串流。</li>
+<li>關閉串流並終止 PortAudio。</li>
+</ol>
+<p>下圖是大略的架構圖，藍色部分是 PortAudio 幫我們做好的部分，我們需要撰寫的其實只有綠色部分。<br><img src="/images/Speech-Compression-Compile-and-Link/Structure-of-PortAudio-Porgramming.png"></p>
+<p>而 PortAudio 專案內其實有蠻多範例程式碼可以看看的，都在 examples 與 test 資料夾內。接下來我們將以 paex_saw.c 做為範例。</p>
+<h3 id="Example-Play-a-sawtooth-wave"><a href="#Example-Play-a-sawtooth-wave" class="headerlink" title="Example : Play a sawtooth wave"></a>Example : Play a sawtooth wave</h3><p>官方範例程式碼：<a href="https://github.com/PortAudio/portaudio/blob/master/examples/paex_saw.c">from Github</a> （其實就是 PortAudio 專案內 examples 資料夾中的 paex_saw.c）</p>
+<blockquote>
+<p>此程式碼會播放一段鋸齒波 (sawtooth wave) 的聲音，但聲音可能不太悅耳，因此建議將音量調低。</p>
+</blockquote>
+<p>官方教學文件的範例也是拿這個程式來講解，可參閱下方的<a href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99">參考資料</a></p>
+<h4 id="此程式可以分成兩個區塊"><a href="#此程式可以分成兩個區塊" class="headerlink" title="此程式可以分成兩個區塊"></a>此程式可以分成兩個區塊</h4><h5 id="Writing-a-Callback-Function（官方文件）"><a href="#Writing-a-Callback-Function（官方文件）" class="headerlink" title="Writing a Callback Function（官方文件）"></a>Writing a Callback Function（<a href="http://www.portaudio.com/docs/v19-doxydocs/writing_a_callback.html">官方文件</a>）</h5><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">float</span> left_phase;</span><br><span class="line">    <span class="keyword">float</span> right_phase;</span><br><span class="line">&#125; paTestData;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">patestCallback</span><span class="params">(  <span class="keyword">const</span> <span class="keyword">void</span>* inputBuffer, <span class="keyword">void</span>* outputBuffer,</span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">unsigned</span> <span class="keyword">long</span> framesPerBuffer,</span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">const</span> PaStreamCallbackTimeInfo * timeInfo,</span></span></span><br><span class="line"><span class="function"><span class="params">                            PaStreamCallbackFlags statusFlags,</span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">void</span>* userData  )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">/* Cast data passed through stream to our structure. */</span></span><br><span class="line">    paTestData *data = (paTestData*)userData;</span><br><span class="line">    <span class="keyword">float</span>* out = (<span class="keyword">float</span>*)outputBuffer;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> i;</span><br><span class="line">    (<span class="keyword">void</span>)inputBuffer; <span class="comment">/* Prevent unused variable warning. */</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; framesPerBuffer; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        *out++ = data-&gt;left_phase;  <span class="comment">/* left */</span></span><br><span class="line">        *out++ = data-&gt;right_phase;  <span class="comment">/* right */</span></span><br><span class="line">        <span class="comment">/* Generate simple sawtooth phaser that ranges between -1.0 and 1.0. */</span></span><br><span class="line">        data-&gt;left_phase += <span class="number">0.01f</span>;</span><br><span class="line">        <span class="comment">/* When signal reaches top, drop back down. */</span></span><br><span class="line">        <span class="keyword">if</span> (data-&gt;left_phase &gt;= <span class="number">1.0f</span>) data-&gt;left_phase -= <span class="number">2.0f</span>;</span><br><span class="line">        <span class="comment">/* higher pitch so we can distinguish left and right. */</span></span><br><span class="line">        data-&gt;right_phase += <span class="number">0.03f</span>;</span><br><span class="line">        <span class="keyword">if</span> (data-&gt;right_phase &gt;= <span class="number">1.0f</span>) data-&gt;right_phase -= <span class="number">2.0f</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>此 function 會在左右聲道各播放一個鋸齒波。</p>
+</blockquote>
+<p><img src="/images/Speech-Compression-Compile-and-Link/Sawtooth-wave.png"></p>
+<h5 id="Main-Function"><a href="#Main-Function" class="headerlink" title="Main Function"></a>Main Function</h5><ul>
+<li><p>Initialize PortAudio （<a href="http://www.portaudio.com/docs/v19-doxydocs/initializing_portaudio.html">官方文件</a>）<br>在使用 PortAudio 前，<strong>務必</strong>呼叫 Pa_Initialize() 來做初始化。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Initialize library before making any other calls. */</span></span><br><span class="line">err = Pa_Initialize();</span><br><span class="line"><span class="keyword">if</span> (err != paNoError) <span class="keyword">goto</span> error;</span><br></pre></td></tr></table></figure></li>
+<li><p>Open a stream （<a href="http://www.portaudio.com/docs/v19-doxydocs/open_default_stream.html">官方文件</a>）</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SAMPLE_RATE (44100) <span class="comment">// 取樣頻率，44.1k 是 CD 所使用的頻率</span></span></span><br><span class="line"><span class="keyword">static</span> paTestData data;</span><br><span class="line">...</span><br><span class="line">PaStream *stream;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Open an audio I/O stream. */</span></span><br><span class="line">err = Pa_OpenDefaultStream( &amp;stream,</span><br><span class="line">                            <span class="number">0</span>,              <span class="comment">/* no input channels */</span></span><br><span class="line">                            <span class="number">2</span>,              <span class="comment">/* stereo output */</span></span><br><span class="line">                            paFloat32,      <span class="comment">/* 32 bit floating point output */</span></span><br><span class="line">                            SAMPLE_RATE,</span><br><span class="line">                            <span class="number">256</span>,            <span class="comment">/* frames per buffer */</span></span><br><span class="line">                            patestCallback, <span class="comment">/* this is your callback function */</span></span><br><span class="line">                            &amp;data           <span class="comment">/*This is a pointer that will be passed to your callback*/</span></span><br><span class="line">                        );</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> (err != paNoError) <span class="keyword">goto</span> error;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Q: 什麼是「Stream（串流）」？<br>A: 就只是一個 buffer。<br>它的內容會藉由 Callback Function 自動填滿，且會在 Stream 開始後播放。</p>
+</blockquote>
+</li>
+<li><p>Start, Stop, and Abort a stream （<a href="http://www.portaudio.com/docs/v19-doxydocs/start_stop_abort.html">官方文件</a>）</p>
+<ul>
+<li><p>開啟串流</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">err = Pa_StartStream(stream);</span><br><span class="line"><span class="keyword">if</span> (err != paNoError) <span class="keyword">goto</span> error;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>當呼叫 Pa_StartStream() 後，PortAudio 將會開始呼叫我們寫的 Callback Function (如上方的 patestCallback() )，直到我們停止串流為止</p>
+</blockquote>
+</li>
+<li><p>關閉串流</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">err = Pa_StopStream(stream);</span><br><span class="line"><span class="keyword">if</span> (err != paNoError) <span class="keyword">goto</span> error;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Pa_StopStream() 主要是確保在 Callback Function 中處理的 buffer 都已被播放，這可能會導致延遲。或者，可使用 Pa_AbortStream() 取代，在某些平台上可能會比較快（但可能不會播放完整個 buffer）。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>Closing a stream and terminating PortAudio</p>
+<ul>
+<li>當我們完成一個串流後，我們應該要將它關掉並釋放電腦資源<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">err = Pa_CloseStream(stream);</span><br><span class="line"><span class="keyword">if</span> (err != paNoError) <span class="keyword">goto</span> error;</span><br></pre></td></tr></table></figure></li>
+<li>而最後很重要的一點，整個程式完成後，<strong>務必</strong>終止 PortAudio<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">err = Pa_Terminate( );</span><br><span class="line"><span class="keyword">if</span>( err != paNoError ) <span class="keyword">goto</span> error;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>顯示錯誤訊息<br>以上程式碼片段當 err 接收到錯誤碼時，會 goto error，而以下是 error 的程式碼片段：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">error:</span><br><span class="line">    Pa_Terminate(); <span class="comment">// 終止 PortAudio</span></span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;An error occured while using the portaudio stream\n&quot;</span>);</span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Error number: %d\n&quot;</span>, err); <span class="comment">// 印出錯誤碼</span></span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Error message: %s\n&quot;</span>, Pa_GetErrorText(err)); <span class="comment">// 印出錯誤訊息</span></span><br><span class="line">    <span class="keyword">return</span> err;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>P.S. stderr 是 C/C++ 中的標準錯誤訊息 (standard error message)，代表訊息將於畫面上或 Windows terminal 輸出</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ol>
+<li>上課用的資料：<a href="http://ipv6.ncnu.org/Course/RTSP/week02-link.html">http://ipv6.ncnu.org/Course/RTSP/week02-link.html</a></li>
+<li>官方教學文件：<a href="http://www.portaudio.com/docs/v19-doxydocs/tutorial_start.html">http://www.portaudio.com/docs/v19-doxydocs/tutorial_start.html</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Speech Compression</category>
+        <category>PortAudio</category>
+      </categories>
+      <tags>
+        <tag>語音壓縮</tag>
+        <tag>Speech Compression</tag>
+        <tag>PortAudio</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Visula Studio Debug &amp; Release Mode</title>
+    <url>/2021/09/29/Visual-Studio-Debug-and-Release-Mode/</url>
+    <content><![CDATA[<p><img src="/images/Visual-Studio-Debug-and-Release-Mode/Debug-and-Release-Config.png"></p>
+<p>本篇會來釐清 Visual Studio 中的 Debug &amp; Release Mode，以及其相關設定。</p>
+<p>其實兩者並無本質上的界線，他們只是一組編譯選項的標籤，編譯器只會按照選項上的設定來執行。也就是說，<strong>兩者僅是不同設定的編譯器設定檔</strong>。</p>
+<span id="more"></span>
+
+<h3 id="Debug-Mode"><a href="#Debug-Mode" class="headerlink" title="Debug Mode"></a>Debug Mode</h3><p>通常稱為測試/偵錯模式，在此模式下編譯時，程式並不會做任何優化，且附加很多測試資料，因此執行效率較慢、檔案大小較大，但會便於開發者開發與除錯。</p>
+<h3 id="Release-Mode"><a href="#Release-Mode" class="headerlink" title="Release Mode"></a>Release Mode</h3><p>通常稱為發布模式，由於是要給使用者使用，所以在此模式編譯後，程式會做各種優化，因此執行效率較佳、檔案大小較小。</p>
+<p>Release 版本的 exe 檔，連結的目標是標準的 MFC (Microsoft Foundation Library) dll，這些在安裝 Windows 時就已經會安裝上去了（位於 Windows 的 System 或 System32 資料夾底下），所以<strong>Release 版本可以在沒有安裝 VC++ 的電腦上執行</strong>。反之，Debug 版本則是調用測試版本的 dll（在 VS 環境安裝時會裝上，如VC++），所以 Debug 版本在沒有安裝 VC++ 的電腦上就不能執行，除非手動 copy 所需用到的 dll，但這樣太麻煩了。</p>
+<p>而在 Release Mode 中不能做一些 Debug 的行為，如設中斷點後，開始偵錯，而後編輯再繼續。如嘗試這麼做的話，會跳錯，如下圖所示：</p>
+<p><img src="/images/Visual-Studio-Debug-and-Release-Mode/Release-Mode-cant-edit-and-continue.png"></p>
+<h3 id="Debug-amp-Release-參數定義"><a href="#Debug-amp-Release-參數定義" class="headerlink" title="Debug &amp; Release 參數定義"></a>Debug &amp; Release 參數定義</h3><h4 id="Debug-版本"><a href="#Debug-版本" class="headerlink" title="Debug 版本"></a>Debug 版本</h4><table>
+<thead>
+<tr>
+<th align="center">參數</th>
+<th align="left">定義</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/MDd /MLd 或 /MTd</td>
+<td align="left">使用 Debug runtime library（測試版本的執行時函式庫）。</td>
+</tr>
+<tr>
+<td align="center">/Od</td>
+<td align="left">關閉優化開關。</td>
+</tr>
+<tr>
+<td align="center">/D “_DEBUG”</td>
+<td align="left">相當於 #define _DEBUG，打開編譯測試程式開關（主要針對 assert 函式）。</td>
+</tr>
+<tr>
+<td align="center">/ZI</td>
+<td align="left">創建 Edit and continue（編輯繼續）資料庫，在測試過程中如果修改了程式碼不需重新編譯。</td>
+</tr>
+<tr>
+<td align="center">/GZ</td>
+<td align="left">可以幫助捕獲記憶體的錯誤。</td>
+</tr>
+<tr>
+<td align="center">/Gm</td>
+<td align="left">打開最小化重 link 開關，減少 link 時間。</td>
+</tr>
+</tbody></table>
+<h4 id="Release-版本"><a href="#Release-版本" class="headerlink" title="Release 版本"></a>Release 版本</h4><table>
+<thead>
+<tr>
+<th align="center">參數</th>
+<th align="left">定義</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/MD /ML 或 /MT</td>
+<td align="left">使用 Release runtime library（發布版本的執行時函式庫）。</td>
+</tr>
+<tr>
+<td align="center">/O1 或 /O2</td>
+<td align="left">優化開關，使程式最小或最快。</td>
+</tr>
+<tr>
+<td align="center">/D “NDEBUG”</td>
+<td align="left">關閉條件編譯測試程式開關（即不編譯 assert 函式）。</td>
+</tr>
+<tr>
+<td align="center">/GF</td>
+<td align="left">合併重複的字串，並將字串常量放到 ROM，防止被修改。</td>
+</tr>
+</tbody></table>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ol>
+<li>Microsoft 官方文件：<a href="https://docs.microsoft.com/zh-tw/visualstudio/debugger/how-to-set-debug-and-release-configurations?view=vs-2019">https://docs.microsoft.com/zh-tw/visualstudio/debugger/how-to-set-debug-and-release-configurations?view=vs-2019</a></li>
+<li><a href="https://stackoverflow.com/questions/933739/what-is-the-difference-between-release-and-debug-modes-in-visual-studio/938665">https://stackoverflow.com/questions/933739/what-is-the-difference-between-release-and-debug-modes-in-visual-studio/938665</a></li>
+<li><a href="http://johnniebooks.blogspot.com/2009/05/debug-release.html">http://johnniebooks.blogspot.com/2009/05/debug-release.html</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Visual Studio</tag>
+        <tag>Debug Mode</tag>
+        <tag>Release Mode</tag>
       </tags>
   </entry>
 </search>

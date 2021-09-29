@@ -35,10 +35,11 @@
 <meta property="og:image" content="https://kalinlai-void.github.io/images/Speech-Compression-intro/Preprocessor-Settings.png">
 <meta property="og:image" content="https://kalinlai-void.github.io/images/Speech-Compression-intro/result.png">
 <meta property="article:published_time" content="2021-09-13T09:46:58.000Z">
-<meta property="article:modified_time" content="2021-09-13T13:36:51.116Z">
+<meta property="article:modified_time" content="2021-09-28T23:37:25.308Z">
 <meta property="article:author" content="Kalin Lai">
 <meta property="article:tag" content="語音壓縮">
 <meta property="article:tag" content="Speech Compression">
+<meta property="article:tag" content="PortAudio">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://kalinlai-void.github.io/images/Speech-Compression-intro/Configs-and-Platforms.png">
 
@@ -241,10 +242,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2021-09-13 17:46:58 / 修改時間：21:36:51" itemprop="dateCreated datePublished" datetime="2021-09-13T17:46:58+08:00">2021-09-13</time>
+              <time title="創建時間：2021-09-13 17:46:58" itemprop="dateCreated datePublished" datetime="2021-09-13T17:46:58+08:00">2021-09-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-09-29 07:37:25" itemprop="dateModified" datetime="2021-09-29T07:37:25+08:00">2021-09-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -252,6 +259,10 @@
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Speech-Compression/" itemprop="url" rel="index"><span itemprop="name">Speech Compression</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Speech-Compression/PortAudio/" itemprop="url" rel="index"><span itemprop="name">PortAudio</span></a>
                 </span>
             </span>
 
@@ -341,13 +352,15 @@
 </ul>
 </li>
 <li>Rebuild Solution，理論上就沒問題了</li>
-<li>最後就會發現專案跟目錄（<code>portaudio\build\msvc</code>）底下新增一個 Win32 的資料夾，點到最裡面就會找到 <strong>portaudio_x86.lib 與 portaudio_x86.dll</strong>，即是我們會用到的檔案<ul>
+<li>最後就會發現專案根目錄（<code>portaudio\build\msvc</code>）底下新增一個 Win32 的資料夾，點到最裡面就會找到 <strong>portaudio_x86.lib 與 portaudio_x86.dll</strong>，即是我們會用到的檔案<ul>
 <li>補充：dll 檔是動態擴充元件，是 lib 檔在執行時會調用的項目，詳細可以參閱系統程式 (System Software) 的資料<br><img src="/images/Speech-Compression-intro/result.png"></li>
 </ul>
 </li>
 </ul>
+<h2 id="官方教學文件"><a href="#官方教學文件" class="headerlink" title="官方教學文件"></a>官方教學文件</h2><p>接下來可以參閱官方提供的教學文件（下方<a href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99">參考資料第2點</a>），裡面也有上面的步驟，不過因有課程需求，所以此篇有改過一些設定，因此可以看看官方是如何帶過下載與編譯的部分！</p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ol>
 <li>上課用的資料：<a target="_blank" rel="noopener" href="http://ipv6.ncnu.org/Course/RTSP/portaudio.html">http://ipv6.ncnu.org/Course/RTSP/portaudio.html</a></li>
+<li>官方教學文件：<a target="_blank" rel="noopener" href="http://www.portaudio.com/docs/v19-doxydocs/tutorial_start.html">http://www.portaudio.com/docs/v19-doxydocs/tutorial_start.html</a></li>
 <li>Windows audio drivers 解釋：<a target="_blank" rel="noopener" href="https://www.sweetwater.com/sweetcare/articles/roland-difference-between-asio-wdm-mme-drivers/">https://www.sweetwater.com/sweetcare/articles/roland-difference-between-asio-wdm-mme-drivers/</a></li>
 </ol>
 
@@ -361,6 +374,7 @@
           <div class="post-tags">
               <a href="/tags/%E8%AA%9E%E9%9F%B3%E5%A3%93%E7%B8%AE/" rel="tag"># 語音壓縮</a>
               <a href="/tags/Speech-Compression/" rel="tag"># Speech Compression</a>
+              <a href="/tags/PortAudio/" rel="tag"># PortAudio</a>
           </div>
 
         
@@ -372,7 +386,10 @@
     <a href="/2021/07/10/TGDF2021_how-to-find-a-suitable-publisher/" rel="prev" title="【TGDF2021】獨立開發團隊如何找到適合的發行商及怎樣是合理的合約">
       <i class="fa fa-chevron-left"></i> 【TGDF2021】獨立開發團隊如何找到適合的發行商及怎樣是合理的合約
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/27/Speech-Compression-Compile-and-Link/" rel="next" title="【Speech Compression】PortAudio 程式編譯及連結 portaudio_x86.lib">
+      【Speech Compression】PortAudio 程式編譯及連結 portaudio_x86.lib <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -432,7 +449,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-PortAudio%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什麼是 PortAudio？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-PortAudio"><span class="nav-number">2.</span> <span class="nav-text">安裝 PortAudio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A"><span class="nav-number">3.</span> <span class="nav-text">環境設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%BD%AE%E8%88%87%E5%95%8F%E9%A1%8C%E6%8E%92%E8%A7%A3"><span class="nav-number">4.</span> <span class="nav-text">建置與問題排解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-PortAudio%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什麼是 PortAudio？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-PortAudio"><span class="nav-number">2.</span> <span class="nav-text">安裝 PortAudio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A"><span class="nav-number">3.</span> <span class="nav-text">環境設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%BD%AE%E8%88%87%E5%95%8F%E9%A1%8C%E6%8E%92%E8%A7%A3"><span class="nav-number">4.</span> <span class="nav-text">建置與問題排解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%98%E6%96%B9%E6%95%99%E5%AD%B8%E6%96%87%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text">官方教學文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">6.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -448,20 +465,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">35</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
