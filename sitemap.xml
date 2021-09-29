@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kalinlai-void.github.io/About/index.html</loc>
+    
+    <lastmod>2021-09-29</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kalinlai-void.github.io/2021/09/29/Visual-Studio-Debug-and-Release-Mode/</loc>
     
     <lastmod>2021-09-29</lastmod>
@@ -201,13 +208,6 @@
     <loc>https://kalinlai-void.github.io/msgBoard/index.html</loc>
     
     <lastmod>2021-03-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kalinlai-void.github.io/About/index.html</loc>
-    
-    <lastmod>2021-03-23</lastmod>
     
   </url>
   
