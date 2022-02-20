@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"kalinlai-void.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":false,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Role of Assembler">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【System Software】 Chapter 2 - Assembler">
+<meta property="og:url" content="https://kalinlai-void.github.io/2021/04/22/System-Software-Chapter2/index.html">
+<meta property="og:site_name" content="Kalin&#39;s Blog">
+<meta property="og:description" content="Role of Assembler">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter2/assembler.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter2/SIC_Example.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter2/SIC_Example_OBJ.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter2/two-pass.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter2/relocation.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter2/XE_Example_OBJ.png">
+<meta property="article:published_time" content="2021-04-21T22:21:14.000Z">
+<meta property="article:modified_time" content="2021-05-26T17:51:02.000Z">
+<meta property="article:author" content="Kalin Lai">
+<meta property="article:tag" content="System Software">
+<meta property="article:tag" content="系統程式">
+<meta property="article:tag" content="SIC&#x2F;XE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter2/assembler.png">
+
+<link rel="canonical" href="https://kalinlai-void.github.io/2021/04/22/System-Software-Chapter2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+<link href="/css/dark.css" rel="alternate stylesheet" type="text/css" title="dark">
+<script type="text/javascript" src="/js/darkmode.js"></script><link rel="stylesheet" type="text/css" href="/css/injector.css" />
+  <title>【System Software】 Chapter 2 - Assembler | Kalin's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJRDV86637"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZJRDV86637');
+      }
+    </script>
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: 'ca-pub-9358449882725994',
+          enable_page_level_ads: true
+     });
+</script>
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Kalin's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Kalin's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/About/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-msgboard">
+
+    <a href="/msgBoard/" rel="section"><i class="far fa-comment-dots fa-fw"></i>訪客留言板</a>
+
+  </li>
+        <li class="menu-item menu-item-kalin-風凜魂太の宅領域">
+
+    <a href="https://kalinlai-void.github.io/ACGN/" rel="section"><i class="fas fa-book fa-fw"></i>Kalin 風凜魂太の宅領域</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://kalinlai-void.github.io/2021/04/22/System-Software-Chapter2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/40635383?s=400&u=5b7e00cf5a939d4bba7dd0d17b8cf4e037ba2f7a&v=4">
+      <meta itemprop="name" content="Kalin Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kalin's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【System Software】 Chapter 2 - Assembler
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-04-22 06:21:14" itemprop="dateCreated datePublished" datetime="2021-04-22T06:21:14+08:00">2021-04-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-27 01:51:02" itemprop="dateModified" datetime="2021-05-27T01:51:02+08:00">2021-05-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/System-Software/" itemprop="url" rel="index"><span itemprop="name">System Software</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="Role-of-Assembler"><a href="#Role-of-Assembler" class="headerlink" title="Role of Assembler"></a>Role of Assembler</h3><p><img src="/images/System-Software-Chapter2/assembler.png"></p>
+<span id="more"></span>
+
+<h4 id="Basic-SIC-assembler-directive"><a href="#Basic-SIC-assembler-directive" class="headerlink" title="Basic SIC assembler directive"></a>Basic SIC assembler directive</h4><p>指示(directive)與指令(instruction)不同的是，<strong>「指令」為讓CPU可以實際執行的命令（e.g. LDA, ADD…）；而「指示」並非真正的指令，主要是為了告訴Assembler要做什麼事（e.g. 保留空間、程式開始與結束…）</strong></p>
+<ul>
+<li>START, END 程式開始與結束<ul>
+<li>e.g. START 1000 =&gt; 代表此程式從記憶體位址0x1000開始（如下圖）</li>
+</ul>
+</li>
+<li>WORD 宣告一個Word的標籤做為<strong>常數</strong>使用</li>
+<li>BYTE 宣告數個Byte的標籤做為<strong>常數</strong>使用</li>
+<li>RESW 保留一個Word的空間當作<strong>變數</strong>使用</li>
+<li>RESB 保留數個Byte的空間當作<strong>變數</strong>使用</li>
+<li>p.s. 常數：不可修改；變數：可修改（後來再賦予值）</li>
+</ul>
+<h4 id="SIC-Code-Example-含Object-Code"><a href="#SIC-Code-Example-含Object-Code" class="headerlink" title="SIC Code Example (含Object Code)"></a>SIC Code Example (含Object Code)</h4><p><img src="/images/System-Software-Chapter2/SIC_Example.png"></p>
+<h4 id="Fundamental-functions-of-assembler"><a href="#Fundamental-functions-of-assembler" class="headerlink" title="Fundamental functions of assembler"></a>Fundamental functions of assembler</h4><ol>
+<li>將 助憶碼(mnemonic operation codes) 轉換成機器碼 <ul>
+<li>e.g. LDA =&gt; 0x00</li>
+</ul>
+</li>
+<li>將 符號運算元(symbolic operands) 轉換為對應的記憶體位址 <ul>
+<li>e.g. RDREC =&gt; 0x2039</li>
+</ul>
+</li>
+<li>依照指令格式建立指令</li>
+<li>將常數資料轉換成機器內部的表示方式<ul>
+<li>e.g. <code>EOF BYTE C&#39;EOF&#39;</code> =&gt; 454F46</li>
+</ul>
+</li>
+<li>產生目的碼程式 (Object program) 和組譯列表</li>
+</ol>
+<h4 id="obj檔內容（皆以16進制表示）"><a href="#obj檔內容（皆以16進制表示）" class="headerlink" title="obj檔內容（皆以16進制表示）"></a>obj檔內容（皆以16進制表示）</h4><p>下圖為上面範例放入obj檔的樣子<br><img src="/images/System-Software-Chapter2/SIC_Example_OBJ.png"><br>其中：</p>
+<ul>
+<li>record (每行首個字元)<ul>
+<li>H (Header)：Obj檔第一行<ul>
+<li>該行第2~7個字元：程式名稱</li>
+<li>該行第8~13個字元：程式起始位址</li>
+<li>該行第14~19個字元：程式總共使用的記憶體長度<ul>
+<li>以上圖為例的話，2079-1000+1=107A</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>T (Text)：指令碼<ul>
+<li>該行第2~7個字元：該行的起始位址</li>
+<li>該行第8~9個字元：該行長度</li>
+<li>該行10~69個字元：Object Code，以16進制表示</li>
+<li>OBJ檔中，Object Code每Byte為2字元，因此<strong>每行最多只能放30 Bytes</strong><ul>
+<li>(69-10+1)/2 = 30</li>
+<li>指令普遍為格式3，指令碼為6個字元，則<u>普遍情況下，該行最多只能存放(69-10+1)/6=10個指令</u></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>E (End)：Obj檔最後一行<ul>
+<li>該行第2~7個字元：程式中第一個可執行指令的位址</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Address-Translation-Problem"><a href="#Address-Translation-Problem" class="headerlink" title="Address Translation Problem"></a>Address Translation Problem</h4><h5 id="Forward-reference-前向參考問題"><a href="#Forward-reference-前向參考問題" class="headerlink" title="Forward reference (前向參考問題)"></a>Forward reference (前向參考問題)</h5><ul>
+<li>組譯時會遇到的問題</li>
+<li>參考的標籤位於該行後方（尚未定義）</li>
+</ul>
+<h5 id="Solution-Two-passes-assembler"><a href="#Solution-Two-passes-assembler" class="headerlink" title="Solution : Two passes assembler"></a>Solution : Two passes assembler</h5><ul>
+<li>Pass 1<ul>
+<li>分配記憶體位址給程式中每一行指令</li>
+<li>判斷指令長度(透過OPTAB)</li>
+<li>計算LOCCTR</li>
+<li><strong>儲存所有標籤(Labels)的位址到SYMTAB</strong></li>
+<li>對一些指示要進行處理</li>
+</ul>
+</li>
+<li>Pass 2<ul>
+<li>透過SYMTAB，帶入Pass 1沒有處理的symbol</li>
+<li>透過OPTABLE產生機器碼</li>
+<li>藉由BYTE, WORD定義，生成常數標籤的數值</li>
+<li>寫入obj檔和組譯列表</li>
+</ul>
+</li>
+</ul>
+<h6 id="細節"><a href="#細節" class="headerlink" title="細節"></a>細節</h6><p><img src="/images/System-Software-Chapter2/two-pass.png"></p>
+<ul>
+<li>運算碼表 (Operation Code Table, OPTAB)<ul>
+<li><strong>儲存助憶指令與機器碼之關連</strong></li>
+<li>使用Hash Table，使用助憶碼作為key</li>
+<li>Pass 1時用來檢驗運算碼及計算指令長度</li>
+<li>Pass 2時用來轉換運算碼至機器碼</li>
+<li>Static結構</li>
+</ul>
+</li>
+<li>符號表 (Symbol Table, SYMTAB)<ul>
+<li><strong>儲存Labels與其對應記憶體位址</strong></li>
+<li>包含Labels名稱、位址、長度、型態和error flags</li>
+<li>使用Hash Table加速</li>
+<li>Dynamic結構</li>
+</ul>
+</li>
+<li>程式計數器 (Location Counter, LOCCTR)<ul>
+<li>初始值為START指派的值</li>
+<li>記錄下一個指令的位址</li>
+</ul>
+</li>
+<li>Intermediate file<ul>
+<li>由pass1寫入並當pass2的input</li>
+<li>包含：<ul>
+<li>在Pass 1所得到的記憶體位址</li>
+<li>錯誤指示（避免Pass 1發現錯，卻還進入Pass 2）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="一些SIC-XE指令符號代表的定址模式"><a href="#一些SIC-XE指令符號代表的定址模式" class="headerlink" title="一些SIC/XE指令符號代表的定址模式"></a>一些SIC/XE指令符號代表的定址模式</h4><ul>
+<li>定址模式請參考<a target="_blank" rel="noopener" href="https://karlunlai-void.github.io/2021/04/22/System-Software-Chapter1/#Addressing-Modes-1">這裡</a></li>
+<li>+: Extended Addressing Mode<ul>
+<li>e.g. <code>+JSUB</code></li>
+</ul>
+</li>
+<li>#: Immediate Addressing Mode<ul>
+<li>e.g. <code>LDA #3</code></li>
+</ul>
+</li>
+<li>@: Indirect Addressing Mode<ul>
+<li>e.g. <code>J @RETADR</code></li>
+</ul>
+</li>
+<li>,X: Indexing Addressing Mode<ul>
+<li>e.g. <code>LDA ARRAY, X</code></li>
+</ul>
+</li>
+<li>如沒以上符號<ul>
+<li><strong>原則上，組譯時先嘗試使用PC相對定址</strong></li>
+<li>若超出範圍則試著使用Base定址</li>
+<li>若兩者都不適用則會有錯誤訊息</li>
+</ul>
+</li>
+</ul>
+<h4 id="Program-Relocation-程式重新定址問題"><a href="#Program-Relocation-程式重新定址問題" class="headerlink" title="Program Relocation (程式重新定址問題)"></a>Program Relocation (程式重新定址問題)</h4><ul>
+<li>SIC有一個absolute loader (絕對載入器)<ul>
+<li>程式必須被載入到指定的起始位址</li>
+<li><strong>如果被載入到與指定的不同，則指令的位址需要更改</strong></li>
+</ul>
+</li>
+<li>因OS記憶體配置較彈性，因此程式每次執行可能會被放在不同的起始位址<br><img src="/images/System-Software-Chapter2/relocation.png"></li>
+</ul>
+<h5 id="Relocatable-program"><a href="#Relocatable-program" class="headerlink" title="Relocatable program"></a>Relocatable program</h5><ul>
+<li>Assembler無法自己改變記憶體位址<ul>
+<li>但可透過OBJ檔告訴loader記憶體位址需要被修正。</li>
+</ul>
+</li>
+<li>會受影響的指令碼（需被Relocate的指令）<ul>
+<li>SIC版本<ul>
+<li><strong>常數資料的指令碼絕對不會影響</strong><ul>
+<li>e.g. <code>EOF BYTE C&#39;EOF&#39;</code> =&gt; 454F46</li>
+</ul>
+</li>
+<li>大多指令都是直接定址，因此幾乎都會影響</li>
+<li>所以暫時逃避不談xD</li>
+</ul>
+</li>
+<li>SIC/XE版本<ul>
+<li><strong>只有Extended定址會受影響</strong>，因為其他定址模式都是相對的</li>
+</ul>
+</li>
+<li>簡單來說，<strong>相對定址和常數資料的指令碼不受影響</strong></li>
+</ul>
+</li>
+<li>OBJ檔中的修正方式：<ul>
+<li>使用record<ul>
+<li>M (Modification)：修正會放在E record前<ul>
+<li><strong>該行第2~7個字元：需修改的位址欄位與程式起始位址的距離</strong></li>
+<li>該行第8~9個字元：修正長度（以Nibble為單位，1 Nibble = 0.5 Byte）</li>
+</ul>
+</li>
+<li>e.g. 有一XE的obj檔如下<br><img src="/images/System-Software-Chapter2/XE_Example_OBJ.png"><ul>
+<li>標示如上圖所示，每兩個16進制字元為1 Byte<ul>
+<li>因此藍標，M 000007 05<ul>
+<li>去Relocation相對程式起始位址第7個Byte</li>
+<li>並修正5個Nibbles（2.5個Bytes）</li>
+<li>第7個Byte是10，那為何是從0開始取5 Nibbles，而不是從1開始取？<ul>
+<li>原因：<strong>因為存放在記憶體的方式是littleEndian</strong>，所以1個Nibble是從第7個Byte的後面開始算</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>其他以此類推</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Sysmbol-Defining-Statements"><a href="#Sysmbol-Defining-Statements" class="headerlink" title="Sysmbol-Defining Statements"></a>Sysmbol-Defining Statements</h3><h4 id="Literals"><a href="#Literals" class="headerlink" title="Literals"></a>Literals</h4>
+    </div>
+
+    
+    
+    
+
+      <div>
+    <script type="text/javascript">
+      document.write(
+        "<iframe scrolling='no' frameborder='0' style='height: 200px; width: 100%;' " + 
+        "sandbox='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-storage-access-by-user-activation' " + 
+        "src='https://button.like.co/in/embed/kalinlai/button?referrer=" +
+        encodeURIComponent(location.href.split("?")[0].split("#")[0]) + "'></iframe>");
+    </script>
+</div>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/System-Software/" rel="tag"># System Software</a>
+              <a href="/tags/%E7%B3%BB%E7%B5%B1%E7%A8%8B%E5%BC%8F/" rel="tag"># 系統程式</a>
+              <a href="/tags/SIC-XE/" rel="tag"># SIC/XE</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/22/System-Software-Chapter1/" rel="prev" title="【System Software】 Chapter 1 - Background">
+      <i class="fa fa-chevron-left"></i> 【System Software】 Chapter 1 - Background
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/10/TGDF2021_GameProgramming-parallelization-and-time-slicing/" rel="next" title="【TGDF2021】遊戲程式優化技巧：平行化與時間切割（Unity）">
+      【TGDF2021】遊戲程式優化技巧：平行化與時間切割（Unity） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Role-of-Assembler"><span class="nav-number">1.</span> <span class="nav-text">Role of Assembler</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-SIC-assembler-directive"><span class="nav-number">1.1.</span> <span class="nav-text">Basic SIC assembler directive</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SIC-Code-Example-%E5%90%ABObject-Code"><span class="nav-number">1.2.</span> <span class="nav-text">SIC Code Example (含Object Code)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fundamental-functions-of-assembler"><span class="nav-number">1.3.</span> <span class="nav-text">Fundamental functions of assembler</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#obj%E6%AA%94%E5%85%A7%E5%AE%B9%EF%BC%88%E7%9A%86%E4%BB%A516%E9%80%B2%E5%88%B6%E8%A1%A8%E7%A4%BA%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">obj檔內容（皆以16進制表示）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Address-Translation-Problem"><span class="nav-number">1.5.</span> <span class="nav-text">Address Translation Problem</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Forward-reference-%E5%89%8D%E5%90%91%E5%8F%83%E8%80%83%E5%95%8F%E9%A1%8C"><span class="nav-number">1.5.1.</span> <span class="nav-text">Forward reference (前向參考問題)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Solution-Two-passes-assembler"><span class="nav-number">1.5.2.</span> <span class="nav-text">Solution : Two passes assembler</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%B4%B0%E7%AF%80"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">細節</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E4%BA%9BSIC-XE%E6%8C%87%E4%BB%A4%E7%AC%A6%E8%99%9F%E4%BB%A3%E8%A1%A8%E7%9A%84%E5%AE%9A%E5%9D%80%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.6.</span> <span class="nav-text">一些SIC&#x2F;XE指令符號代表的定址模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Program-Relocation-%E7%A8%8B%E5%BC%8F%E9%87%8D%E6%96%B0%E5%AE%9A%E5%9D%80%E5%95%8F%E9%A1%8C"><span class="nav-number">1.7.</span> <span class="nav-text">Program Relocation (程式重新定址問題)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Relocatable-program"><span class="nav-number">1.7.1.</span> <span class="nav-text">Relocatable program</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sysmbol-Defining-Statements"><span class="nav-number">2.</span> <span class="nav-text">Sysmbol-Defining Statements</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Literals"><span class="nav-number">2.1.</span> <span class="nav-text">Literals</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kalin Lai"
+      src="https://avatars.githubusercontent.com/u/40635383?s=400&u=5b7e00cf5a939d4bba7dd0d17b8cf4e037ba2f7a&v=4">
+  <p class="site-author-name" itemprop="name">Kalin Lai</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    Just is a おたく，</br>又名 ── 風凜魂太。
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/KalinLai-void" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KalinLai-void" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lun.void52513@gmail.com" title="E-Mail → mailto:lun.void52513@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/KalinLai_void" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;KalinLai_void" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/KalinLai.void/" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;KalinLai.void&#x2F;" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/kalin_lai.void/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;kalin_lai.void&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://home.gamer.com.tw/homeindex.php?owner=play52513" title="巴哈小屋 → https:&#x2F;&#x2F;home.gamer.com.tw&#x2F;homeindex.php?owner&#x3D;play52513" rel="noopener" target="_blank"><i class="fas fa-gamepad fa-fw"></i>巴哈小屋</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    <!--google_adsense-->
+    
+      <div class="links-of-blogroll-title">
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-9358449882725994"
+            data-ad-slot="9718442885"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    
+    <!--/google_adsense-->
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        <!--google_adsense-->
+
+  <div class="links-of-blogroll-title">
+    <i class="fab fa-google"></i> AdSense
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-9358449882725994"
+         data-ad-slot="9718442885"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+<!--/google_adsense-->
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fas fa-star-of-david"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kalin Lai</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'd4d527dcec1ec91415b4',
+      clientSecret: '7ddda799fc5e5b91d632ed2c892f26de2376653f',
+      repo        : 'KalinLai-void.github.io',
+      owner       : 'KalinLai-void',
+      admin       : ['KalinLai-void'],
+      id          : '8e0b63b07835c9740b12ce005deff421',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item">
+      <i class='fas fa-chevron-down'></i>    </div>
+    
+    <div id="moon-menu-item-back2top" class="moon-menu-item">
+      <i class='fas fa-chevron-up'></i>    </div>
+    
+    <div id="moon-menu-item-dark" class="moon-menu-item" onclick="switchDarkMode()">
+      <i class='fas fa-adjust'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+</body>
+
+<script src="/live2d-widget/autoload.js"></script>
+</html>

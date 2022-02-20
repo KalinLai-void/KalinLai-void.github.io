@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"kalinlai-void.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":false,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Simplified Instruction Computer 簡化指令電腦(SIC) SIC是一個假想的電腦，用來解釋系統程式的架構 SIC有兩種版本 Standard model (SIC) Extension version (SIC&#x2F;XE) 相比SIC，更多設備指令 但更貴 支持向上相容 (upward compatible) ，代表XE電腦可以執行SIC指令，但SIC電腦無法執行XE指令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【System Software】 Chapter 1 - Background">
+<meta property="og:url" content="https://kalinlai-void.github.io/2021/04/22/System-Software-Chapter1/index.html">
+<meta property="og:site_name" content="Kalin&#39;s Blog">
+<meta property="og:description" content="Simplified Instruction Computer 簡化指令電腦(SIC) SIC是一個假想的電腦，用來解釋系統程式的架構 SIC有兩種版本 Standard model (SIC) Extension version (SIC&#x2F;XE) 相比SIC，更多設備指令 但更貴 支持向上相容 (upward compatible) ，代表XE電腦可以執行SIC指令，但SIC電腦無法執行XE指令">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter1/SIC_Instruction_Formats.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter1/XE_Instruction_Formats.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter1/Base_relative_addressing_mode.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter1/PC_relative_addressing_mode.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter1/Direct_addressing_mode.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter1/Immediate_addressing_mode.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter1/Indirect_addressing_mode.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter1/Indexing_addressing_mode.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter1/Addressing_Mode_Example.png">
+<meta property="article:published_time" content="2021-04-21T16:01:17.000Z">
+<meta property="article:modified_time" content="2021-04-23T00:25:58.000Z">
+<meta property="article:author" content="Kalin Lai">
+<meta property="article:tag" content="System Software">
+<meta property="article:tag" content="系統程式">
+<meta property="article:tag" content="SIC&#x2F;XE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kalinlai-void.github.io/images/System-Software-Chapter1/SIC_Instruction_Formats.png">
+
+<link rel="canonical" href="https://kalinlai-void.github.io/2021/04/22/System-Software-Chapter1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+<link href="/css/dark.css" rel="alternate stylesheet" type="text/css" title="dark">
+<script type="text/javascript" src="/js/darkmode.js"></script><link rel="stylesheet" type="text/css" href="/css/injector.css" />
+  <title>【System Software】 Chapter 1 - Background | Kalin's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJRDV86637"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZJRDV86637');
+      }
+    </script>
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: 'ca-pub-9358449882725994',
+          enable_page_level_ads: true
+     });
+</script>
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Kalin's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Kalin's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/About/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-msgboard">
+
+    <a href="/msgBoard/" rel="section"><i class="far fa-comment-dots fa-fw"></i>訪客留言板</a>
+
+  </li>
+        <li class="menu-item menu-item-kalin-風凜魂太の宅領域">
+
+    <a href="https://kalinlai-void.github.io/ACGN/" rel="section"><i class="fas fa-book fa-fw"></i>Kalin 風凜魂太の宅領域</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://kalinlai-void.github.io/2021/04/22/System-Software-Chapter1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/40635383?s=400&u=5b7e00cf5a939d4bba7dd0d17b8cf4e037ba2f7a&v=4">
+      <meta itemprop="name" content="Kalin Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kalin's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【System Software】 Chapter 1 - Background
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-04-22 00:01:17" itemprop="dateCreated datePublished" datetime="2021-04-22T00:01:17+08:00">2021-04-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-23 08:25:58" itemprop="dateModified" datetime="2021-04-23T08:25:58+08:00">2021-04-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/System-Software/" itemprop="url" rel="index"><span itemprop="name">System Software</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Simplified-Instruction-Computer-簡化指令電腦-SIC"><a href="#Simplified-Instruction-Computer-簡化指令電腦-SIC" class="headerlink" title="Simplified Instruction Computer 簡化指令電腦(SIC)"></a>Simplified Instruction Computer 簡化指令電腦(SIC)</h2><ul>
+<li>SIC是一個<strong>假想的電腦</strong>，用來解釋系統程式的架構</li>
+<li>SIC有兩種版本<ul>
+<li>Standard model (<strong>SIC</strong>)</li>
+<li>Extension version (SIC/<strong>XE</strong>)<ul>
+<li>相比SIC，更多設備指令</li>
+<li>但更貴</li>
+<li>支持<strong>向上相容 (upward compatible)</strong> ，代表XE電腦可以執行SIC指令，但SIC電腦無法執行XE指令</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="SIC-Machine-Architecture"><a href="#SIC-Machine-Architecture" class="headerlink" title="SIC Machine Architecture"></a>SIC Machine Architecture</h3><h4 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h4><ul>
+<li>1 Bytes = 8 bits</li>
+<li><strong>1 Word = 3 Bytes (24 bits)</strong></li>
+<li>Total memory is <strong>32768 ($2^{15}$) bytes (32KB)</strong></li>
+</ul>
+<h4 id="Registers"><a href="#Registers" class="headerlink" title="Registers"></a>Registers</h4><table>
+<thead>
+<tr>
+<th align="center">Mnemonic</th>
+<th align="center">Number</th>
+<th align="left">Special use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">A</td>
+<td align="center">0</td>
+<td align="left">累加(Accumulator) 暫存器 <br>用在算術運算</td>
+</tr>
+<tr>
+<td align="center">X</td>
+<td align="center">1</td>
+<td align="left">索引(Index) 暫存器 <br>用在定址</td>
+</tr>
+<tr>
+<td align="center">L</td>
+<td align="center">2</td>
+<td align="left">連結(Linkage) 暫存器 <br>用於儲存跳到副程式指令(Jump to Subroutine, JSUB)返回的位址</td>
+</tr>
+<tr>
+<td align="center">PC</td>
+<td align="center">8</td>
+<td align="left">程式計數器(Program counter) <br>儲存下一個要取出來執行的指令的位址</td>
+</tr>
+<tr>
+<td align="center">SW</td>
+<td align="center">9</td>
+<td align="left">狀態字組(Status word) <br>儲存不同的資訊，包括條件碼(Condition Code, CC)，主要是機器使用</td>
+</tr>
+</tbody></table>
+<h4 id="Data-Formats"><a href="#Data-Formats" class="headerlink" title="Data Formats"></a>Data Formats</h4><ul>
+<li>整數以24 bits(1 word)的二進制碼儲存</li>
+<li>用2的補數表示負數值</li>
+<li>字元以8 bits的ASCII Code儲存</li>
+<li>無浮點數表示法</li>
+</ul>
+<h4 id="Instruction-Formats"><a href="#Instruction-Formats" class="headerlink" title="Instruction Formats"></a>Instruction Formats</h4><p><img src="/images/System-Software-Chapter1/SIC_Instruction_Formats.png"><br>可拆分為</p>
+<ul>
+<li>Opcode(指令碼)：8 bits，剩下的位元數(24-15-1=8)</li>
+<li>X：1 bit，用來表示是否為索引定址模式(indexed-addressing mode)</li>
+<li>Address：15 bits，因為記憶體大小為$2^{15}$ bytes，因此15個bits就可以表示所有記憶體位置</li>
+</ul>
+<h4 id="Addressing-Modes"><a href="#Addressing-Modes" class="headerlink" title="Addressing Modes"></a>Addressing Modes</h4><table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Indication</th>
+<th>Target address calculation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Direct</td>
+<td>x = 0</td>
+<td>TA = address</td>
+</tr>
+<tr>
+<td>Indexed</td>
+<td>x = 1</td>
+<td>TA = address + (X)</td>
+</tr>
+</tbody></table>
+<p>p.s. (X) = X暫存器內的值</p>
+<h4 id="Instruction-Set"><a href="#Instruction-Set" class="headerlink" title="Instruction Set"></a>Instruction Set</h4><ul>
+<li>Load &amp; Store<ul>
+<li>LDA, LDX 將一個記憶體的資料（必為1 word）載入A暫存器 or X暫存器</li>
+<li>STA, STX 將A暫存器 or X暫存器儲存至一個記憶體</li>
+<li>LDCH 載入1 byte的記憶體資料至A暫存器（<strong>剩餘位數補0</strong>）</li>
+<li>STCH 將A暫存器的值儲存至一個記憶體（1 bytey資料）</li>
+</ul>
+</li>
+<li>Integer Arithmetic Operations<ul>
+<li>ADD, SUB, MUL, DIV, etc.<ul>
+<li><strong>將A暫存器與某記憶體中的資料（必為1 word）運算，並儲存在A暫存器</strong></li>
+<li>e.g. ADD 0030 → A暫存器 = (A) + (0030)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Comparison<ul>
+<li>COMP 比較A暫存器內的值與一個記憶體位址中的資料，並<strong>設置一個CC再儲存至SW暫存器</strong></li>
+</ul>
+</li>
+<li>Coditional Jump Instruction<ul>
+<li>JLT, JEQ, JGT (&lt;, =, &gt;)</li>
+<li>根據SW暫存器的值，去決定是否跳到該記憶體位址，因此需與COMP指令搭配</li>
+<li>e.g. <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">COMP 0030   &#x2F;&#x2F; (A)與(0030)比較</span><br><span class="line">JLT 3120    &#x2F;&#x2F; 若(A)&lt;(0030)，則將PC暫存器的值設為3120</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>Subroutine Jump Instructions<ul>
+<li>JSUB 跳到某副程式</li>
+<li>RSUB 無需放任何參數在後方，跳到L暫存器內的值</li>
+<li><strong>使用L暫存器來存取回傳的位址</strong></li>
+</ul>
+</li>
+<li>Input &amp; Output &amp; Test Device<ul>
+<li>輸入輸出<ul>
+<li>一次只處理1 byte，並且只存取A暫存器的最右邊8 bits</li>
+<li>每個裝置都有特定的記憶體位址，<strong>如果要從該裝置輸出or輸入，就是去該位址做存取</strong></li>
+<li>RD (Read Device), WD (Write Data)</li>
+<li>e.g. <a href="#Input-amp-Output">Input &amp; Output</a></li>
+</ul>
+</li>
+<li>TD (Test Device)</li>
+</ul>
+</li>
+<li>其他指令<ul>
+<li>搭配索引定指模式(Indexed-addressing mode)<ul>
+<li>如下方Code =&gt; <a href="#Looping-amp-Indexing">Looping and Indexing</a></li>
+</ul>
+</li>
+<li>TIX<ul>
+<li>(X) = (X) + 1</li>
+<li>加完後X暫存器會與後方參數比較，若相等就會設置CC給SW暫存器</li>
+<li>常用在迴圈處理，如下方Code =&gt; <a href="#Looping-amp-Indexing">Looping and Indexing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>沒有記憶體對記憶體的搬移指令</strong><ul>
+<li>不過可以經過Coding，如下方Code =&gt; <a href="#Load-amp-Store">Load &amp; Store</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="SIC-XE-Machine-Architecture"><a href="#SIC-XE-Machine-Architecture" class="headerlink" title="SIC/XE Machine Architecture"></a>SIC/XE Machine Architecture</h3><h4 id="Memory-1"><a href="#Memory-1" class="headerlink" title="Memory"></a>Memory</h4><ul>
+<li>Total memory is <strong>$2^{20}$ bytes (1MB)</strong></li>
+</ul>
+<h4 id="Registers-1"><a href="#Registers-1" class="headerlink" title="Registers"></a>Registers</h4><p>除了原本SIC有的暫存器外，還多了以下暫存器：</p>
+<table>
+<thead>
+<tr>
+<th align="center">Mnemonic</th>
+<th align="center">Number</th>
+<th align="left">Special use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">B</td>
+<td align="center">3</td>
+<td align="left">基底(Base) 暫存器 <br>用在定址</td>
+</tr>
+<tr>
+<td align="center">S</td>
+<td align="center">4</td>
+<td align="left">一般工作(General working) 暫存器 <br>無特定用途</td>
+</tr>
+<tr>
+<td align="center">T</td>
+<td align="center">5</td>
+<td align="left">一般工作(General working) 暫存器 <br>無特定用途</td>
+</tr>
+<tr>
+<td align="center">F</td>
+<td align="center">6</td>
+<td align="left">浮點累加器(Floating-point accumulator)，有48 bits <br>用於浮點運算</td>
+</tr>
+</tbody></table>
+<p>p.s. 本課程不討論浮點數處理，因此該筆記不整理浮點數相關</p>
+<h4 id="Instruction-Formats-1"><a href="#Instruction-Formats-1" class="headerlink" title="Instruction Formats"></a>Instruction Formats</h4><p>基本上，沒有特定格式狀況下，都是Format 3<br><img src="/images/System-Software-Chapter1/XE_Instruction_Formats.png"></p>
+<h4 id="Addressing-Modes-1"><a href="#Addressing-Modes-1" class="headerlink" title="Addressing Modes"></a>Addressing Modes</h4><p>Instruction Format 3 &amp; Format 4中間那6 bits (n i x b p e)，分別代表一種定址模式，而<strong>b、p兩個位元會互斥（b=1則p=0，反之p=1則b=0）</strong></p>
+<ul>
+<li>Simple<ul>
+<li>SIC: n = i = 0，其實就是SIC的instruction format<ul>
+<li><strong>bpe會變成disp的一部分</strong>，TA = bpe + disp</li>
+</ul>
+</li>
+<li>XE: n = i = 1<ul>
+<li>Base relative 基底定址<ul>
+<li>相對於Base暫存器</li>
+<li><strong>n=1, i=1, b=1, p=0</strong></li>
+<li>TA = (B) + disp ($0 \leq disp \leq 4095$)</li>
+<li><img src="/images/System-Software-Chapter1/Base_relative_addressing_mode.png"></li>
+</ul>
+</li>
+<li>Program-counter relative PC相對定址<ul>
+<li>相對於PC暫存器</li>
+<li><strong>n=1, i=1, b=0, p=1</strong></li>
+<li>TA = (PC) + disp ($-2048 \leq disp \leq 2047$)</li>
+<li><img src="/images/System-Software-Chapter1/PC_relative_addressing_mode.png"></li>
+</ul>
+</li>
+<li>Direct 直接定址<ul>
+<li><strong>n=1, i=1, b=0, p=0</strong></li>
+<li>TA = disp ($0 \leq disp \leq 4095$)</li>
+<li><img src="/images/System-Software-Chapter1/Direct_addressing_mode.png"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Immediate 立即定址<ul>
+<li>要運算的東西，直接放在disp</li>
+<li><strong>n=0, i=1, x=0</strong></li>
+<li>operand = disp</li>
+<li><img src="/images/System-Software-Chapter1/Immediate_addressing_mode.png"></li>
+</ul>
+</li>
+<li>Indirect 間接定址<ul>
+<li><strong>n=1, i=0, x=0</strong></li>
+<li>TA = (disp)</li>
+<li><img src="/images/System-Software-Chapter1/Indirect_addressing_mode.png"></li>
+</ul>
+</li>
+<li>Indexing 索引定址<ul>
+<li><strong>x=1</strong>，可搭配其他定址模式</li>
+<li>TA = (X) + Original TA</li>
+<li><img src="/images/System-Software-Chapter1/Indexing_addressing_mode.png"></li>
+</ul>
+</li>
+<li>Extended <ul>
+<li><font style="color:red">Format 4</font></li>
+<li><strong>e=1</strong></li>
+</ul>
+</li>
+</ul>
+<h5 id="Addressing-Mode-Example"><a href="#Addressing-Mode-Example" class="headerlink" title="Addressing Mode Example"></a>Addressing Mode Example</h5><p><img src="/images/System-Software-Chapter1/Addressing_Mode_Example.png"></p>
+<table>
+<thead>
+<tr>
+<th>Hex</th>
+<th>Opcode</th>
+<th>n</th>
+<th>i</th>
+<th>x</th>
+<th>b</th>
+<th>p</th>
+<th>e</th>
+<th>disp/address</th>
+<th>TA</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>032600</td>
+<td>000000</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0110 0000 0000</td>
+<td>3600</td>
+</tr>
+<tr>
+<td>03C300</td>
+<td>000000</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0011 0000 0000</td>
+<td>6390</td>
+</tr>
+<tr>
+<td>022030</td>
+<td>000000</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0000 0011 0000</td>
+<td>3030</td>
+</tr>
+<tr>
+<td>010030</td>
+<td>000000</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0000 0011 0000</td>
+<td>30</td>
+</tr>
+<tr>
+<td>003600</td>
+<td>000000</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0110 0000 0000</td>
+<td>3600</td>
+</tr>
+<tr>
+<td>0310C303</td>
+<td>000000</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0000 1100 0011 0000 0011</td>
+<td>C303</td>
+</tr>
+</tbody></table>
+<h4 id="Instruction-Set-1"><a href="#Instruction-Set-1" class="headerlink" title="Instruction Set"></a>Instruction Set</h4><ul>
+<li>load/store<ul>
+<li>LDB, STB, stc.</li>
+</ul>
+</li>
+<li>Register move (<font style="color:red">Format 2</font>)<ul>
+<li>RMO</li>
+</ul>
+</li>
+<li>Register-Register arithmetic (<font style="color:red">Format 2</font>)<ul>
+<li>ADDR, SUBR, MULR, DIVR</li>
+</ul>
+</li>
+</ul>
+<h3 id="Code-Example"><a href="#Code-Example" class="headerlink" title="Code Example"></a>Code Example</h3><h4 id="Load-amp-Store"><a href="#Load-amp-Store" class="headerlink" title="Load &amp; Store"></a>Load &amp; Store</h4><ul>
+<li>SIC<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">LDA   FIVE        &#x2F;&#x2F; 將FIVE載入至A暫存器</span><br><span class="line">STA   ALPHA       &#x2F;&#x2F; 將A暫存器的值存至ALPHA</span><br><span class="line">LDCH  CHARZ       &#x2F;&#x2F; 將CHARZ載入A暫存器，此時(A)&#x3D;0x000091</span><br><span class="line">STCH  C1          &#x2F;&#x2F; 將A暫存器的值存至C1</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">&#x2F;** 以下為「指示(Directive)」，詳細至Chapter 2了解 **&#x2F;</span><br><span class="line">ALPHA RESW 1      &#x2F;&#x2F; 宣告ALPHA，並保留1 word大小的空間</span><br><span class="line">FIVE  WORD 5      &#x2F;&#x2F; 宣告FIVE，並將常數5放入(1 word大小)</span><br><span class="line">CHARZ BYTE C&#39;Z&#39;   &#x2F;&#x2F; 宣告CHARZ，並放入「Z」的ASCII Code</span><br><span class="line">                  &#x2F;&#x2F; C&#39;&#39;代表放入ASCII Code</span><br><span class="line">C1    RESB 1      &#x2F;&#x2F; 宣告C1，並保留1 byte大小的空間</span><br></pre></td></tr></table></figure></li>
+<li>XE<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LDA   #5          &#x2F;&#x2F; 「#」為立即值(使用Immediate Addressing Mode)</span><br><span class="line">STA   ALPHA</span><br><span class="line">LDA   #90         &#x2F;&#x2F; 使用立即定址將ASCII Code為90的字元存進A暫存器</span><br><span class="line">STCH  C1</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">ALPHA RESW  1</span><br><span class="line">C1    RESB  1</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Arithmetic-Operation"><a href="#Arithmetic-Operation" class="headerlink" title="Arithmetic Operation"></a>Arithmetic Operation</h4><ul>
+<li>以下Code先假設ALPHA, BETA, GAMMA, DELTA, INCR已載入值</li>
+<li>SIC<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">LDA   ALPHA     &#x2F;&#x2F; 將ALPHA的值存入A暫存器</span><br><span class="line">ADD   INCR      &#x2F;&#x2F; A暫存器 +&#x3D; INCR</span><br><span class="line">SUB   ONE       &#x2F;&#x2F; A暫存器 -&#x3D; 1</span><br><span class="line">STA   BETA      &#x2F;&#x2F; 將A暫存器的值存入BETA</span><br><span class="line">LDA   GAMMA     &#x2F;&#x2F; 將GAMMA的值存入A暫存器</span><br><span class="line">ADD   INCR      &#x2F;&#x2F; A暫存器 +&#x3D; INCR</span><br><span class="line">SUB   ONE       &#x2F;&#x2F; A暫存器 -&#x3D; 1</span><br><span class="line">STA   DELTA     &#x2F;&#x2F; 將A暫存器的值存入DELTA</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">ONE     WORD 	1</span><br><span class="line">ALPHA   RESW	1</span><br><span class="line">BETA    RESW	1</span><br><span class="line">GAMMA   RESW 	1</span><br><span class="line">DELTA   RESW	1</span><br><span class="line">INCR    RESW 	1</span><br></pre></td></tr></table></figure></li>
+<li>XE<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">LDS   INCR      &#x2F;&#x2F; 將INCR的值存入S</span><br><span class="line">LDA   ALPHA     &#x2F;&#x2F; 將ALPHA的值存入A</span><br><span class="line">ADDR  S, A      &#x2F;&#x2F; S + A 後放回A</span><br><span class="line">SUB   #1        &#x2F;&#x2F; A暫存器 -&#x3D; 1</span><br><span class="line">STA   BETA      &#x2F;&#x2F; 將A暫存器的值存入BETA</span><br><span class="line">LDA   GAMMA     &#x2F;&#x2F; 將GAMMA的值存入A</span><br><span class="line">ADDR  S, A      &#x2F;&#x2F; S + A 後放回A</span><br><span class="line">SUB   #1        &#x2F;&#x2F; A暫存器 -&#x3D; 1</span><br><span class="line">STA   DELTA     &#x2F;&#x2F; 將A暫存器的值存入DELTA</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">ALPHA   RESW  1</span><br><span class="line">BETA    RESW  1</span><br><span class="line">GAMMA   RESW  1</span><br><span class="line">DELTA   RESW  1</span><br><span class="line">INCR    RESW  1</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Looping-amp-Indexing"><a href="#Looping-amp-Indexing" class="headerlink" title="Looping &amp; Indexing"></a>Looping &amp; Indexing</h4><ul>
+<li>SIC<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">        LDX   ZERO      &#x2F;&#x2F; 初始化X暫存器為0</span><br><span class="line">MOVECH  LDCH  STR1, X   &#x2F;&#x2F; 從A暫存器讀取index為X的一個字元進去</span><br><span class="line">        STCH  STR2, X   &#x2F;&#x2F; 將A暫存器的值存入STR2的index X</span><br><span class="line">        TIX   ELEVEN    &#x2F;&#x2F; 先將X暫存器值+1後跟ELEVEN比對值放入CC（SW暫存器）</span><br><span class="line">        JLT   MOVECH    &#x2F;&#x2F; 如果CC是小於則跳回MOVECH</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">STR1    BYTE  C&#39;TEST STRING&#39;	&#x2F;&#x2F;將後面字串傳成ASCII Code並丟入STR1</span><br><span class="line">STR2    RESB  11</span><br><span class="line">ZERO    WORD  0</span><br><span class="line">ELEVEN  WORD  11</span><br></pre></td></tr></table></figure></li>
+<li>XE<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">        LDT   #11       &#x2F;&#x2F; 初始化T暫存器為11</span><br><span class="line">        LDX   #0        &#x2F;&#x2F; 初始化X暫存器為0</span><br><span class="line">MOVECH  LDCH  STR1,X    &#x2F;&#x2F; 從A暫存器讀取index為X的一個字元進去</span><br><span class="line">        STCH  STR2,X    &#x2F;&#x2F; 將A暫存器的值存入STR2的index X</span><br><span class="line">        TIXR  T         &#x2F;&#x2F; 先將X暫存器值+1後跟ELEVEN比對值放入CC（SW暫存器）</span><br><span class="line">        JLT   MOVECH    &#x2F;&#x2F; 如果CC是小於則跳回MOVECH</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">STR1  BYTE  C&#39;TEST STRING&#39;</span><br><span class="line">STR2  RESB  11</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h4><ul>
+<li>SIC<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">INLOOP  TD    INDEV   &#x2F;&#x2F; 測試輸入裝置</span><br><span class="line">        JEQ   INLOOP  &#x2F;&#x2F; 迴圈直到輸入裝置準備好</span><br><span class="line">        RD    INDEV   &#x2F;&#x2F; 讀一個字元進入A暫存器</span><br><span class="line">        STCH  DATA    &#x2F;&#x2F; 把A暫存器的字元存入DATA</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">OUTLP   TD    OUTDEV  &#x2F;&#x2F; 測試輸入裝置</span><br><span class="line">        JEQ   OUTLP   &#x2F;&#x2F; 迴圈直到輸入裝置準備好</span><br><span class="line">        LDCH  DATA    &#x2F;&#x2F; 從DATA位址讀一個字元進A暫存器</span><br><span class="line">        WD    OUTDEV  &#x2F;&#x2F; 將字元輸出</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">INDEV   BYTE  X&#39;F1&#39;   &#x2F;&#x2F; 輸入裝置代號F1</span><br><span class="line">OUTDEV  BYTE  X&#39;05&#39;   &#x2F;&#x2F; 輸出裝置代號05</span><br><span class="line">                      &#x2F;&#x2F; 由X&#39;&#39;可知為16進制</span><br><span class="line">DATA    RESB  1</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <div>
+    <script type="text/javascript">
+      document.write(
+        "<iframe scrolling='no' frameborder='0' style='height: 200px; width: 100%;' " + 
+        "sandbox='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-storage-access-by-user-activation' " + 
+        "src='https://button.like.co/in/embed/kalinlai/button?referrer=" +
+        encodeURIComponent(location.href.split("?")[0].split("#")[0]) + "'></iframe>");
+    </script>
+</div>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/System-Software/" rel="tag"># System Software</a>
+              <a href="/tags/%E7%B3%BB%E7%B5%B1%E7%A8%8B%E5%BC%8F/" rel="tag"># 系統程式</a>
+              <a href="/tags/SIC-XE/" rel="tag"># SIC/XE</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/02/05/UpdateLog/" rel="prev" title="Blog更新日誌">
+      <i class="fa fa-chevron-left"></i> Blog更新日誌
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/22/System-Software-Chapter2/" rel="next" title="【System Software】 Chapter 2 - Assembler">
+      【System Software】 Chapter 2 - Assembler <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Simplified-Instruction-Computer-%E7%B0%A1%E5%8C%96%E6%8C%87%E4%BB%A4%E9%9B%BB%E8%85%A6-SIC"><span class="nav-number">1.</span> <span class="nav-text">Simplified Instruction Computer 簡化指令電腦(SIC)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SIC-Machine-Architecture"><span class="nav-number">1.1.</span> <span class="nav-text">SIC Machine Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Memory"><span class="nav-number">1.1.1.</span> <span class="nav-text">Memory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Registers"><span class="nav-number">1.1.2.</span> <span class="nav-text">Registers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-Formats"><span class="nav-number">1.1.3.</span> <span class="nav-text">Data Formats</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Instruction-Formats"><span class="nav-number">1.1.4.</span> <span class="nav-text">Instruction Formats</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Addressing-Modes"><span class="nav-number">1.1.5.</span> <span class="nav-text">Addressing Modes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Instruction-Set"><span class="nav-number">1.1.6.</span> <span class="nav-text">Instruction Set</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SIC-XE-Machine-Architecture"><span class="nav-number">1.2.</span> <span class="nav-text">SIC&#x2F;XE Machine Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Memory-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">Memory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Registers-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">Registers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Instruction-Formats-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">Instruction Formats</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Addressing-Modes-1"><span class="nav-number">1.2.4.</span> <span class="nav-text">Addressing Modes</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Addressing-Mode-Example"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">Addressing Mode Example</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Instruction-Set-1"><span class="nav-number">1.2.5.</span> <span class="nav-text">Instruction Set</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-Example"><span class="nav-number">1.3.</span> <span class="nav-text">Code Example</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Load-amp-Store"><span class="nav-number">1.3.1.</span> <span class="nav-text">Load &amp; Store</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Arithmetic-Operation"><span class="nav-number">1.3.2.</span> <span class="nav-text">Arithmetic Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Looping-amp-Indexing"><span class="nav-number">1.3.3.</span> <span class="nav-text">Looping &amp; Indexing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Input-amp-Output"><span class="nav-number">1.3.4.</span> <span class="nav-text">Input &amp; Output</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kalin Lai"
+      src="https://avatars.githubusercontent.com/u/40635383?s=400&u=5b7e00cf5a939d4bba7dd0d17b8cf4e037ba2f7a&v=4">
+  <p class="site-author-name" itemprop="name">Kalin Lai</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    Just is a おたく，</br>又名 ── 風凜魂太。
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/KalinLai-void" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KalinLai-void" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lun.void52513@gmail.com" title="E-Mail → mailto:lun.void52513@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/KalinLai_void" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;KalinLai_void" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/KalinLai.void/" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;KalinLai.void&#x2F;" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/kalin_lai.void/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;kalin_lai.void&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://home.gamer.com.tw/homeindex.php?owner=play52513" title="巴哈小屋 → https:&#x2F;&#x2F;home.gamer.com.tw&#x2F;homeindex.php?owner&#x3D;play52513" rel="noopener" target="_blank"><i class="fas fa-gamepad fa-fw"></i>巴哈小屋</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    <!--google_adsense-->
+    
+      <div class="links-of-blogroll-title">
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-9358449882725994"
+            data-ad-slot="9718442885"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    
+    <!--/google_adsense-->
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        <!--google_adsense-->
+
+  <div class="links-of-blogroll-title">
+    <i class="fab fa-google"></i> AdSense
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-9358449882725994"
+         data-ad-slot="9718442885"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+<!--/google_adsense-->
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fas fa-star-of-david"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kalin Lai</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'd4d527dcec1ec91415b4',
+      clientSecret: '7ddda799fc5e5b91d632ed2c892f26de2376653f',
+      repo        : 'KalinLai-void.github.io',
+      owner       : 'KalinLai-void',
+      admin       : ['KalinLai-void'],
+      id          : '8d4c67957d1f76a6ad4763d795ff16b7',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item">
+      <i class='fas fa-chevron-down'></i>    </div>
+    
+    <div id="moon-menu-item-back2top" class="moon-menu-item">
+      <i class='fas fa-chevron-up'></i>    </div>
+    
+    <div id="moon-menu-item-dark" class="moon-menu-item" onclick="switchDarkMode()">
+      <i class='fas fa-adjust'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+</body>
+
+<script src="/live2d-widget/autoload.js"></script>
+</html>

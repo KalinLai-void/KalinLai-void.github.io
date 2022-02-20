@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"kalinlai-void.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":false,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="講者：達哥&#x2F;Kelvin Lo 演講影片此筆記不會介紹如何使用，不過影片內講師有操作，或自行上網找資源。 其實就是 Unity 中的藍圖系統 (Blueprint System)、可視化程式 (Visual Scripting)。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【TGDF2021】Unity可視化程式（Visual Scripting）專案開發">
+<meta property="og:url" content="https://kalinlai-void.github.io/2021/07/10/TGDF2021_unity-visual-scripting/index.html">
+<meta property="og:site_name" content="Kalin&#39;s Blog">
+<meta property="og:description" content="講者：達哥&#x2F;Kelvin Lo 演講影片此筆記不會介紹如何使用，不過影片內講師有操作，或自行上網找資源。 其實就是 Unity 中的藍圖系統 (Blueprint System)、可視化程式 (Visual Scripting)。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-07-10T03:58:56.000Z">
+<meta property="article:modified_time" content="2021-09-13T13:51:55.000Z">
+<meta property="article:author" content="Kalin Lai">
+<meta property="article:tag" content="TGDF台北遊戲開發者論壇">
+<meta property="article:tag" content="TGDF2021">
+<meta property="article:tag" content="Unity">
+<meta property="article:tag" content="遊戲程式">
+<meta property="article:tag" content="Visual Scripting">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://kalinlai-void.github.io/2021/07/10/TGDF2021_unity-visual-scripting/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+<link href="/css/dark.css" rel="alternate stylesheet" type="text/css" title="dark">
+<script type="text/javascript" src="/js/darkmode.js"></script><link rel="stylesheet" type="text/css" href="/css/injector.css" />
+  <title>【TGDF2021】Unity可視化程式（Visual Scripting）專案開發 | Kalin's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJRDV86637"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZJRDV86637');
+      }
+    </script>
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: 'ca-pub-9358449882725994',
+          enable_page_level_ads: true
+     });
+</script>
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Kalin's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Kalin's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/About/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-msgboard">
+
+    <a href="/msgBoard/" rel="section"><i class="far fa-comment-dots fa-fw"></i>訪客留言板</a>
+
+  </li>
+        <li class="menu-item menu-item-kalin-風凜魂太の宅領域">
+
+    <a href="https://kalinlai-void.github.io/ACGN/" rel="section"><i class="fas fa-book fa-fw"></i>Kalin 風凜魂太の宅領域</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://kalinlai-void.github.io/2021/07/10/TGDF2021_unity-visual-scripting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/40635383?s=400&u=5b7e00cf5a939d4bba7dd0d17b8cf4e037ba2f7a&v=4">
+      <meta itemprop="name" content="Kalin Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kalin's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【TGDF2021】Unity可視化程式（Visual Scripting）專案開發
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-07-10 11:58:56" itemprop="dateCreated datePublished" datetime="2021-07-10T11:58:56+08:00">2021-07-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-09-13 21:51:55" itemprop="dateModified" datetime="2021-09-13T21:51:55+08:00">2021-09-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TGDF2021-%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/" itemprop="url" rel="index"><span itemprop="name">TGDF2021_台北遊戲開發者論壇</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>講者：達哥/Kelvin Lo</p>
+<p><a target="_blank" rel="noopener" href="https://youtu.be/bQ7ClW_nsdk">演講影片</a><br>此筆記不會介紹如何使用，不過影片內講師有操作，或自行上網找資源。</p>
+<p>其實就是 Unity 中的藍圖系統 (Blueprint System)、可視化程式 (Visual Scripting)。</p>
+<span id="more"></span>
+
+<h2 id="講者介紹"><a href="#講者介紹" class="headerlink" title="講者介紹"></a>講者介紹</h2><p>服務於 Unity 已經有 8 年，主要任務為提供台灣開發者使用 Unity 上的技術支援，同時也在各大平台推廣 Unity。同時也是 TGDF 的常客，致力於把最新的 Unity 內容同步的傳達到台灣開發者社群。</p>
+<h2 id="Unity-Visual-Scripting"><a href="#Unity-Visual-Scripting" class="headerlink" title="Unity Visual Scripting"></a>Unity Visual Scripting</h2><ul>
+<li>跨功能的節點式 (Node-based) 設計系統<ul>
+<li>Shader Graph</li>
+<li>Visual Effect Graph</li>
+<li><strong>Visual Scripting Tool</strong> &lt;- 本次議程重點</li>
+</ul>
+</li>
+<li>之前的 Unity 若想使用這類可式化節點設計工具，需安裝第三方套件<ul>
+<li>e.g. PlayMaker, Bolt, etc.</li>
+</ul>
+</li>
+<li><strong>而在 Unity 收購 Bolt 這個套件，並整合至 Unity2021</strong><ul>
+<li>但若是2021以前的版本想要使用 Visual Scripting，可以直接去 Unity Asset Store 下載 Bolt<ul>
+<li>雖然有些功能會和整合進來的不太一樣，但邏輯相通</li>
+<li><strong>舊版檔案格式與新版檔案格式並不相容</strong>，後面會介紹如何轉換</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如何運作？<ul>
+<li>圖形化的程式產生器，可以不用coding</li>
+<li>相當於 Unreal 中的藍圖系統 (Blueprint System)</li>
+</ul>
+</li>
+</ul>
+<h2 id="部分功能與名詞介紹"><a href="#部分功能與名詞介紹" class="headerlink" title="部分功能與名詞介紹"></a>部分功能與名詞介紹</h2><ul>
+<li>Scrip Machine 表示單一的腳本狀態</li>
+<li>State Machine 有包含狀態機控制，適合怪物 AI</li>
+<li>Backboard 裡面會定義不同生命週期的變數<ul>
+<li>Graph: 只有自己這張圖可以使用</li>
+<li>Object: 可以在同個物件，但不同圖使用</li>
+<li>Scene: 可以在同個場景內共用，無法跨場景</li>
+<li>App: 整個 App 內都可以用</li>
+<li>Saved: 會在遊戲結束後也會儲存著</li>
+</ul>
+</li>
+</ul>
+<h2 id="專案轉換舊版本-Bolt-至-Unity-2021"><a href="#專案轉換舊版本-Bolt-至-Unity-2021" class="headerlink" title="專案轉換舊版本 Bolt 至 Unity 2021"></a>專案轉換舊版本 Bolt 至 Unity 2021</h2><ul>
+<li>在網路上搜尋 Unity Visual Scripting 或 Bolt，會找到很多網路教學或專案，但很多專案在 Unity 2021 前就分享了，所以現在用 Unity 2021 開啟這些專案可能會壞掉。</li>
+<li>可以在 Unity 內的 <code>Project Setting -&gt; Visual Scripting</code> 裡面 <strong>Fix Missing Scripts</strong><ul>
+<li>會嘗試把舊版本 Bolt 升級成 Unity 2021 的版本</li>
+</ul>
+</li>
+</ul>
+<h2 id="講者觀點"><a href="#講者觀點" class="headerlink" title="講者觀點"></a>講者觀點</h2><ul>
+<li>Visual Scripting 誰適合使用？<ul>
+<li><strong>程式設計師</strong><ul>
+<li>因為概念邏輯相通，也很程式導向，能最快進入狀況。</li>
+<li>但排斥感可能也最大，因為有限制。</li>
+</ul>
+</li>
+<li>PM / 企劃人員<ul>
+<li><strong>適合做 Prototype 開發</strong> ，因為搭建很快，不需寫code，也不用麻煩程式設計師。</li>
+</ul>
+</li>
+<li>任何想要開發遊戲的開發者<ul>
+<li>可能對自己的程式能力沒有信心</li>
+<li>多了個開發方法，降低了門檻</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>會取代傳統程式碼嗎？<ul>
+<li>不會，應該會共生。</li>
+<li>也可能產生出「<strong>可視化程式設計師</strong>」xD</li>
+</ul>
+</li>
+</ul>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q &amp; A"></a>Q &amp; A</h2><ol>
+<li>我問的問題：請問 Unity 的 Visual Scripting 是否能串聯(讀取) C# script內的function和變數（像 Unreal 的 Blueprint 那樣）<ul>
+<li>可以在同一個物件寫另外的 C# 腳本，變數可以直接取用。</li>
+</ul>
+</li>
+<li>Visual Scripting 在多人工作上的 Merge 是否有問題，檔案是文本基礎嗎？（因為 Unreal 的 Blueprint 就有這種問題）<ul>
+<li>他是 Component based，所以是以元件的形式跟著物件的，跟其他元件邏輯一樣，並非文本格式就是了。多人工作建議還是一個人負責編輯。</li>
+</ul>
+</li>
+<li>請問如用 Visual Scripting 做完 Prototype 後，想轉成 C# Script 可以直接轉換？或需要手工重寫？<ul>
+<li>如果你點元件旁的「…」，可以看到一個「Edit script」，裡面會顯示腳本，但是這個腳本是含框架的，所以會比較難讀懂，有可能會比你重寫來的慢，取決於圖的複雜度。</li>
+</ul>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <div>
+    <script type="text/javascript">
+      document.write(
+        "<iframe scrolling='no' frameborder='0' style='height: 200px; width: 100%;' " + 
+        "sandbox='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-storage-access-by-user-activation' " + 
+        "src='https://button.like.co/in/embed/kalinlai/button?referrer=" +
+        encodeURIComponent(location.href.split("?")[0].split("#")[0]) + "'></iframe>");
+    </script>
+</div>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/" rel="tag"># TGDF台北遊戲開發者論壇</a>
+              <a href="/tags/TGDF2021/" rel="tag"># TGDF2021</a>
+              <a href="/tags/Unity/" rel="tag"># Unity</a>
+              <a href="/tags/%E9%81%8A%E6%88%B2%E7%A8%8B%E5%BC%8F/" rel="tag"># 遊戲程式</a>
+              <a href="/tags/Visual-Scripting/" rel="tag"># Visual Scripting</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/10/TGDF2021_thinking-outside-Superliminal/" rel="prev" title="【TGDF2021】跳脫框架思考─《Superliminal》開發經驗談">
+      <i class="fa fa-chevron-left"></i> 【TGDF2021】跳脫框架思考─《Superliminal》開發經驗談
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/10/TGDF2021_Addressables-and-Cloud-Content-Delivery/" rel="next" title="【TGDF2021】遊戲線上內容的管理與交付（Unity）">
+      【TGDF2021】遊戲線上內容的管理與交付（Unity） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AC%9B%E8%80%85%E4%BB%8B%E7%B4%B9"><span class="nav-number">1.</span> <span class="nav-text">講者介紹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unity-Visual-Scripting"><span class="nav-number">2.</span> <span class="nav-text">Unity Visual Scripting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E5%88%86%E5%8A%9F%E8%83%BD%E8%88%87%E5%90%8D%E8%A9%9E%E4%BB%8B%E7%B4%B9"><span class="nav-number">3.</span> <span class="nav-text">部分功能與名詞介紹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%88%E6%A1%88%E8%BD%89%E6%8F%9B%E8%88%8A%E7%89%88%E6%9C%AC-Bolt-%E8%87%B3-Unity-2021"><span class="nav-number">4.</span> <span class="nav-text">專案轉換舊版本 Bolt 至 Unity 2021</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AC%9B%E8%80%85%E8%A7%80%E9%BB%9E"><span class="nav-number">5.</span> <span class="nav-text">講者觀點</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">6.</span> <span class="nav-text">Q &amp; A</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kalin Lai"
+      src="https://avatars.githubusercontent.com/u/40635383?s=400&u=5b7e00cf5a939d4bba7dd0d17b8cf4e037ba2f7a&v=4">
+  <p class="site-author-name" itemprop="name">Kalin Lai</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    Just is a おたく，</br>又名 ── 風凜魂太。
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/KalinLai-void" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KalinLai-void" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lun.void52513@gmail.com" title="E-Mail → mailto:lun.void52513@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/KalinLai_void" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;KalinLai_void" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/KalinLai.void/" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;KalinLai.void&#x2F;" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/kalin_lai.void/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;kalin_lai.void&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://home.gamer.com.tw/homeindex.php?owner=play52513" title="巴哈小屋 → https:&#x2F;&#x2F;home.gamer.com.tw&#x2F;homeindex.php?owner&#x3D;play52513" rel="noopener" target="_blank"><i class="fas fa-gamepad fa-fw"></i>巴哈小屋</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    <!--google_adsense-->
+    
+      <div class="links-of-blogroll-title">
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-9358449882725994"
+            data-ad-slot="9718442885"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    
+    <!--/google_adsense-->
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        <!--google_adsense-->
+
+  <div class="links-of-blogroll-title">
+    <i class="fab fa-google"></i> AdSense
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-9358449882725994"
+         data-ad-slot="9718442885"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+<!--/google_adsense-->
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fas fa-star-of-david"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kalin Lai</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'd4d527dcec1ec91415b4',
+      clientSecret: '7ddda799fc5e5b91d632ed2c892f26de2376653f',
+      repo        : 'KalinLai-void.github.io',
+      owner       : 'KalinLai-void',
+      admin       : ['KalinLai-void'],
+      id          : 'ed6d42751527e2b08034022daf81dfaf',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item">
+      <i class='fas fa-chevron-down'></i>    </div>
+    
+    <div id="moon-menu-item-back2top" class="moon-menu-item">
+      <i class='fas fa-chevron-up'></i>    </div>
+    
+    <div id="moon-menu-item-dark" class="moon-menu-item" onclick="switchDarkMode()">
+      <i class='fas fa-adjust'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+</body>
+
+<script src="/live2d-widget/autoload.js"></script>
+</html>
