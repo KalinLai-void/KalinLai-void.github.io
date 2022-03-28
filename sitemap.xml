@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kalinlai-void.github.io/About/index.html</loc>
+    
+    <lastmod>2022-03-28</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kalinlai-void.github.io/2022/03/28/Morphology-Image-Processing/</loc>
     
     <lastmod>2022-03-28</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://kalinlai-void.github.io/categories/index.html</loc>
     
     <lastmod>2022-02-20</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kalinlai-void.github.io/About/index.html</loc>
-    
-    <lastmod>2022-02-15</lastmod>
     
   </url>
   
