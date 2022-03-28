@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"kalinlai-void.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":false,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本篇為形態學影像處理的筆記，會簡單介紹一些形態學影像處理方法，如：膨脹處理（Dilation）、侵蝕處理（Erosion）、開與合運算（Opening &amp; Closing）與形態學濾波（Morphological Filtering）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Image Processing】Morphology 形態學">
+<meta property="og:url" content="https://kalinlai-void.github.io/2022/03/28/Morphology-Image-Processing/index.html">
+<meta property="og:site_name" content="Kalin&#39;s Blog">
+<meta property="og:description" content="本篇為形態學影像處理的筆記，會簡單介紹一些形態學影像處理方法，如：膨脹處理（Dilation）、侵蝕處理（Erosion）、開與合運算（Opening &amp; Closing）與形態學濾波（Morphological Filtering）。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/Morphology-Image-Processing/boolean_orig.jpg">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/Morphology-Image-Processing/Set.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/Morphology-Image-Processing/Reflection.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/Morphology-Image-Processing/Dilation.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/Morphology-Image-Processing/Erosion.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/Morphology-Image-Processing/Opening.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/Morphology-Image-Processing/Closing.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/Morphology-Image-Processing/Morphological-Filtering-Fingerprint.png">
+<meta property="og:image" content="https://kalinlai-void.github.io/images/Morphology-Image-Processing/Morphological-Filtering-Whitepoint.png">
+<meta property="article:published_time" content="2022-03-27T17:22:23.000Z">
+<meta property="article:modified_time" content="2022-03-28T19:42:01.848Z">
+<meta property="article:author" content="Kalin Lai">
+<meta property="article:tag" content="影像處理">
+<meta property="article:tag" content="電腦視覺">
+<meta property="article:tag" content="形態學">
+<meta property="article:tag" content="Morphology">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kalinlai-void.github.io/images/Morphology-Image-Processing/boolean_orig.jpg">
+
+<link rel="canonical" href="https://kalinlai-void.github.io/2022/03/28/Morphology-Image-Processing/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+<link href="/css/dark.css" rel="alternate stylesheet" type="text/css" title="dark">
+<script type="text/javascript" src="/js/darkmode.js"></script><link rel="stylesheet" type="text/css" href="/css/injector.css" />
+  <title>【Image Processing】Morphology 形態學 | Kalin's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJRDV86637"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZJRDV86637');
+      }
+    </script>
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: 'ca-pub-9358449882725994',
+          enable_page_level_ads: true
+     });
+</script>
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Kalin's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Kalin's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/About/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-msgboard">
+
+    <a href="/msgBoard/" rel="section"><i class="far fa-comment-dots fa-fw"></i>訪客留言板</a>
+
+  </li>
+        <li class="menu-item menu-item-kalin-風凜魂太の宅領域">
+
+    <a href="https://kalinlai-void.github.io/ACGN/" rel="section"><i class="fas fa-book fa-fw"></i>Kalin 風凜魂太の宅領域</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://kalinlai-void.github.io/2022/03/28/Morphology-Image-Processing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/40635383?s=400&u=5b7e00cf5a939d4bba7dd0d17b8cf4e037ba2f7a&v=4">
+      <meta itemprop="name" content="Kalin Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kalin's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【Image Processing】Morphology 形態學
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2022-03-28 01:22:23" itemprop="dateCreated datePublished" datetime="2022-03-28T01:22:23+08:00">2022-03-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-03-29 03:42:01" itemprop="dateModified" datetime="2022-03-29T03:42:01+08:00">2022-03-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Image-Processing/" itemprop="url" rel="index"><span itemprop="name">Image Processing</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本篇為形態學影像處理的筆記，會簡單介紹一些形態學影像處理方法，如：膨脹處理（Dilation）、侵蝕處理（Erosion）、開與合運算（Opening &amp; Closing）與形態學濾波（Morphological Filtering）。</p>
+<span id="more"></span>
+
+<h2 id="What-is-Morphology？"><a href="#What-is-Morphology？" class="headerlink" title="What is Morphology？"></a>What is Morphology？</h2><p>在數學上的形態學（Mathematical morphology）<strong>是一門建立在格論和拓撲學基礎之上的圖像分析學科</strong>，也就是本篇拿來做影像處理的基本理論。</p>
+<p>Morphology 非常實用，且可以運用的範圍非常廣泛，如：邊界抽取、區域填充、細線化、粗線化、型態梯度、型態濾波、高帽轉換……等。</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>主要運用<strong>集合運算</strong>與<strong>邏輯運算</strong>。（<u>集合運算與邏輯運算雖然概念同構，但不完全相同</u>）<br>理論會使用集合運算解釋，而程式實作則是使用邏輯運算。</p>
+<h4 id="邏輯運算"><a href="#邏輯運算" class="headerlink" title="邏輯運算"></a>邏輯運算</h4><p><img src="/images/Morphology-Image-Processing/boolean_orig.jpg"></p>
+<ul>
+<li>基本邏輯：AND、OR、NOT，其真值表如上圖。<ul>
+<li>分別對應到集合運算中的交集、聯集、補集。</li>
+</ul>
+</li>
+<li>而在高職的數位邏輯中有學到，其餘的 XOR、NAND、NOR 等都可用基本邏輯組成。</li>
+</ul>
+<h4 id="集合運算"><a href="#集合運算" class="headerlink" title="集合運算"></a>集合運算</h4><p><img src="/images/Morphology-Image-Processing/Set.png"></p>
+<ul>
+<li>基本的交集（Intersection）、聯集（Union）。</li>
+<li>補集（Complement）： A 的補集是影像G中所有不屬於 A 的元素集合。<ul>
+<li>$A^{c} = \lbrace\ w\ |\ w \in G\ and\ w \notin A\ \rbrace$</li>
+</ul>
+</li>
+<li>差集（Difference）：<ul>
+<li>$A - B = \lbrace\ w\ |\ w \in a\ and\ w \notin B\ \rbrace = A \cap B^{c}$</li>
+</ul>
+</li>
+<li>反射集（Reflection）：B 集合中所有元素<strong>相對集合原點</strong>（不一定是影像座標原點）的反射值之集合。<ul>
+<li>$\hat{B} = \lbrace\ w\ |\ w = -b,\ b \in B\ \rbrace$</li>
+<li>雖然上方有圖示，但這邊額外補充其他圖示，應該會更清楚。<br><img src="/images/Morphology-Image-Processing/Reflection.png"></li>
+</ul>
+</li>
+<li>平移運算（Translation）：<ul>
+<li>$(A)_z = \lbrace\ c\ |\ c = a + z,\ for\ a \in A\ \rbrace,\ z = (z_1,z_2)$<ul>
+<li>$\begin{cases} c_1 = a_1 + z_1 \\ c_2 = a_2 + z_2 \end{cases}$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="膨脹處理（Dilation）"><a href="#膨脹處理（Dilation）" class="headerlink" title="膨脹處理（Dilation）"></a>膨脹處理（Dilation）</h2><p>定義如下：<br>$A \oplus B = \lbrace\ z\ |\ (\hat{B})_z \cap A \neq \varnothing \rbrace $</p>
+<p>實作上可以理解為：</p>
+<ul>
+<li>A 是我要 Dilation 的目標。</li>
+<li>B 一般稱為 <strong>Struceures Element</strong>，可以理解為 Dilation 作用在每一點的遮罩（mask）大小（m * m 或 m * n）。</li>
+<li>等式右邊意思是「把 B 做 Reflection 後在集合內平移且跟 A 不是空集合的部分做 AND」。<ul>
+<li><u>Note：若 Structure Element 為上下左右皆對稱，則 Reflection 的動作可以忽略。</u></li>
+</ul>
+</li>
+</ul>
+<p>而稍微轉換個角度思考，我們也可以將定義改寫如下：<br>$A \oplus B = \lbrace\ z\ |\ [\ (\hat{B})_z \cap A\ ]\ \subseteq A \rbrace $</p>
+<p><img src="/images/Morphology-Image-Processing/Dilation.png"></p>
+<h2 id="侵蝕處理（Erosion）"><a href="#侵蝕處理（Erosion）" class="headerlink" title="侵蝕處理（Erosion）"></a>侵蝕處理（Erosion）</h2><p>定義如下：<br>$A \ominus B = \lbrace\ z\ |\ (B)_z \cap A^{c} \neq \varnothing \rbrace $</p>
+<p>基本上概念跟 Dilation 大致相同，只是<strong>反過來做</strong>而已。<br>而經由上面定義會發現 $B_z$ 其實一直在 $A$ 內，且跑出來的樣子就是結果了，因此我們也可以將定義改寫如下：<br>$A \ominus B = \lbrace\ z\ |\ (B)_z \subseteq A\ \rbrace $</p>
+<p><img src="/images/Morphology-Image-Processing/Erosion.png"></p>
+<h2 id="斷開與閉合運算（Opeing-amp-Closing）"><a href="#斷開與閉合運算（Opeing-amp-Closing）" class="headerlink" title="斷開與閉合運算（Opeing &amp; Closing）"></a>斷開與閉合運算（Opeing &amp; Closing）</h2><p>建立在 Dilation 與 Erosion 的運算基礎上，簡單來說：</p>
+<ul>
+<li>Opening：先 Erosion 再 Dilation。 $ A \circ B = (A \ominus B ) \oplus B$</li>
+<li>Closing：先 Dilation 再 Erosion。 $ A \bullet B = (A \oplus B ) \ominus B$</li>
+</ul>
+<h3 id="斷開運算-Opening"><a href="#斷開運算-Opening" class="headerlink" title="斷開運算 Opening"></a>斷開運算 Opening</h3><p>先做 Erosion 再做 Dilation。其數學式如下：<br>$ A \circ B = (A \ominus B ) \oplus B = \bigcup\ \lbrace\ (B)_z\ |\ (B)_z \subseteq A\ \rbrace$</p>
+<p>其作用等同是拿 Structures Element 在<u>目標內部</u>任意移動，而若是 Structures Element 到不了的地方就會被消除掉，<strong>可以將圖形凸出的銳角給鈍化</strong>。</p>
+<p>Opening 具有以下特性：</p>
+<ul>
+<li>$A \circ B$ 是 $A$ 的子集合。</li>
+<li>若 $C$ 是 $D$ 的子集合，則 $C \circ B$ 是 $D \circ B$ 的子集合。</li>
+<li>$(A \circ B) \circ B = A \circ B$</li>
+</ul>
+<p><img src="/images/Morphology-Image-Processing/Opening.png"></p>
+<h3 id="閉合運算-Closing"><a href="#閉合運算-Closing" class="headerlink" title="閉合運算 Closing"></a>閉合運算 Closing</h3><p>先做 Dilation 再做 Erosion。其數學式如下：<br>$ A \bullet B = (A \oplus B ) \ominus B = \lbrace\ (B)_z\ |\ (B)_z \cap A \neq \varnothing\ \rbrace$</p>
+<p>其實就是 Opening <strong>反過來做</strong>而已。等同是拿 Structures Element 在<u>目標外部</u>移動，進不去的地方就把它填滿，<strong>可以將圖形內陷的銳角給鈍化</strong>。</p>
+<p>Closing 具有以下特性：</p>
+<ul>
+<li>$A$ 是 $A \bullet B$ 的子集合。</li>
+<li>若 $C$ 是 $D$ 的子集合，則 $C \bullet B$ 是 $D \bullet B$ 的子集合。</li>
+<li>$(A \bullet B) \bullet B = A \bullet B$</li>
+</ul>
+<p><img src="/images/Morphology-Image-Processing/Closing.png"></p>
+<h2 id="應用：形態學濾波（Morphological-Filtering）"><a href="#應用：形態學濾波（Morphological-Filtering）" class="headerlink" title="應用：形態學濾波（Morphological Filtering）"></a>應用：形態學濾波（Morphological Filtering）</h2><h3 id="情境1"><a href="#情境1" class="headerlink" title="情境1"></a>情境1</h3><p>如下圖所示，該指紋圖片有一些白色雜訊，我們想要在<strong>不影響指紋型狀的狀況下去移除雜訊</strong>。而此時就可以使用「型態學濾波」了！其流程皆由圖上文字所述。</p>
+<p><img src="/images/Morphology-Image-Processing/Morphological-Filtering-Fingerprint.png"></p>
+<h3 id="情境2"><a href="#情境2" class="headerlink" title="情境2"></a>情境2</h3><p>又或者有另一種情境，我們可以看到下圖最左邊那張，裡面有大大小小不同的方點（有1 * 1、3 * 3、5 * 5、7 * 7、9 * 9、15 * 15 等 6 種尺寸），今天我們<strong>希望把 15 * 15 的方點留下，而其他東西就是我們不要的雜訊，要將他們濾掉</strong>。</p>
+<p>我們可以設計一個 11 * 11 or 13 * 13 or 15 * 15 的 Structures Element 去跟它做 Erosion，結果會長的像下圖中間那張。<br>而利用 Erosion 的原理，小於 Structures Element 的方點會直接被侵蝕到不見，以 13 * 13 的 Structures Element 我們想要留下的目標會被侵蝕到變成 3 * 3 的方點（若用 11 * 11 會變 5 * 5；用 15 * 15 會變 1 * 1），這樣我們確實將不必要的雜訊去除了，但是<strong>最終我們不希望改變目標的原始大小</strong>，因此可以再用同一個 Structures Element 去做 Dilation 將目標膨脹回原來的尺寸，如下圖最右邊那張。</p>
+<p><img src="/images/Morphology-Image-Processing/Morphological-Filtering-Whitepoint.png"></p>
+<p>形態學影像處理其實還有非常多應用，而「形態學濾波」只是其一種。而因為剛好最近碰到，因此本篇僅記錄此應用，至於其他的應用，未來若有機會再補上文章。</p>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><p>最後附上在寫這篇文章時所寫的Code，我都放在<a target="_blank" rel="noopener" href="https://github.com/KalinLai-void/Course-Computer-Vision/tree/master/2.%20MorphologyOperation">GitHub</a>內了。<br>其功能有 Dilation、Erosion、Opening 及 Closing，且可以調整大小。</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li>Image Processing - Lecture 11。Wasseem Nahy Ibrahem。</li>
+<li>Digital Image Processing 4th Edition - Chapter 9。Rafael C. Gonzalez, Richard E. Woods。</li>
+<li><a target="_blank" rel="noopener" href="http://ccy.dd.ncu.edu.tw/~chen/course/vision/ch9/%E5%96%AE%E5%85%83%E4%B9%9D%E3%80%81%E6%95%B8%E5%AD%B8%E5%9E%8B%E6%85%8B%E5%AD%B8.pdf">數學形態學。陳慶瀚。2004。</a></li>
+<li><a target="_blank" rel="noopener" href="https://jason-chen-1992.weebly.com/home/-morphology">【影像處理】形態學 Morphology。Jason Chen。2019。</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <div>
+    <script type="text/javascript">
+      document.write(
+        "<iframe scrolling='no' frameborder='0' style='height: 200px; width: 100%;' " + 
+        "sandbox='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-storage-access-by-user-activation' " + 
+        "src='https://button.like.co/in/embed/kalinlai/button?referrer=" +
+        encodeURIComponent(location.href.split("?")[0].split("#")[0]) + "'></iframe>");
+    </script>
+</div>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86/" rel="tag"># 影像處理</a>
+              <a href="/tags/%E9%9B%BB%E8%85%A6%E8%A6%96%E8%A6%BA/" rel="tag"># 電腦視覺</a>
+              <a href="/tags/%E5%BD%A2%E6%85%8B%E5%AD%B8/" rel="tag"># 形態學</a>
+              <a href="/tags/Morphology/" rel="tag"># Morphology</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/29/Visual-Studio-Debug-and-Release-Mode/" rel="prev" title="Visula Studio Debug & Release Mode">
+      <i class="fa fa-chevron-left"></i> Visula Studio Debug & Release Mode
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+<!--google_adsense-->
+
+  <div class="links-of-blogroll-title">
+    <i class="fab fa-google"></i> AdSense
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-9358449882725994"
+         data-ad-slot="9718442885"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+<!--/google_adsense-->
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-Morphology%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">What is Morphology？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97"><span class="nav-number">1.1.1.</span> <span class="nav-text">邏輯運算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E9%81%8B%E7%AE%97"><span class="nav-number">1.1.2.</span> <span class="nav-text">集合運算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%86%A8%E8%84%B9%E8%99%95%E7%90%86%EF%BC%88Dilation%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">膨脹處理（Dilation）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%B5%E8%9D%95%E8%99%95%E7%90%86%EF%BC%88Erosion%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">侵蝕處理（Erosion）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B7%E9%96%8B%E8%88%87%E9%96%89%E5%90%88%E9%81%8B%E7%AE%97%EF%BC%88Opeing-amp-Closing%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">斷開與閉合運算（Opeing &amp; Closing）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B7%E9%96%8B%E9%81%8B%E7%AE%97-Opening"><span class="nav-number">4.1.</span> <span class="nav-text">斷開運算 Opening</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%96%89%E5%90%88%E9%81%8B%E7%AE%97-Closing"><span class="nav-number">4.2.</span> <span class="nav-text">閉合運算 Closing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%87%89%E7%94%A8%EF%BC%9A%E5%BD%A2%E6%85%8B%E5%AD%B8%E6%BF%BE%E6%B3%A2%EF%BC%88Morphological-Filtering%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">應用：形態學濾波（Morphological Filtering）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%85%E5%A2%831"><span class="nav-number">5.1.</span> <span class="nav-text">情境1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%85%E5%A2%832"><span class="nav-number">5.2.</span> <span class="nav-text">情境2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">6.</span> <span class="nav-text">程式碼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">7.</span> <span class="nav-text">References</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kalin Lai"
+      src="https://avatars.githubusercontent.com/u/40635383?s=400&u=5b7e00cf5a939d4bba7dd0d17b8cf4e037ba2f7a&v=4">
+  <p class="site-author-name" itemprop="name">Kalin Lai</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    Just is a おたく，</br>又名 ── 風凜魂太。
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/KalinLai-void" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KalinLai-void" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lun.void52513@gmail.com" title="E-Mail → mailto:lun.void52513@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/KalinLai_void" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;KalinLai_void" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/KalinLai.void/" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;KalinLai.void&#x2F;" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/kalin_lai.void/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;kalin_lai.void&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://home.gamer.com.tw/homeindex.php?owner=play52513" title="巴哈小屋 → https:&#x2F;&#x2F;home.gamer.com.tw&#x2F;homeindex.php?owner&#x3D;play52513" rel="noopener" target="_blank"><i class="fas fa-gamepad fa-fw"></i>巴哈小屋</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    <!--google_adsense-->
+    
+      <div><br></div>
+      <div class="links-of-blogroll-title">
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-9358449882725994"
+            data-ad-slot="9718442885"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    
+    <!--/google_adsense-->
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fas fa-star-of-david"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kalin Lai</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'd4d527dcec1ec91415b4',
+      clientSecret: '7ddda799fc5e5b91d632ed2c892f26de2376653f',
+      repo        : 'KalinLai-void.github.io',
+      owner       : 'KalinLai-void',
+      admin       : ['KalinLai-void'],
+      id          : '74407cc458904c63295d7297b3c20b44',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item">
+      <i class='fas fa-chevron-down'></i>    </div>
+    
+    <div id="moon-menu-item-back2top" class="moon-menu-item">
+      <i class='fas fa-chevron-up'></i>    </div>
+    
+    <div id="moon-menu-item-dark" class="moon-menu-item" onclick="switchDarkMode()">
+      <i class='fas fa-adjust'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+</body>
+
+<script src="/live2d-widget/autoload.js"></script>
+</html>
