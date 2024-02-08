@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"kalinlai-void.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":false,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="講者：Josue Benavidez">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【TGDF2021】透過團隊合作來進行關卡設計">
+<meta property="og:url" content="https://kalinlai-void.github.io/2021/07/10/TGDF2021_LevelDesign-using-team-cooperation/index.html">
+<meta property="og:site_name" content="Kalin&#39;s Blog">
+<meta property="og:description" content="講者：Josue Benavidez">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-07-10T01:17:25.000Z">
+<meta property="article:modified_time" content="2021-09-14T16:02:06.000Z">
+<meta property="article:author" content="Kalin Lai">
+<meta property="article:tag" content="TGDF台北遊戲開發者論壇">
+<meta property="article:tag" content="遊戲設計">
+<meta property="article:tag" content="TGDF2021">
+<meta property="article:tag" content="Level Design">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://kalinlai-void.github.io/2021/07/10/TGDF2021_LevelDesign-using-team-cooperation/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+<link href="/css/dark.css" rel="alternate stylesheet" type="text/css" title="dark">
+<script type="text/javascript" src="/js/darkmode.js"></script><link rel="stylesheet" type="text/css" href="/css/injector.css" />
+  <title>【TGDF2021】透過團隊合作來進行關卡設計 | Kalin's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJRDV86637"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZJRDV86637');
+      }
+    </script>
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: 'ca-pub-9358449882725994',
+          enable_page_level_ads: true
+     });
+</script>
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Kalin's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Kalin's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/About/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-msgboard">
+
+    <a href="/msgBoard/" rel="section"><i class="far fa-comment-dots fa-fw"></i>訪客留言板</a>
+
+  </li>
+        <li class="menu-item menu-item-kalin-風凜魂太の宅領域">
+
+    <a href="https://kalinlai-void.github.io/ACGN/" rel="section"><i class="fas fa-book fa-fw"></i>Kalin 風凜魂太の宅領域</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://kalinlai-void.github.io/2021/07/10/TGDF2021_LevelDesign-using-team-cooperation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/40635383?s=400&u=5b7e00cf5a939d4bba7dd0d17b8cf4e037ba2f7a&v=4">
+      <meta itemprop="name" content="Kalin Lai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kalin's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【TGDF2021】透過團隊合作來進行關卡設計
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-07-10 09:17:25" itemprop="dateCreated datePublished" datetime="2021-07-10T09:17:25+08:00">2021-07-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-09-15 00:02:06" itemprop="dateModified" datetime="2021-09-15T00:02:06+08:00">2021-09-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TGDF2021-%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/" itemprop="url" rel="index"><span itemprop="name">TGDF2021_台北遊戲開發者論壇</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>講者：Josue Benavidez</p>
+<span id="more"></span>
+<p><a href="">線上直播連結(代補)</a></p>
+<h2 id="講者介紹"><a href="#講者介紹" class="headerlink" title="講者介紹"></a>講者介紹</h2><ul>
+<li>Insomniac Games 首席遊戲設計師</li>
+<li>曾參與過作品：<ul>
+<li>Sunset Overdrive（落日飆神）</li>
+<li>Spider-Man New York（蜘蛛人：紐約）</li>
+</ul>
+</li>
+<li>Email: <a href="mailto:&#74;&#x6f;&#x73;&#x75;&#101;&#46;&#78;&#x2e;&#x42;&#101;&#110;&#97;&#x76;&#x69;&#x64;&#x65;&#122;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#111;&#109;">&#74;&#x6f;&#x73;&#x75;&#101;&#46;&#78;&#x2e;&#x42;&#101;&#110;&#97;&#x76;&#x69;&#x64;&#x65;&#122;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#111;&#109;</a></li>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/JosueNBenavidez">Twitter</a></li>
+</ul>
+<h2 id="什麼是關卡設計？"><a href="#什麼是關卡設計？" class="headerlink" title="什麼是關卡設計？"></a>什麼是關卡設計？</h2><p>本演講會以「<strong>打造有特定遊戲目標的空間</strong>」的角度來說明關卡設計，因為這仍適用於大多數的遊戲空間設計。儘管遊戲和關卡的概念不斷進化，但基本目標仍然相同，還是會面臨相同的基本設計挑戰 ─ <strong>如何建構一個能給予玩家深刻互動體驗的遊戲空間</strong>。</p>
+<h2 id="Phases-of-Level-Design"><a href="#Phases-of-Level-Design" class="headerlink" title="Phases of Level Design"></a>Phases of Level Design</h2><ol>
+<li><a href="#%E5%A4%A7%E7%B6%B1%E9%9A%8E%E6%AE%B5-Outline-Phase">大綱階段 (Outline Phase)</a></li>
+<li><a href="#%E7%A0%94%E7%99%BC%E9%9A%8E%E6%AE%B5-R-amp-D-Phase">研發階段 (R&amp;D Phase)</a></li>
+<li><a href="#%E4%BD%88%E5%B1%80%E9%9A%8E%E6%AE%B5-Layout-Phase">佈局階段 (Layout Phase)</a></li>
+<li><a href="#%E7%8E%A9%E6%B3%95%E9%9A%8E%E6%AE%B5-Gameplay-Phase">玩法階段 (Gameplay Phase)</a></li>
+<li><a href="#%E9%87%8F%E7%94%A2%E9%9A%8E%E6%AE%B5-Production-Phase">量產階段 (Production Phase)</a></li>
+<li><a href="#%E6%B8%AC%E8%A9%A6%E9%9A%8E%E6%AE%B5-Testing-Phase">測試階段 (Testing Phase)</a></li>
+</ol>
+<h2 id="大綱階段-Outline-Phase"><a href="#大綱階段-Outline-Phase" class="headerlink" title="大綱階段 (Outline Phase)"></a>大綱階段 (Outline Phase)</h2><ul>
+<li>在建構遊戲之前盡可能列出關卡細節</li>
+<li>規劃關卡目標<ul>
+<li>依重要性排序</li>
+<li>列出<strong>玩家體驗</strong>「必須」包含哪些內容<ul>
+<li>可以是情感、敘事節奏、成就感</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>討論設計方向<ul>
+<li>建立工作範圍</li>
+<li><strong>不是被指示具體該做的事項</strong><ul>
+<li>設計方向是提出挑戰，作為美術和程式的工作是確定方向，並按照此方向製作最好的遊戲（畢竟各自有專業領域的知識，有責任利用這些知識以最適合的方式來應用）</li>
+</ul>
+</li>
+<li>以《蜘蛛人》為例<ul>
+<li>總監和組長對於紐約的製作方向都非常明確且一致，希望紐約標誌性的天際線和城市能夠有超越現實大小的感覺</li>
+<li>城市的確切設計細節，則由美術和程式所決定，而非組長</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>企劃組設計方向<ul>
+<li>用對白來提供上下文</li>
+<li><strong>針對關卡提供敘述</strong><ul>
+<li>希望每個關卡都能敘說一個故事，甚至是在開放世界</li>
+</ul>
+</li>
+<li><strong>賦予關卡一段歷史</strong><ul>
+<li>玩家的操作將成為「世界歷史」的一部分</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>讓每個人都能參與</li>
+<li>Level Outline<ul>
+<li>研擬關卡的流程<ul>
+<li>簡單描述玩家如何通過並體驗關卡</li>
+<li>也可以描述任務的動向</li>
+</ul>
+</li>
+<li><strong>保持彈性</strong><ul>
+<li>使用低成本、快速完成的列表來撰寫</li>
+</ul>
+</li>
+<li>規劃出明顯就能做出重大決定的大綱(outline)</li>
+</ul>
+</li>
+<li>如果卡住了，就做些實驗和嘗試<ul>
+<li>可以超前部屬</li>
+<li>做個粗糙的Prototype</li>
+</ul>
+</li>
+<li><strong>不要被自己所建構的任何東西綁得太死</strong></li>
+<li><strong>不要自我設限</strong>，此階段有無限可能</li>
+<li>Pitch it Wide<ul>
+<li>當以上皆做好準備，就可以和其他人分享</li>
+<li>可以先找總監or組長</li>
+<li>蒐集回饋</li>
+</ul>
+</li>
+</ul>
+<h2 id="研發階段-R-amp-D-Phase"><a href="#研發階段-R-amp-D-Phase" class="headerlink" title="研發階段 (R&amp;D Phase)"></a>研發階段 (R&amp;D Phase)</h2><ul>
+<li>實際開發階段</li>
+<li><strong>目標是做出可用的Prototype</strong>，需解決關卡上的風險和未知數<ul>
+<li>大綱應有一些風險和未知數</li>
+<li>如果大綱沒有把人嚇跑，代表不夠努力</li>
+<li>在建構前，回答未知及管理風險</li>
+</ul>
+</li>
+<li>閱讀開會的氣氛<ul>
+<li>注意團隊的「負面反應」</li>
+<li>重複被提及的地方，可能是團隊在擔心的</li>
+<li>先專注解決團隊最關心的問題</li>
+</ul>
+</li>
+<li>建立強大的目標<ul>
+<li>做點研究可以幫助很大</li>
+<li>盡可能找出相近的遊戲範例</li>
+</ul>
+</li>
+<li>驗證玩法<ul>
+<li>玩法應在納入關卡前進行原型驗證</li>
+<li>在此階段建構的內容應<strong>快速而簡陋</strong> ，<u>只要能讓人理解重點即可</u></li>
+</ul>
+</li>
+<li>評估玩法的可行性<ul>
+<li>專注在渴望的結果<ul>
+<li>為什麼覺得這有趣？為什麼你想要這樣做？</li>
+<li>並非專注於實際功能</li>
+</ul>
+</li>
+<li><strong>保持開放的心態</strong><ul>
+<li>每個人對於遊戲機制都有不同的見解</li>
+<li>針對遊戲目的提出替代方案</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="佈局階段-Layout-Phase"><a href="#佈局階段-Layout-Phase" class="headerlink" title="佈局階段 (Layout Phase)"></a>佈局階段 (Layout Phase)</h2><p>以前偏好使用紙本來做，但現在大多會直接3D佈局。<br>講師認為用2D或紙上畫草圖還是很有幫助，不過這是個人喜好的問題，<strong>應選最適合自己的方法開始</strong>。</p>
+<ul>
+<li><strong>目標是玩家能夠通過整個關卡</strong></li>
+<li>確定比例<ul>
+<li>把最大與最小的空間放入3D佈局</li>
+<li>使用「比例尺」，e.g. 椅子、窗戶等</li>
+<li>盡量以遊戲內視角體會</li>
+</ul>
+</li>
+<li>若有「環境組」，讓他們來檢視與評估關卡<ul>
+<li>比例錯誤是最常見的問題，並非只有新手會犯</li>
+<li>不要過於自信在自己的比例</li>
+</ul>
+</li>
+<li>以《蜘蛛人》為例，當初在開發時，專注於比例重現與正確<ul>
+<li>從最具代表性的中央公園開始建造</li>
+</ul>
+</li>
+<li>Blockout the Outline<ul>
+<li>把重點放在結構和佈局，跳過細節</li>
+</ul>
+</li>
+<li>Gameplay Tests<ul>
+<li>此階段重心是佈局，而非遊戲機制<ul>
+<li>但遊戲機制常影響佈局</li>
+</ul>
+</li>
+<li>因此可以放入<strong>簡單的玩法</strong>來幫助評估空間<ul>
+<li>可放入無複雜行為的敵人或機關</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>氣氛營造<ul>
+<li>思考關卡對玩家所產生的情緒</li>
+<li>氣氛元素（e.g. 光影、音樂等）加入時機：<strong>沒有標準答案</strong><ul>
+<li>講者喜歡在此階段就建立氣氛</li>
+<li>氣氛會影響比例認知和玩家路徑</li>
+<li>但風險是難拿捏，也可能誤導玩家，且也不一定是設計師擅長的領域<ul>
+<li>向相關技術人員尋求支援，用簡單的東西去符合關卡氣氛</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="玩法階段-Gameplay-Phase"><a href="#玩法階段-Gameplay-Phase" class="headerlink" title="玩法階段 (Gameplay Phase)"></a>玩法階段 (Gameplay Phase)</h2><ul>
+<li><strong>目標是實裝玩法</strong>，讓關卡可以正常遊玩的程度</li>
+<li>實裝玩法<ul>
+<li>提供所有互動功能</li>
+<li>保持靈活，必要時需整個砍掉重來<ul>
+<li>原則上來說：如果現在不好玩，那就算加上更多美術或細節也不會好玩<ul>
+<li>「更多美術細節也不會讓向左的東西變成向右」</li>
+</ul>
+</li>
+<li>「玩法迭代經常失敗的原因在於變動過於保守」</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Setup Controlled Tests<ul>
+<li>在製作一個可直接載入遊玩的新功能範本</li>
+<li>讓每個人都能簡單的測試，不用跑過整個關卡</li>
+</ul>
+</li>
+<li>Stay Ahead of your Team<ul>
+<li>提早公布已確定的關卡區塊</li>
+</ul>
+</li>
+<li>做小型的測試</li>
+<li>儘量在美術開始以前確定關卡造型<ul>
+<li>“Layout Lock”<ul>
+<li>只能對關卡做出最緊要的更改</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="量產階段-Production-Phase"><a href="#量產階段-Production-Phase" class="headerlink" title="量產階段 (Production Phase)"></a>量產階段 (Production Phase)</h2><p>全體總動員，此階段是協調與溝通最重要的時候。</p>
+<ul>
+<li><strong>目標是讓玩家在玩遊戲時獲得完整關卡體驗</strong></li>
+<li>設計師從開發者變成support<ul>
+<li>但還是有設計工作，需要取得平衡</li>
+<li>首要工作是<strong>保持所有進度暢行無阻</strong></li>
+</ul>
+</li>
+<li>保持關卡正常運作<ul>
+<li>因為此階段可能會改動很多功能，所以可能會壞掉</li>
+<li>必要時提供暫時修復</li>
+</ul>
+</li>
+<li>Gameplay Fine Tuning<ul>
+<li>持續調整玩法</li>
+<li>與玩法階段的大規模調整不同，進行微幅調整</li>
+<li>重複測試和迭代，<strong>嘗試去玩壞你的關卡</strong>，然後去修正</li>
+</ul>
+</li>
+<li>遇到問題時，斟酌自幹或者去請教他人</li>
+<li>定期大家「一起試玩」<ul>
+<li>讓大家一起參與，跑過所有關卡</li>
+<li>一起提出意見、提醒大家是個團隊</li>
+</ul>
+</li>
+</ul>
+<h2 id="測試階段-Testing-Phase"><a href="#測試階段-Testing-Phase" class="headerlink" title="測試階段 (Testing Phase)"></a>測試階段 (Testing Phase)</h2><ul>
+<li>此階段焦點是<strong>測試和修復錯誤</strong></li>
+<li>讓玩家可以<ol>
+<li>從頭到尾完整遊玩</li>
+<li>體驗所有遊戲功能</li>
+<li>不會遇到任何錯誤</li>
+</ol>
+</li>
+</ul>
+<h3 id="各種測試模式"><a href="#各種測試模式" class="headerlink" title="各種測試模式"></a>各種測試模式</h3><h4 id="QA-Testing"><a href="#QA-Testing" class="headerlink" title="QA Testing"></a>QA Testing</h4><ul>
+<li>所有東西都是待測試的對象</li>
+<li>與測試團隊建立溝通管道</li>
+<li>主動詢問測試團隊是否提供足夠資訊</li>
+<li>主動提出潛在問題</li>
+<li>再度強調「每個人都是團隊」，QA組也是團隊成員</li>
+</ul>
+<h4 id="User-Testing"><a href="#User-Testing" class="headerlink" title="User Testing"></a>User Testing</h4><ul>
+<li>請專業玩家試玩來做測試</li>
+<li>提供「好問題」<ul>
+<li>要問能夠採取行動的問題，不要問「知道答案也無能為力」的問題</li>
+</ul>
+</li>
+<li><strong>對蒐集的資訊做具體明確的拆解</strong></li>
+</ul>
+<h4 id="Accessibility-Testing"><a href="#Accessibility-Testing" class="headerlink" title="Accessibility Testing"></a>Accessibility Testing</h4><p>是個很大的議題，這邊只簡短介紹。</p>
+<ul>
+<li>盡可能讓關卡被很多人玩到</li>
+<li>每個人都有不同的遊玩水準</li>
+<li>改善關卡的無障礙設計，會改善每個人的體驗</li>
+<li>不要把無障礙設計視為「只能改善少數玩家族群體驗的工具」</li>
+</ul>
+<h4 id="Practical-Testing"><a href="#Practical-Testing" class="headerlink" title="Practical Testing"></a>Practical Testing</h4><p>比較非正式，可以省略，但有機會還是應該做一下。</p>
+<ul>
+<li>儘量<strong>模擬「遊玩環境」</strong><ul>
+<li>不要在辦公室進行，可以在家中的沙發上、床上等</li>
+</ul>
+</li>
+</ul>
+<h3 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h3><ul>
+<li>需和團隊討論這些反饋如何處理</li>
+<li>詢問自己，處理這個反饋是否有助於該關卡達成目標</li>
+</ul>
+<h3 id="Weigh-Changes"><a href="#Weigh-Changes" class="headerlink" title="Weigh Changes"></a>Weigh Changes</h3><ul>
+<li>在此階段更改，成本最高</li>
+<li>衡量更改的<strong>成本與效益</strong></li>
+<li>與團隊討論<ul>
+<li>如果意見分歧，可以考慮引入外部意見</li>
+</ul>
+</li>
+<li>後期更改往往是造成團隊摩擦的主因</li>
+<li>同理心與同情心<ul>
+<li>對遊戲最好的決定，不一定是對團隊最好的決定</li>
+</ul>
+</li>
+</ul>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><ul>
+<li>關卡設計流程</li>
+<li>你的功勞很重要，但你的團隊更重要！</li>
+</ul>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q &amp; A"></a>Q &amp; A</h2><ol>
+<li>關卡修正期間，任何人都還能提供意見嗎？如何決定意見的優先權或責任歸屬？<ul>
+<li>A: 設定目標─以目標為第一考量，而非人員。共識決，整個團隊一起來！沒有共識時再度尋求高層指引。</li>
+</ul>
+</li>
+<li>每個設計階段會需要多少時間？<ul>
+<li>A: Production 通常最久。不過我們花了很多時間在建置《蜘蛛人：紐約》的 Layout 階段。有些前置過程花的時間比想像中還多，但是很值得且必要！</li>
+</ul>
+</li>
+<li>小團隊的關卡設計：如果只有 1-3 人，流程上會有差異嗎？<ul>
+<li>A: 講者沒有在小團隊合作過，但是個人認為差異不大。e.g. 《Sunset: Overdrive》中，常常需要自行開發關卡。</li>
+</ul>
+</li>
+<li>可否舉例在最後階段的「必要/重要修改」？<ul>
+<li>A:《蜘蛛人：紐約》 有個 suit house 換裝功能，一開始團隊不確定是否必要，但是試玩時很多玩家希望那些 suit 能有不同功能，所以我們在最後加上了。</li>
+</ul>
+</li>
+<li>推薦 Layout 工具？<ul>
+<li>A: 以前會用紙筆。現在用Adobe illustrator、Maya，還有自製軟體等。不論如何，都該是很簡單的—用簡單幾何來生成關卡。</li>
+</ul>
+</li>
+<li>你覺得這些工具是重要/推薦使用的嗎？<ul>
+<li>A: 這個非常看個人。不用侷限。例如我曾經會在團隊開會上直接搭建紙箱來模擬蜘蛛人的城市。</li>
+</ul>
+</li>
+<li>生涯中最大的挫折？如何應對？<ul>
+<li>A: 想要做個關卡跟時代廣場有關，但是一直沒有打定主意。最後改到只剩下一條街，只好改命名、捨棄原本這個主題。因此開始思考「設計通則」，跟團隊成員們分享。這些通則對於未來的關卡開發很有幫助。</li>
+</ul>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+	  
+  <div class="popular-posts-header">相關文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\07\10\TGDF2021-Dusk-Diver-experience\" rel="bookmark">【TGDF2021】《Dusk Diver 酉閃町》遊戲結合實名地區的開發經驗分享</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\07\10\TGDF2021_thinking-outside-Superliminal\" rel="bookmark">【TGDF2021】跳脫框架思考─《Superliminal》開發經驗談</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\07\12\TGDF2020_RESIDENT-EVIL-RESISTANCE-development-experience-share\" rel="bookmark">【TGDF2020】《惡靈古堡：反抗》— 非對稱對戰遊戲開發經驗分享</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\07\10\TGDF2021_Addressables-and-Cloud-Content-Delivery\" rel="bookmark">【TGDF2021】遊戲線上內容的管理與交付（Unity）</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\07\10\TGDF2021_GameProgramming-parallelization-and-time-slicing\" rel="bookmark">【TGDF2021】遊戲程式優化技巧：平行化與時間切割（Unity）</a></div>
+    </li>
+  </ul>
+
+
+      <div>
+    <script type="text/javascript">
+      document.write(
+        "<iframe scrolling='no' frameborder='0' style='height: 200px; width: 100%;' " + 
+        "sandbox='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-storage-access-by-user-activation' " + 
+        "src='https://button.like.co/in/embed/kalinlai/button?referrer=" +
+        encodeURIComponent(location.href.split("?")[0].split("#")[0]) + "'></iframe>");
+    </script>
+</div>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/" rel="tag"># TGDF台北遊戲開發者論壇</a>
+              <a href="/tags/%E9%81%8A%E6%88%B2%E8%A8%AD%E8%A8%88/" rel="tag"># 遊戲設計</a>
+              <a href="/tags/TGDF2021/" rel="tag"># TGDF2021</a>
+              <a href="/tags/Level-Design/" rel="tag"># Level Design</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/10/TGDF2021_GameProgramming-parallelization-and-time-slicing/" rel="prev" title="【TGDF2021】遊戲程式優化技巧：平行化與時間切割（Unity）">
+      <i class="fa fa-chevron-left"></i> 【TGDF2021】遊戲程式優化技巧：平行化與時間切割（Unity）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/10/TGDF2021_thinking-outside-Superliminal/" rel="next" title="【TGDF2021】跳脫框架思考─《Superliminal》開發經驗談">
+      【TGDF2021】跳脫框架思考─《Superliminal》開發經驗談 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+<!--google_adsense-->
+
+  <div class="links-of-blogroll-title">
+    <i class="fab fa-google"></i> AdSense
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-9358449882725994"
+         data-ad-slot="9718442885"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+<!--/google_adsense-->
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AC%9B%E8%80%85%E4%BB%8B%E7%B4%B9"><span class="nav-number">1.</span> <span class="nav-text">講者介紹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF%E9%97%9C%E5%8D%A1%E8%A8%AD%E8%A8%88%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">什麼是關卡設計？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Phases-of-Level-Design"><span class="nav-number">3.</span> <span class="nav-text">Phases of Level Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E7%B6%B1%E9%9A%8E%E6%AE%B5-Outline-Phase"><span class="nav-number">4.</span> <span class="nav-text">大綱階段 (Outline Phase)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A0%94%E7%99%BC%E9%9A%8E%E6%AE%B5-R-amp-D-Phase"><span class="nav-number">5.</span> <span class="nav-text">研發階段 (R&amp;D Phase)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%88%E5%B1%80%E9%9A%8E%E6%AE%B5-Layout-Phase"><span class="nav-number">6.</span> <span class="nav-text">佈局階段 (Layout Phase)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%A9%E6%B3%95%E9%9A%8E%E6%AE%B5-Gameplay-Phase"><span class="nav-number">7.</span> <span class="nav-text">玩法階段 (Gameplay Phase)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8F%E7%94%A2%E9%9A%8E%E6%AE%B5-Production-Phase"><span class="nav-number">8.</span> <span class="nav-text">量產階段 (Production Phase)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6%E9%9A%8E%E6%AE%B5-Testing-Phase"><span class="nav-number">9.</span> <span class="nav-text">測試階段 (Testing Phase)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%84%E7%A8%AE%E6%B8%AC%E8%A9%A6%E6%A8%A1%E5%BC%8F"><span class="nav-number">9.1.</span> <span class="nav-text">各種測試模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#QA-Testing"><span class="nav-number">9.1.1.</span> <span class="nav-text">QA Testing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#User-Testing"><span class="nav-number">9.1.2.</span> <span class="nav-text">User Testing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Accessibility-Testing"><span class="nav-number">9.1.3.</span> <span class="nav-text">Accessibility Testing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Practical-Testing"><span class="nav-number">9.1.4.</span> <span class="nav-text">Practical Testing</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feedback"><span class="nav-number">9.2.</span> <span class="nav-text">Feedback</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Weigh-Changes"><span class="nav-number">9.3.</span> <span class="nav-text">Weigh Changes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90"><span class="nav-number">10.</span> <span class="nav-text">總結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">11.</span> <span class="nav-text">Q &amp; A</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kalin Lai"
+      src="https://avatars.githubusercontent.com/u/40635383?s=400&u=5b7e00cf5a939d4bba7dd0d17b8cf4e037ba2f7a&v=4">
+  <p class="site-author-name" itemprop="name">Kalin Lai</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    Just is a おたく，</br>又名 ── 風凜魂太。
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/KalinLai-void" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KalinLai-void" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lun.void52513@gmail.com" title="E-Mail → mailto:lun.void52513@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/KalinLai_void" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;KalinLai_void" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/KalinLai.void/" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;KalinLai.void&#x2F;" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/kalin_lai.void/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;kalin_lai.void&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCuZvz5Y1EQ7K-jWN_5TLfOw" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCuZvz5Y1EQ7K-jWN_5TLfOw" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://home.gamer.com.tw/homeindex.php?owner=play52513" title="巴哈小屋 → https:&#x2F;&#x2F;home.gamer.com.tw&#x2F;homeindex.php?owner&#x3D;play52513" rel="noopener" target="_blank"><i class="fas fa-gamepad fa-fw"></i>巴哈小屋</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    <!--google_adsense-->
+    
+      <div><br></div>
+      <div class="links-of-blogroll-title">
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-9358449882725994"
+            data-ad-slot="9718442885"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    
+    <!--/google_adsense-->
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fas fa-star-of-david"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kalin Lai</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'd4d527dcec1ec91415b4',
+      clientSecret: '7ddda799fc5e5b91d632ed2c892f26de2376653f',
+      repo        : 'KalinLai-void.github.io',
+      owner       : 'KalinLai-void',
+      admin       : ['KalinLai-void'],
+      id          : '8dab919f01d0459e10bfcedd1aa47ce0',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item">
+      <i class='fas fa-chevron-down'></i>    </div>
+    
+    <div id="moon-menu-item-back2top" class="moon-menu-item">
+      <i class='fas fa-chevron-up'></i>    </div>
+    
+    <div id="moon-menu-item-dark" class="moon-menu-item" onclick="switchDarkMode()">
+      <i class='fas fa-adjust'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+</body>
+
+<script src="/live2d-widget/autoload.js"></script>
+</html>
