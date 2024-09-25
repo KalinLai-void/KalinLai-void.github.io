@@ -3045,7 +3045,7 @@
   <entry>
     <title>【遊戲化】Gamification Teaching Model Using Card-Games, Slides and Learning Sheets (CSLS) 淺談卡片教學遊戲化教學設計之卡簡單模式</title>
     <url>/2024/09/25/Gamification-Teaching-Model-Using-CSLS/</url>
-    <content><![CDATA[<p>本篇為本人研究所「遊戲式數位學習」課程的作業影片之觀看筆記。<br><a href="https://sites.google.com/view/hthou/meg%E5%9C%98%E9%9A%8A">侯惠澤教授（Prof. Huei-Tse Hou）的臺科大迷你教育遊戲研究團隊（NTUST MEG）</a>所設計的卡簡單模組。其整合了<strong>遊戲式學習（Game-based Leagning, GBL）</strong>及<strong>學習遊戲化（Gamification）</strong>兩個理論到模組當中。</p>
+    <content><![CDATA[<p>本篇為本人研究所「遊戲式數位學習」課程的作業影片之觀看筆記，並在最後提出一些範例與分析自己的想法，若有其他想法歡迎可以交流。<br><a href="https://sites.google.com/view/hthou/meg%E5%9C%98%E9%9A%8A">侯惠澤教授（Prof. Huei-Tse Hou）的臺科大迷你教育遊戲研究團隊（NTUST MEG）</a>所設計的卡簡單模組。其整合了<strong>遊戲式學習（Game-based Leagning, GBL）</strong>及<strong>學習遊戲化（Gamification）</strong>兩個理論到模組當中。</p>
 <span id="more"></span>
 
 <h2 id="影片出處"><a href="#影片出處" class="headerlink" title="影片出處"></a>影片出處</h2><iframe width="1280" height="720" src="https://www.youtube.com/embed/mjLPPpFJQv8?si=Z4mYFJoyZ0XP7BvQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -3108,6 +3108,14 @@
 </blockquote>
 <p>若今天換成 MOBA 或 FPS 遊戲可能也是同理，可能都只能從次要機制會比較能套用，且<strong>我個人認為確實是能透過這類娛樂遊戲來學到東西，但就會比較薄弱，皆僅能透過附加機制與價值來學習</strong>。但若今天類型換成 RTS 策略、解謎、TCG 卡牌等等，應該就能更好地運用卡簡單模組的概念並結合了吧。</p>
 <p>而內容也有提到，卡簡單模組也是為了讓學生進入心流，那這些娛樂遊戲同樣能讓我們進入心流狀態，應該就是靠其他機制去堆疊而成，那我想這又是另外的心理分析了！順帶一提，關於遊戲的心流，我個人也蠻推薦企劃水狼陽介寫過的專欄── <a href="https://medium.com/that-game-designer/%E7%82%BA%E4%BB%80%E9%BA%BC%E6%88%91%E5%80%91%E9%9C%80%E8%A6%81%E8%AE%93%E7%8E%A9%E5%AE%B6%E9%80%B2%E5%85%A5-%E5%BF%83%E6%B5%81-98054125b729">為什麼我們需要讓玩家進入「心流」？</a>，且水狼大大也寫過非常多的企劃專欄，雖然都是比較偏向電子遊戲，但我覺得遊戲設計的概念多少都可以交互引用！</p>
+<h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><ul>
+<li>一般課程、教學現場 &#x3D;&gt; <strong>可行</strong>，無論實體&#x2F;遠距，效果最好！</li>
+<li>教育型遊戲（桌遊&#x2F;電玩） &#x3D;&gt; <strong>可行</strong>，GBL 的機制多元，可以替換許多概念。</li>
+<li>純娛樂型遊戲（桌遊&#x2F;電玩） &#x3D;&gt; <strong>大多情況不可行</strong>，主要是主機制下較難結合 GBL 及學習遊戲化，僅能由其他附加機制&#x2F;附加價值上來補充。</li>
+</ul>
+<blockquote>
+<p>我也還在學習，這篇比較像學習筆記，若有不同的想法，歡迎交流~</p>
+</blockquote>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
 <li><a href="https://youtu.be/mjLPPpFJQv8">[NTUSTMEG侯惠澤教授遊戲教學心理學之聊聊系列2]: 卡簡單教學模組 (結合遊戲式學習與遊戲化機制的遊戲教學活動設計模組)[聊聊其中的理論與初步的介紹]</a></li>
 <li><a href="https://medium.com/%E9%AD%94%E8%A1%93%E6%B2%BB%E7%99%82%E5%B8%AB-%E9%84%AD%E5%87%B1%E6%96%87kevin/%E5%8D%A1%E7%B0%A1%E5%96%AE%E9%81%8A%E6%88%B2%E5%8C%96%E5%B7%A5%E4%BD%9C%E5%9D%8A-%E9%81%8A%E6%88%B2%E7%9B%AE%E6%A8%99%E5%8D%B3%E6%98%AF%E5%AD%B8%E7%BF%92%E7%9B%AE%E6%A8%99-ace95e20b102">《卡簡單遊戲化工作坊》：遊戲目標即是學習目標</a></li>
