@@ -6,7 +6,7 @@
   <link href="https://kalinlai-void.github.io/atom.xml" rel="self"/>
   
   <link href="https://kalinlai-void.github.io/"/>
-  <updated>2022-03-28T19:42:01.848Z</updated>
+  <updated>2024-09-25T20:37:40.849Z</updated>
   <id>https://kalinlai-void.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【遊戲化】Gamification Teaching Model Using Card-Games, Slides and Learning Sheets (CSLS) 淺談卡片教學遊戲化教學設計之卡簡單模式</title>
+    <link href="https://kalinlai-void.github.io/2024/09/25/Gamification-Teaching-Model-Using-CSLS/"/>
+    <id>https://kalinlai-void.github.io/2024/09/25/Gamification-Teaching-Model-Using-CSLS/</id>
+    <published>2024-09-24T18:08:19.000Z</published>
+    <updated>2024-09-25T20:37:40.849Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本篇為本人研究所「遊戲式數位學習」課程的作業影片之觀看筆記。&lt;br&gt;&lt;a href=&quot;https://sites.google.com/view/hthou/meg%E5%9C%98%E9%9A%8A&quot;&gt;侯惠澤教授（Prof. Huei-Tse Hou）的臺科大迷你教育遊戲研究團隊（NTUST MEG）&lt;/a&gt;所設計的卡簡單模組。其整合了&lt;strong&gt;遊戲式學習（Game-based Leagning, GBL）&lt;/strong&gt;及&lt;strong&gt;學習遊戲化（Gamification）&lt;/strong&gt;兩個理論到模組當中。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="遊戲心理學" scheme="https://kalinlai-void.github.io/categories/%E9%81%8A%E6%88%B2%E5%BF%83%E7%90%86%E5%AD%B8/"/>
+    
+    
+    <category term="遊戲化教育" scheme="https://kalinlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E5%8C%96%E6%95%99%E8%82%B2/"/>
+    
+    <category term="Gamification Teaching" scheme="https://kalinlai-void.github.io/tags/Gamification-Teaching/"/>
+    
+    <category term="NTUSTMEG" scheme="https://kalinlai-void.github.io/tags/NTUSTMEG/"/>
+    
+    <category term="侯惠澤" scheme="https://kalinlai-void.github.io/tags/%E4%BE%AF%E6%83%A0%E6%BE%A4/"/>
+    
+    <category term="Huei-Tse Hou" scheme="https://kalinlai-void.github.io/tags/Huei-Tse-Hou/"/>
+    
+    <category term="卡牌" scheme="https://kalinlai-void.github.io/tags/%E5%8D%A1%E7%89%8C/"/>
+    
+    <category term="遊戲心理學" scheme="https://kalinlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E5%BF%83%E7%90%86%E5%AD%B8/"/>
+    
+    <category term="卡簡單教學模組" scheme="https://kalinlai-void.github.io/tags/%E5%8D%A1%E7%B0%A1%E5%96%AE%E6%95%99%E5%AD%B8%E6%A8%A1%E7%B5%84/"/>
+    
+  </entry>
   
   <entry>
     <title>【Image Processing】Morphology 形態學</title>
@@ -146,7 +179,7 @@
     <link href="https://kalinlai-void.github.io/2021/07/10/TGDF2021-Dusk-Diver-experience/"/>
     <id>https://kalinlai-void.github.io/2021/07/10/TGDF2021-Dusk-Diver-experience/</id>
     <published>2021-07-10T04:57:34.000Z</published>
-    <updated>2021-09-14T17:25:28.000Z</updated>
+    <updated>2024-09-24T18:45:05.408Z</updated>
     
     
     <summary type="html">&lt;p&gt;講者：朱彥儒&lt;/p&gt;
@@ -488,31 +521,6 @@
     <category term="遊戲行銷與商務" scheme="https://kalinlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A1%8C%E9%8A%B7%E8%88%87%E5%95%86%E5%8B%99/"/>
     
     <category term="社群經營" scheme="https://kalinlai-void.github.io/tags/%E7%A4%BE%E7%BE%A4%E7%B6%93%E7%87%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【TGDF2020】《惡靈古堡：反抗》— 非對稱對戰遊戲開發經驗分享</title>
-    <link href="https://kalinlai-void.github.io/2020/07/12/TGDF2020_RESIDENT-EVIL-RESISTANCE-development-experience-share/"/>
-    <id>https://kalinlai-void.github.io/2020/07/12/TGDF2020_RESIDENT-EVIL-RESISTANCE-development-experience-share/</id>
-    <published>2020-07-12T01:28:00.000Z</published>
-    <updated>2021-07-21T22:59:50.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;講者: 李健源, AL Yang&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="TGDF2020_台北遊戲開發者論壇" scheme="https://kalinlai-void.github.io/categories/TGDF2020-%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
-    
-    
-    <category term="TGDF2020" scheme="https://kalinlai-void.github.io/tags/TGDF2020/"/>
-    
-    <category term="TGDF台北遊戲開發者論壇" scheme="https://kalinlai-void.github.io/tags/TGDF%E5%8F%B0%E5%8C%97%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC%E8%80%85%E8%AB%96%E5%A3%87/"/>
-    
-    <category term="遊戲製程與管理" scheme="https://kalinlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A3%BD%E7%A8%8B%E8%88%87%E7%AE%A1%E7%90%86/"/>
-    
-    <category term="遊戲設計" scheme="https://kalinlai-void.github.io/tags/%E9%81%8A%E6%88%B2%E8%A8%AD%E8%A8%88/"/>
     
   </entry>
   

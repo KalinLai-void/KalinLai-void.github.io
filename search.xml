@@ -1317,8 +1317,8 @@
 <li>動漫風格的動作遊戲</li>
 <li>高度還原西門町場景</li>
 <li>網銀國際開發、傑仕登發行</li>
-<li>三平台（Switch、PS4、PC）全球同步發行，並具備台/日配音</li>
-<li>一言以蔽之：「<strong>PC/家用平台上以西門町為背景的動漫風格動作遊戲</strong>」</li>
+<li>三平台（Switch、PS4、PC）全球同步發行，並具備台&#x2F;日配音</li>
+<li>一言以蔽之：「<strong>PC&#x2F;家用平台上以西門町為背景的動漫風格動作遊戲</strong>」</li>
 </ul>
 <h3 id="為什麼選擇西門町"><a href="#為什麼選擇西門町" class="headerlink" title="為什麼選擇西門町"></a>為什麼選擇西門町</h3><ul>
 <li>最根本原因在於，團隊成員有新有舊，但都是第一次做原創作品</li>
@@ -1330,7 +1330,7 @@
 </ul>
 <h4 id="考量：產品對外"><a href="#考量：產品對外" class="headerlink" title="考量：產品對外"></a>考量：產品對外</h4><ul>
 <li>如何追求產品特色？</li>
-<li>本土化 = 國際化 -&gt; 找出產品的<strong>標的物</strong><ul>
+<li>本土化 &#x3D; 國際化 -&gt; 找出產品的<strong>標的物</strong><ul>
 <li>外國朋友熟悉，或是可以迅速取得資訊的地方</li>
 <li>調查發現西門町排名外國人最愛景點前三</li>
 </ul>
@@ -1338,7 +1338,7 @@
 </ul>
 <h4 id="考量：對內製成"><a href="#考量：對內製成" class="headerlink" title="考量：對內製成"></a>考量：對內製成</h4><ul>
 <li>首次成軍，需避免過於發散的討論</li>
-<li>第一次使用商用引擎（Unreal），所以成員都很陌生，需讓程式/企劃/美術都能快速進入實作</li>
+<li>第一次使用商用引擎（Unreal），所以成員都很陌生，需讓程式&#x2F;企劃&#x2F;美術都能快速進入實作</li>
 <li>因此，<strong>需要能夠引起共鳴，且方便取財的景點</strong><ul>
 <li>西門町距離網銀台北分公司捷運路程僅10分鐘</li>
 </ul>
@@ -3040,6 +3040,92 @@
         <tag>電腦視覺</tag>
         <tag>形態學</tag>
         <tag>Morphology</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【遊戲化】Gamification Teaching Model Using Card-Games, Slides and Learning Sheets (CSLS) 淺談卡片教學遊戲化教學設計之卡簡單模式</title>
+    <url>/2024/09/25/Gamification-Teaching-Model-Using-CSLS/</url>
+    <content><![CDATA[<p>本篇為本人研究所「遊戲式數位學習」課程的作業影片之觀看筆記。<br><a href="https://sites.google.com/view/hthou/meg%E5%9C%98%E9%9A%8A">侯惠澤教授（Prof. Huei-Tse Hou）的臺科大迷你教育遊戲研究團隊（NTUST MEG）</a>所設計的卡簡單模組。其整合了<strong>遊戲式學習（Game-based Leagning, GBL）</strong>及<strong>學習遊戲化（Gamification）</strong>兩個理論到模組當中。</p>
+<span id="more"></span>
+
+<h2 id="影片出處"><a href="#影片出處" class="headerlink" title="影片出處"></a>影片出處</h2><iframe width="1280" height="720" src="https://www.youtube.com/embed/mjLPPpFJQv8?si=Z4mYFJoyZ0XP7BvQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2 id="遊戲式學習-vs-學習遊戲化"><a href="#遊戲式學習-vs-學習遊戲化" class="headerlink" title="遊戲式學習 vs. 學習遊戲化"></a>遊戲式學習 vs. 學習遊戲化</h2><ul>
+<li>遊戲式學習（Game-based Leagning, GBL）：透過遊戲來做教學、學習的過程。有一個完整的遊戲（桌遊、電玩…etc），讓大家從中學習。 <ul>
+<li>&#x3D;&gt; <strong>若是要在<u>課堂中</u>安排一個完整的遊戲，難度較高。</strong></li>
+<li>若僅是想在課程中加入一些遊戲的元素，則可以使用遊戲化（Gamification）的概念。</li>
+</ul>
+</li>
+<li>學習遊戲化（Gamification）：將學習的歷程加入遊戲的關鍵因子（如：PBL機制），讓過程中像是玩一場遊戲。<ul>
+<li>PBL 的原意為點數（Points）、徽章（Badges）、排行（Leaderboards），不過研究指出「徽章」對於學習表現並沒有顯著影響，所以建議改成獎勵（Benefit）。<br> (推薦閱讀：<a href="https://afu.tw/1077">《教學的技術》教學遊戲化 PBL －福哥版</a>)</li>
+</ul>
+</li>
+</ul>
+<h2 id="卡簡單模組（CSLS-Model）"><a href="#卡簡單模組（CSLS-Model）" class="headerlink" title="卡簡單模組（CSLS Model）"></a>卡簡單模組（CSLS Model）</h2><p><img src="/images/Gamification-Teaching-Model-Using-CSLS/1.png"></p>
+<ul>
+<li>運用三種教學媒材：<strong>卡</strong>片（Card games）、<strong>簡</strong>報（Slides）、學習<strong>單</strong>（Learning Sheets）<ul>
+<li>卡片跟簡報彼此間會交互進行，為情境式的活動。</li>
+<li>可以是實體，也可以是虛擬&#x2F;遠距。</li>
+</ul>
+</li>
+</ul>
+<p>首先會使用<strong>「簡報」</strong>來解說、講解，以及情境脈絡的連結，且通常會加上故事來做引導，來引發學生專注參與的動機；接著發放<strong>「卡片」</strong>讓學生操作，當作一個GBL的元素，讓學生間產生互動，使其在互動的過程中探索來激盪想法，同時也能提供學生先備知識的掌握、技能的訓練等；最後讓玩家將所學思考的歷程，透過<strong>「學習單」</strong>的方式來回顧記錄下來（讓玩家去紀錄遊戲中曾經經歷過的事物，e.g. 遊戲的進度狀況、血量等）。</p>
+<ul>
+<li>卡片遊戲（10 ~ 20 mins）：著重在提供同儕間的互動。</li>
+<li>簡報媒體：提供情境的脈絡幫助學生聚焦。可以是多媒體的應用。</li>
+<li>學習單：扮演學習歷程與回顧評估的角色。</li>
+</ul>
+<p>導入學習單的概念，是為了避免學生體會到<strong>「好玩但學不到」或「學得到但不好玩」</strong>：很多時候在安排活動的時候，可能為了讓學生學習，而忽略遊戲的元素，而導致不好玩，故學生可能會沒有學習的動機，且又時常擔心學生只是因為好玩，而沒有學到東西。<u>所以需要依賴認知元素的設計，考慮人的大腦在學習的過程中的變化，此部分涉及注意力、記憶提取、後設認知等，這些都需要去評估整體成效</u>。但學習單必須搭配遊戲來用，而非單獨採用。</p>
+<h3 id="那遊戲化在哪？"><a href="#那遊戲化在哪？" class="headerlink" title="那遊戲化在哪？"></a>那遊戲化在哪？</h3><ul>
+<li>上方出現遊戲式學習（GBL）的部分是在卡片遊戲中，但可能也就短短幾十分鐘。在安排課堂時，不一定會是要學生玩桌遊or卡片遊戲，那<strong>主要還是要思考如何讓學生維持他學習的動機</strong>。&#x3D;&gt; 延伸概念：心流理論及鷹架理論的設計。</li>
+<li>透過情境讓學生融入課程，可能是累積積分、達成成就感等，而非讓學生只是玩一個遊戲就結束了。<br>&#x3D;&gt; 將遊戲化的概念<strong>「Point Mechanism（積分機制）」</strong>加入在整個教學&#x2F;學習活動中。</li>
+</ul>
+<p>所以整個卡簡單模組，是期待能同時得到<strong>「卡片」</strong>當作GBL元素及套用遊戲化的<strong>「積分機制」</strong>，來讓學生能夠維持動機，使其進入心流，透過後設認知等心理學得概念來學習、理解課程的內容。所以整個卡簡單教學模組涉及到很多關於遊戲及教育心理學上的研究，也已經在教育界實戰多年，侯老師的團隊也發表了數篇 Paper。</p>
+<h2 id="筆者的想法"><a href="#筆者的想法" class="headerlink" title="筆者的想法"></a>筆者的想法</h2><p>基本上影片就是用比較概念的方式帶過相關概念，先簡單談談了<strong>遊戲式學習（Game-based Leagning, GBL）</strong>及<strong>學習遊戲化（Gamification）</strong>的差別，然後帶出侯老師研究團隊提出的方法<strong>「卡簡單模組」</strong>（第一次看到這中文名字時實在想不通是什麼意思，原來是簡稱啊XD）。</p>
+<p>雖然我是資工系出身，但我的背景及未來走向都是以「泛娛樂產業」來著手，近幾年來也持續在學習關於遊戲心理學、遊戲企劃相關的理論，目的都是做出好玩的遊戲，同時當然也希望遊戲本身擁有學習價值（希望玩家能從中學到點什麼）。但在聽完這個主題後，我覺得稍微可惜，因為卡簡單模組主要是運用在教學課程上，但我對於「教育」沒有興趣，不過我對設計遊戲是非常感興趣的，所以我就在思考這個方法我可以怎麼運用。</p>
+<h3 id="範例：以本課程9-19的線上課的模式舉例"><a href="#範例：以本課程9-19的線上課的模式舉例" class="headerlink" title="範例：以本課程9&#x2F;19的線上課的模式舉例"></a>範例：以本課程9&#x2F;19的線上課的模式舉例</h3><p>先來簡單分析，卡簡單模式弱勢運用在教學課程上，就如同上週（9&#x2F;19）的線上課模式，讓學生玩<u>卡牌</u>桌遊來激發想法與組內討論，而雖然是用Google Meet，但課堂間去<u>營造競爭的情境</u>（分組對抗、緊張音樂等方式），最後讓各組去填寫<u>學習單</u>去回顧、分析（甚至我現在在寫這些想法也是學習單的一環，雖然跟課程情境無關，但我接上關聯了XD），而過程中讓各組能夠去賺積分點數，使學生能更進入心流，動機感更強烈。</p>
+<h3 id="教育類型的電玩-桌遊套用卡簡單模組"><a href="#教育類型的電玩-桌遊套用卡簡單模組" class="headerlink" title="教育類型的電玩&#x2F;桌遊套用卡簡單模組"></a>教育類型的電玩&#x2F;桌遊套用卡簡單模組</h3><p>而再來我個人就需要思考，若今天不是教學課程的案例，我該如何運用？先循序漸進吧，我今天若是做一款教育類型的電玩&#x2F;桌遊，我覺得依舊可以套用這個模式，但這邊的卡牌可以替換成其他不同機制（如：戰棋、解謎等），因為卡牌的存在就是為了導入GBL，而再來我們可以透過氛圍&#x2F;故事來去營造情境，到了遊戲中間&#x2F;最後可以顯示玩家在遊玩的歷程，輔助玩家去學習、檢討、分析遊戲中的狀況等等，<strong>這部分我認為可以是抽象的，重點是要能讓玩家去學到東西</strong>，過程中依舊可以搭配一些積分機制。</p>
+<blockquote>
+<p>這邊剛好就舉例近期玩過的一款<strong>桌遊</strong>來舉例：迷走工作坊的<a href="https://www.zeczec.com/projects/tw2045?srsltid=AfmBOoqNXpK-OHebUtfCXXXMIJFJOq6oKDxbsnYzjeNmeFT__pw5owUy">《2045》</a>，這是我上周去<a href="https://utexpo.com/app/zh/exhibition/taiwanbgexpo/lobby">2024台灣新銳桌遊博覽會</a>試玩的作品。</p>
+<ol>
+<li>其營造的氛圍，就是未來2045年的台灣，如果中國打過來我們該怎麼辦？玩家的情境就是需要去扮演各自的陣營，來權衡自身的利益。</li>
+<li>機制有很多，但我認為在GBL上的核心機制上是使用<strong>行動點</strong>的機制，讓玩家選擇並學習遇到相對應的事件時，以自身利益來說，我該怎麼處置，是該執行卡牌效果？補兵力？移動？甚至是投共？</li>
+<li>學習單的部分，我認為這邊屬於抽象概念，過程中或遊戲結束都可能會出現，主要可以分成兩個面向：<strong>「自身利益的權量」</strong>以及<strong>「反思：若共軍真的打過來，身為台灣人民我該怎麼辦？」</strong></li>
+</ol>
+<p>並且從中能獲得很多種類的積分：功勳、分數、區域&#x2F;政治&#x2F;企業等級等。</p>
+</blockquote>
+<p>這邊僅舉桌遊範例，若是教育類電玩我想也是同理，只是能運用的機制更多更廣。</p>
+<h3 id="其他純娛樂性的桌遊，甚至電玩，能套用嗎？"><a href="#其他純娛樂性的桌遊，甚至電玩，能套用嗎？" class="headerlink" title="其他純娛樂性的桌遊，甚至電玩，能套用嗎？"></a>其他純娛樂性的桌遊，甚至電玩，能套用嗎？</h3><p>最後，來探討比較個人的問題，上方也說明過這個方法可能僅適用教學類（課程、教育型遊戲等），所以我這邊想要探討若是<strong>純</strong>娛樂型（FPS、MOBA、動作等）的遊戲類型，是否也能套用這個模組？我認為是可以，但可能就比較不明顯且薄弱，理由在於：我雖然依舊可以安排情境與故事，依舊可以設計機制，但會比較難去以 GBL 的機制來設計主機制，可能僅能作為次要機制來服務主機制；其次，學習單的部分我個人認為頂多僅能讓玩家分析遊戲中的狀況，而不太能分析、學習其他教育意義的內容。所以個人認為是比較難的。</p>
+<blockquote>
+<p>那我這邊就舉個電玩案例好了：台灣的赤燭遊戲開發的2D獨立<strong>動作</strong>遊戲<a href="https://store.steampowered.com/app/1809540/_/">《九日》</a>。是一款東方道龐克風格的2D橫向卷軸動作遊戲。</p>
+<ol>
+<li>其營造出他自己的道龐克世界觀，並且大多是以東方元素為主。</li>
+<li>機制上很多，但在主機制（探索、2D戰鬥）上已經沒有常見 GBL 的元素，硬要說的話，可能貼符咒、禱告、血量等次要機制，可以讓我們學習到道教文化及其用詞(?)，除此之外，GBL的機制好像都很薄弱？</li>
+<li>學習單的部分，基本上都是在學習及探討遊戲內的東西，比如「BOSS的打法」、「地圖探索」等等，好像幾乎沒有教育元素。</li>
+</ol>
+<p>積分固然有，技能點、石頭、血量等等應該都算，但主要不適用卡簡單模組的點在於那些教育相關的元素。</p>
+<p>（以上是我的分析，可能有漏掉，歡迎補充）</p>
+</blockquote>
+<p>若今天換成 MOBA 或 FPS 遊戲可能也是同理，可能都只能從次要機制會比較能套用。但若今天類型換成 RTS 策略、解謎、TCG 卡牌等等，應該就能結合卡簡單模組的概念吧。</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a href="https://youtu.be/mjLPPpFJQv8">[NTUSTMEG侯惠澤教授遊戲教學心理學之聊聊系列2]: 卡簡單教學模組 (結合遊戲式學習與遊戲化機制的遊戲教學活動設計模組)[聊聊其中的理論與初步的介紹]</a></li>
+<li><a href="https://medium.com/%E9%AD%94%E8%A1%93%E6%B2%BB%E7%99%82%E5%B8%AB-%E9%84%AD%E5%87%B1%E6%96%87kevin/%E5%8D%A1%E7%B0%A1%E5%96%AE%E9%81%8A%E6%88%B2%E5%8C%96%E5%B7%A5%E4%BD%9C%E5%9D%8A-%E9%81%8A%E6%88%B2%E7%9B%AE%E6%A8%99%E5%8D%B3%E6%98%AF%E5%AD%B8%E7%BF%92%E7%9B%AE%E6%A8%99-ace95e20b102">《卡簡單遊戲化工作坊》：遊戲目標即是學習目標</a></li>
+<li><a href="https://afu.tw/1077">《教學的技術》教學遊戲化 PBL －福哥版（2）</a></li>
+<li><a href="https://medium.com/that-game-designer/%E7%82%BA%E4%BB%80%E9%BA%BC%E6%88%91%E5%80%91%E9%9C%80%E8%A6%81%E8%AE%93%E7%8E%A9%E5%AE%B6%E9%80%B2%E5%85%A5-%E5%BF%83%E6%B5%81-98054125b729">為什麼我們需要讓玩家進入「心流」？</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>遊戲心理學</category>
+      </categories>
+      <tags>
+        <tag>遊戲化教育</tag>
+        <tag>Gamification Teaching</tag>
+        <tag>NTUSTMEG</tag>
+        <tag>侯惠澤</tag>
+        <tag>Huei-Tse Hou</tag>
+        <tag>卡牌</tag>
+        <tag>遊戲心理學</tag>
+        <tag>卡簡單教學模組</tag>
       </tags>
   </entry>
 </search>
