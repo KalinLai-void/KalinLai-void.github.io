@@ -204,12 +204,14 @@ table th:nth-of-type(2) {
   - 數位
     - 嘰咕嘰咕物語 - 大學專題 **待補連結**
     - [3D 戰鬥冒險遊戲（UE4 with ALS）](https://youtube.com/playlist?list=PLQWBJqv0t-8MMzfjmlem-0COft8JJBAKM) - 練習用
-    - [3D 砍殺遊戲（UE4）](https://youtu.be/5jYg5EQLKj8) - 線上課程作品
+    - [3D 砍殺遊戲（UE4）](https://kalinkonta.itch.io/3d-hack-and-slash-game) - 線上課程作品
     - [簡單的終端機貪食蛇小遊戲（使用 PortAudio + Libsndfile）](https://github.com/KalinLai-void/SnakeGame) - 課程專題
+    - [AR 打地鼠遊戲](https://kalinkonta.itch.io/ar-whack-a-mole) - 課程專題
     - [戰車：堂吒風雲（Unity）](https://kalinkonta.itch.io/faust-game-jam-2023-tank-bbf) - Game Jam 作品
+    - 更多可看[我的 itch.io 頁面](https://kalinkonta.itch.io/)
   - 桌遊
-    - 地皮操盤手 - 課程作品，繼續開發ing **日後出版**
-    - 聖物獵影 - 輔導夥伴做作品參加[比賽](https://bhuntr.com/tw/competitions/nelr1bk4kvhw6hwjtz) **日後出版**
+    - 地皮操盤手 - 課程作品，繼續開發ing - **日後出版**
+    - 聖物獵影 - 輔導夥伴做作品參加[比賽](https://bhuntr.com/tw/competitions/nelr1bk4kvhw6hwjtz) - **日後出版**
 - 美術
   - 3D建模
     - [小綿羊‧風鈴草‧道別（Maya）](https://twitter.com/KalinLai_void/status/1544645020237475840) - 課程作品
