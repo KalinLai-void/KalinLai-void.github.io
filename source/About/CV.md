@@ -9,8 +9,10 @@ date: 2023-10-10 07:18:34
 
 # <br><br><br> Kalin G. Lai (賴冠綸)
 Kalin Guanlun Lai
-<i class="fab fa-orcid"></i> ORCiD: [orcid.org/0009-0009-4622-3502](https://orcid.org/0009-0009-4622-3502)
+<i class="fa fa-google-scholar"></i> Google Scholar: [citations?user=XxMML2oAAAAJ&hl=en](https://scholar.google.com/citations?user=XxMML2oAAAAJ&hl=en)
+<i class="fab fa-orcid"></i> ORCiD: [0009-0009-4622-3502](https://orcid.org/0009-0009-4622-3502)
 <i class="fa fa-envelope"></i> E-mail (Personal): [lun.void52513@gmail.com](mailto:lun.void52513@gmail.com)
+<i class="fa fa-envelope"></i> E-mail (School): [M11315207@mail.ntust.edu.tw](M11315207@mail.ntust.edu.tw) / [M11315207@gapps.ntust.edu.tw](M11315207@gapps.ntust.edu.tw)
 <i class="fa fa-envelope"></i> E-mail (School): [C108151131@nkust.edu.tw](C108151131@nkust.edu.tw)
 
 ### RESEARCH INTERESTS
@@ -42,10 +44,15 @@ Kalin Guanlun Lai
 #### Journal Papers
 - <u>Kalin G. Lai</u>, Hsu-Chun Huang, Shang-Yi Lin, Wei-Ting Lin and Kawuu W. Lin, "Tennis shot side-view and top-view data set for player analysis in Tennist", *Data in Brief* (2024). DOI: [10.1016/j.dib.2024.110438](https://doi.org/10.1016/j.dib.2024.110438)
 - Chun-Yi Wang, <u>Kalin G. Lai</u>, Hsu-Chun Huang, Wei-Ting Lin, "Tennis Player Actions Dataset for Human Pose Estimation", *Data in Brief* (2024). DOI: [10.1016/j.dib.2024.110665](https://doi.org/10.1016/j.dib.2024.110665)
+- <u>Kalin G. Lai</u>, Hsu-Chun Huang, Shang-Yi Lin, Wei-Ting Lin and Kawuu W. Lin, "Analyzing the Forecast of Tennis Ball Landing Points: An Interdisciplinary Study of Virtual-Reality Integration and Multi-Camera Perspectives", *Expert Systems With Applications*. (2025) DOI: [doi.org/10.1016/j.eswa.2025.127903](https://doi.org/10.1016/j.eswa.2025.127903)
 
 - Working Papers
-  - <u>Kalin G. Lai</u>, Hsu-Chun Huang, Shang-Yi Lin, Wei-Ting Lin and Kawuu W. Lin, "Analyzing the Forecast of Tennis Ball Landing Points: An Interdisciplinary Study of Virtual-Reality Integration and Multi-Camera Perspectives", *Expert Systems With Applications*. **(Under Review. DOI: [10.2139/ssrn.4608926](https://doi.org/10.2139/ssrn.4608926))**
-  - <u>Kalin G. Lai</u>, Hsu-Chun Huang, Wei-Ting Lin, Kawuu W. Lin, "Analyzing Athlete Performance in Tennis Training A Computer Vision Perspective on Contact Point Characteristics"
+  - <u>Kalin G. Lai</u>, Hsu-Chun Huang, Wei-Ting Lin, Kawuu W. Lin, "[TennisSimulator](https://github.com/KalinLai-void/TennisSimulator)"
+  - <u>Kalin G. Lai</u>, Hsu-Chun Huang, Wei-Ting Lin, Kawuu W. Lin, "[TennisPlayerAnalysis](https://github.com/KalinLai-void/TennisPlayerAnalysis)"
+    - Analyzing Tennis Player Performance: A Study of Contact Points and Poses Based on OpenPose Model (with Hsu-Chun Huang, Wei-Ting Lin and Kawuu W. Lin)
+      - In tennis player shotting, obtaining the player's skeleton and hitting point through [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) model to analyze the player's shotting pose.
+      - Divide into 2 group to make a comparison.
+  - <u>Kalin G. Lai</u>, Hsu-Chun Huang, Wei-Ting Lin, Kawuu W. Lin, "[TennisPoseTrainer](https://github.com/KalinLai-void/TennisPoseTrainer)"
   
 #### Conference and Seminar Papers
 - <u>Kalin G. Lai (賴冠綸)</u>, Shang-Yi Lin (林尚毅), Wei-Ting Lin (林暐庭), Hsu-Chun Huang (黃昫鈞) and Kawuu W. Lin (林威成), "Research on the Development of Tennis Tracking and 3D Trajectory Simulation System," in the 36th IPPR Conference on Computer Vision, Graphics, and Image Processing (CVGIP2023) (第 36 屆電腦視覺、圖學暨影像處理研討會), National Quemoy University (國立金門大學), Kinmen, Taiwan, pp. 690-694, August 20-22, 2023. **<mark style="color: darkred">(Speaker)</mark>**
@@ -57,8 +64,3 @@ Kalin Guanlun Lai
 
 #### Papers Competition
 - <u>賴冠綸</u> 、林暐庭、林威成，〈應用智慧辨識技術於精準網球抽球能力提升之研究與實作〉，112年中國工程師學會學生分會工程論文競賽 資訊組 **<mark style="color: darkred">（優等獎）</mark>** ，民國112年。
-
-### WORK IN PROGRESS
-- Analyzing Tennis Player Performance: A Study of Contact Points and Poses Based on OpenPose Model (with Hsu-Chun Huang, Wei-Ting Lin and Kawuu W. Lin)
-  - In tennis player shotting, obtaining the player's skeleton and hitting point through [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) model to analyze the player's shotting pose.
-  - Divide into 2 group to make a comparison.

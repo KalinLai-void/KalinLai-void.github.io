@@ -27,11 +27,20 @@ table th:nth-of-type(2) {
 
 ### ✨ 創立團隊
 <details> 
-  <summary> 師公現有延畢牲必延有限公司 共同創辦人 </summary>
+  <summary> 師公現有延畢牲必延有限公司 共同創辦人（2024/05 ~ Now） </summary>
 
   - [數位名片](https://portaly.cc/delayGG)
   - 大學延畢時期因修課，與夥伴成立的團隊，目前以開發桌遊為主。
-  - 目前開發中作品：地皮操盤手、聖物獵影
+  - 目前開發中作品：《地皮操盤手》、《聖物獵影》
+
+</details>
+
+<details> 
+  <summary> 璐光遊戲工作室 / LuxAria Games Studio 共同創辦人、程式、企劃（2025/03 ~ Now） </summary>
+
+  - [數位名片](https://portaly.cc/LuxAria-Games)
+  - 研究所期間與同 Lab 同學修課，與設計系合作後衍伸組成的團隊，目前專注於 VR 音遊開發。
+  - 目前開發中作品：《Code:ARIA》
 
 </details>
 

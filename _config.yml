@@ -105,7 +105,7 @@ theme: NexT
 #deploy:
 #  type: git
 #  repo: https://github.com/KalinLai-void/KalinLai-void.github.io.git
-#  branch: master
+#  branch: gh-pages
 
 search:
   path: search.xml
