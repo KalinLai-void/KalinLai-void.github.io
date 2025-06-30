@@ -9,7 +9,7 @@ date: 2023-10-10 07:18:34
 
 # <br><br><br> Kalin G. Lai (賴冠綸)
 Kalin Guanlun Lai
-<i class="fa fa-google-scholar"></i> Google Scholar: [citations?user=XxMML2oAAAAJ&hl=en](https://scholar.google.com/citations?user=XxMML2oAAAAJ&hl=en)
+<i class="fa fa-google-scholar"></i> [Google Scholar](https://scholar.google.com/citations?user=XxMML2oAAAAJ&hl=en)
 <i class="fab fa-orcid"></i> ORCiD: [0009-0009-4622-3502](https://orcid.org/0009-0009-4622-3502)
 <i class="fa fa-envelope"></i> E-mail (Personal): [lun.void52513@gmail.com](mailto:lun.void52513@gmail.com)
 <i class="fa fa-envelope"></i> E-mail (School 1-1): [M11315207@mail.ntust.edu.tw](M11315207@mail.ntust.edu.tw)
