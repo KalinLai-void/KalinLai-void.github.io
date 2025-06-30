@@ -12,9 +12,9 @@ Kalin Guanlun Lai
 <i class="fa fa-google-scholar"></i> [Google Scholar](https://scholar.google.com/citations?user=XxMML2oAAAAJ&hl=en)
 <i class="fab fa-orcid"></i> ORCiD: [0009-0009-4622-3502](https://orcid.org/0009-0009-4622-3502)
 <i class="fa fa-envelope"></i> E-mail (Personal): [lun.void52513@gmail.com](mailto:lun.void52513@gmail.com)
-<i class="fa fa-envelope"></i> E-mail (School 1-1): [M11315207@mail.ntust.edu.tw](M11315207@mail.ntust.edu.tw)
-<i class="fa fa-envelope"></i> E-mail (School 1-2): [M11315207@gapps.ntust.edu.tw](M11315207@gapps.ntust.edu.tw)
-<i class="fa fa-envelope"></i> E-mail (School 2): [C108151131@nkust.edu.tw](C108151131@nkust.edu.tw)
+<i class="fa fa-envelope"></i> E-mail (School): [M11315207@mail.ntust.edu.tw](M11315207@mail.ntust.edu.tw)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / [M11315207@gapps.ntust.edu.tw](M11315207@gapps.ntust.edu.tw)
+<i class="fa fa-envelope"></i> E-mail (School): [C108151131@nkust.edu.tw](C108151131@nkust.edu.tw)
 
 ### RESEARCH INTERESTS
 - Video Game
