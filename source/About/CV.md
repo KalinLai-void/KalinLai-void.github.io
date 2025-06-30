@@ -5,7 +5,7 @@ date: 2023-10-10 07:18:34
 ---
 
 ###### [Return to About Page](/About/)
-<p><img align="right" src="/images/CV/pic.png" width="30%" style="opacity:1.0; margin-left: 10px"></p>
+<p><img align="right" src="/images/CV/pic.png" width="25%" style="opacity:1.0; margin-left: 10px"></p>
 
 # <br><br><br> Kalin G. Lai (賴冠綸)
 Kalin Guanlun Lai
