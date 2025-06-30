@@ -5,15 +5,16 @@ date: 2023-10-10 07:18:34
 ---
 
 ###### [Return to About Page](/About/)
-<p><img align="right" src="/images/CV/pic.png" width="28%" style="opacity:1.0; margin-left: 10px"></p>
+<p><img align="right" src="/images/CV/pic.png" width="30%" style="opacity:1.0; margin-left: 10px"></p>
 
-# <br><br><br><br> Kalin G. Lai (賴冠綸)
+# <br><br><br> Kalin G. Lai (賴冠綸)
 Kalin Guanlun Lai
 <i class="fa fa-google-scholar"></i> Google Scholar: [citations?user=XxMML2oAAAAJ&hl=en](https://scholar.google.com/citations?user=XxMML2oAAAAJ&hl=en)
 <i class="fab fa-orcid"></i> ORCiD: [0009-0009-4622-3502](https://orcid.org/0009-0009-4622-3502)
 <i class="fa fa-envelope"></i> E-mail (Personal): [lun.void52513@gmail.com](mailto:lun.void52513@gmail.com)
-<i class="fa fa-envelope"></i> E-mail (School): [M11315207@mail.ntust.edu.tw](M11315207@mail.ntust.edu.tw) / [M11315207@gapps.ntust.edu.tw](M11315207@gapps.ntust.edu.tw)
-<i class="fa fa-envelope"></i> E-mail (School): [C108151131@nkust.edu.tw](C108151131@nkust.edu.tw)
+<i class="fa fa-envelope"></i> E-mail (School 1-1): [M11315207@mail.ntust.edu.tw](M11315207@mail.ntust.edu.tw)
+<i class="fa fa-envelope"></i> E-mail (School 1-2): [M11315207@gapps.ntust.edu.tw](M11315207@gapps.ntust.edu.tw)
+<i class="fa fa-envelope"></i> E-mail (School 2): [C108151131@nkust.edu.tw](C108151131@nkust.edu.tw)
 
 ### RESEARCH INTERESTS
 - Video Game
