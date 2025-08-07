@@ -21,11 +21,12 @@ Kalin Guanlun Lai (賴冠綸)
 ### RESEARCH INTERESTS
 - Video Game
 - Computer Graphics
-- Human Computer Interaction
+- Human Computer Interaction (HCI)
 - Game AI
 - VR, AR, MR, XR
 - Computer Vision
 - Game Design
+- Game-related anything...
 
 ### EDUCATION
 - **Master of Science (M.S.) in Computer Science and Information Engineering**, Excepted 2026
@@ -45,9 +46,10 @@ Kalin Guanlun Lai (賴冠綸)
 
 ### PUBLICATION
 #### Journal Papers
-- <u>Kalin G. Lai</u>, Hsu-Chun Huang, Shang-Yi Lin, Wei-Ting Lin and Kawuu W. Lin, "Tennis shot side-view and top-view data set for player analysis in Tennist", *Data in Brief* (2024). DOI: [10.1016/j.dib.2024.110438](https://doi.org/10.1016/j.dib.2024.110438)
-- Chun-Yi Wang, <u>Kalin G. Lai</u>, Hsu-Chun Huang, Wei-Ting Lin, "Tennis Player Actions Dataset for Human Pose Estimation", *Data in Brief* (2024). DOI: [10.1016/j.dib.2024.110665](https://doi.org/10.1016/j.dib.2024.110665)
 - <u>Kalin G. Lai</u>, Hsu-Chun Huang, Shang-Yi Lin, Wei-Ting Lin and Kawuu W. Lin, "Analyzing the Forecast of Tennis Ball Landing Points: An Interdisciplinary Study of Virtual-Reality Integration and Multi-Camera Perspectives", *Expert Systems With Applications*. (2025) DOI: [doi.org/10.1016/j.eswa.2025.127903](https://doi.org/10.1016/j.eswa.2025.127903)
+- Chun-Yi Wang, <u>Kalin G. Lai</u>, Hsu-Chun Huang, Wei-Ting Lin, "Tennis Player Actions Dataset for Human Pose Estimation", *Data in Brief* (2024). DOI: [10.1016/j.dib.2024.110665](https://doi.org/10.1016/j.dib.2024.110665)
+- <u>Kalin G. Lai</u>, Hsu-Chun Huang, Shang-Yi Lin, Wei-Ting Lin and Kawuu W. Lin, "Tennis shot side-view and top-view data set for player analysis in Tennist", *Data in Brief* (2024). DOI: [10.1016/j.dib.2024.110438](https://doi.org/10.1016/j.dib.2024.110438)
+
 
 - Working Papers
   - <u>Kalin G. Lai</u>, Hsu-Chun Huang, Wei-Ting Lin, Kawuu W. Lin, "[TennisSimulator](https://github.com/KalinLai-void/TennisSimulator)"
@@ -58,12 +60,13 @@ Kalin Guanlun Lai (賴冠綸)
   - <u>Kalin G. Lai</u>, Hsu-Chun Huang, Wei-Ting Lin, Kawuu W. Lin, "[TennisPoseTrainer](https://github.com/KalinLai-void/TennisPoseTrainer)"
   
 #### Conference and Seminar Papers
-- <u>Kalin G. Lai (賴冠綸)</u>, Shang-Yi Lin (林尚毅), Wei-Ting Lin (林暐庭), Hsu-Chun Huang (黃昫鈞) and Kawuu W. Lin (林威成), "Research on the Development of Tennis Tracking and 3D Trajectory Simulation System," in the 36th IPPR Conference on Computer Vision, Graphics, and Image Processing (CVGIP2023) (第 36 屆電腦視覺、圖學暨影像處理研討會), National Quemoy University (國立金門大學), Kinmen, Taiwan, pp. 690-694, August 20-22, 2023. **<mark style="color: darkred">(Speaker)</mark>**
-- <u>賴冠綸</u> 、林尚毅、林暐庭、黃昫鈞、林威成，〈建置「智慧影像辨識系統」探究網球抽球技術之研究─以紅土場地為例〉，2023年「體育運動暨健康休閒產業」學術研討會，國立高雄師範大學，2023年07月01日。口頭發表 **<mark style="color: darkred">(Speaker)</mark>** 。
-- 林尚毅、<u>賴冠綸</u>、林暐庭、黃昫鈞、林威成，〈開發「網球追蹤與落點預測系統」之研究〉，2023年「體育運動暨健康休閒產業」學術研討會，國立高雄師範大學，2023年07月01日。口頭發表。
-- 陳宥中, 陳品岳, <u>賴冠綸</u>, 黃昫鈞, 林暐庭, 林威成, "Deep Learning-Based Tennis Tracking and Bounce Analysis System: Applications in Innovative Physical (基於深度學席的網球追蹤與落點分析系統：創新體育教育的應用)," in 2024 The International Conference for Asian Sports and Exercise of Innovation and Prospects (2024「亞洲體育運動的創新與展望」國際學術研討會), National Kaohsiung Normal University (國立高雄師範大學), Kaohsiung, Taiwan, June 22-23, 2024. Oral presentation.
-- 許善荃, 蕭宇桓, 藍駿宸, <u>賴冠綸</u>, 黃昫鈞, 林暐庭, 林威成, "Using Human Posture Analysis Technology for Excersice and Fitness Application (人體姿態分析技術在健身運動之應用)," in 2024 The International Conference for Asian Sports and Exercise of Innovation and Prospects (2024「亞洲體育運動的創新與展望」國際學術研討會), National Kaohsiung Normal University (國立高雄師範大學), Kaohsiung, Taiwan, June 22-23, 2024. Oral presentation.
+- <u>Kalin G. Lai (賴冠綸)</u>, Guan-Wen Wang (王冠文), Yi Ting (丁逸), Heng-Hao Wang (王姮皓), Hsuan-Tung Lai (賴宣同), Zhe-Cheng Chang (張哲誠), Po-Hung Chiang (江柏宏) and Wen-Kai Tai (戴文凱), "Demo: A VR Rhythm Dance Game Driven by Wotagei," in the 11th Annual Conference of Taiwan Association of Computer Human Interaction (TAICHI 2025) (第十一屆台灣人機互動研討會), National Tsing Hua University (國立清華大學),  Hsinchu, Taiwan, August 02-03, 2025.  **<mark style="color: darkred">Best Demo Award</mark>**
 - 陳奕豪, 林逸峰, <u>賴冠綸</u>, 黃昫鈞, 林暐庭, 林威成, "Tennis Player Performance Analysis and Stroke Trajectory Simulation (模擬網球擊球軌跡與擊球表現之分析)," in 2024 The International Conference for Asian Sports and Exercise of Innovation and Prospects (2024「亞洲體育運動的創新與展望」國際學術研討會), National Kaohsiung Normal University (國立高雄師範大學), Kaohsiung, Taiwan, June 22-23, 2024. Poster presentation.
+- 許善荃, 蕭宇桓, 藍駿宸, <u>賴冠綸</u>, 黃昫鈞, 林暐庭, 林威成, "Using Human Posture Analysis Technology for Excersice and Fitness Application (人體姿態分析技術在健身運動之應用)," in 2024 The International Conference for Asian Sports and Exercise of Innovation and Prospects (2024「亞洲體育運動的創新與展望」國際學術研討會), National Kaohsiung Normal University (國立高雄師範大學), Kaohsiung, Taiwan, June 22-23, 2024. Oral presentation.
+- 陳宥中, 陳品岳, <u>賴冠綸</u>, 黃昫鈞, 林暐庭, 林威成, "Deep Learning-Based Tennis Tracking and Bounce Analysis System: Applications in Innovative Physical (基於深度學席的網球追蹤與落點分析系統：創新體育教育的應用)," in 2024 The International Conference for Asian Sports and Exercise of Innovation and Prospects (2024「亞洲體育運動的創新與展望」國際學術研討會), National Kaohsiung Normal University (國立高雄師範大學), Kaohsiung, Taiwan, June 22-23, 2024. Oral presentation.
+- 林尚毅、<u>賴冠綸</u>、林暐庭、黃昫鈞、林威成，〈開發「網球追蹤與落點預測系統」之研究〉，2023年「體育運動暨健康休閒產業」學術研討會，國立高雄師範大學，2023年07月01日。口頭發表。
+- <u>賴冠綸</u> 、林尚毅、林暐庭、黃昫鈞、林威成，〈建置「智慧影像辨識系統」探究網球抽球技術之研究─以紅土場地為例〉，2023年「體育運動暨健康休閒產業」學術研討會，國立高雄師範大學，2023年07月01日。口頭發表 **<mark style="color: darkred">(Speaker)</mark>** 。
+- <u>Kalin G. Lai (賴冠綸)</u>, Shang-Yi Lin (林尚毅), Wei-Ting Lin (林暐庭), Hsu-Chun Huang (黃昫鈞) and Kawuu W. Lin (林威成), "Research on the Development of Tennis Tracking and 3D Trajectory Simulation System," in the 36th IPPR Conference on Computer Vision, Graphics, and Image Processing (CVGIP2023) (第 36 屆電腦視覺、圖學暨影像處理研討會), National Quemoy University (國立金門大學), Kinmen, Taiwan, pp. 690-694, August 20-22, 2023. **<mark style="color: darkred">(Speaker)</mark>**
 
 #### Papers Competition
 - <u>賴冠綸</u> 、林暐庭、林威成，〈應用智慧辨識技術於精準網球抽球能力提升之研究與實作〉，112年中國工程師學會學生分會工程論文競賽 資訊組 **<mark style="color: darkred">（優等獎）</mark>** ，民國112年。
