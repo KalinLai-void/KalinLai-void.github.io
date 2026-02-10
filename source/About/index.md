@@ -31,16 +31,17 @@ table th:nth-of-type(2) {
 
   - 延畢牲必延有限公司 | [數位名片](https://portaly.cc/delayGG)
   - 大學延畢時期因修課，與夥伴成立的團隊，目前以開發桌遊為主。
-  - 目前開發中作品：《地皮操盤手》、《聖物獵影》、《審判天使有選擇障礙》
+  - 目前已商品化作品：《聖物獵影》、《審判天使有選擇障礙》
+  - 目前開發中作品：《建城京界（原：地皮操盤手）》
 
 </details>
 
 <details> 
-  <summary> 璐光遊戲工作室 / LuxAria Games Studio 共同創辦人、程式、企劃（2025/03 ~ Now）</summary>
+  <summary> 璐光遊戲工作室 / LuxAria Games Studio 共同創辦人、程式、企劃（2025/06 ~ Now）</summary>
 
   - 璐光遊戲工作室有限公司 | [數位名片](https://portaly.cc/LuxAria-Games)
-  - 研究所期間與同 Lab 同學修課，與設計系合作後衍伸組成的團隊，目前專注於 VR 音遊開發。
-  - 目前開發中作品：《Code:ARIA》
+  - 研究所期間與同 Lab 同學修課，與設計系合作後衍伸組成的團隊（2025/03~），目前專注於 VR 音遊開發。
+  - 目前開發中作品：《[WotaBeats](https://store.steampowered.com/app/4083810)》
 
 </details>
 
