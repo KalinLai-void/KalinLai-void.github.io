@@ -14,9 +14,9 @@ Kalin Guanlun Lai (賴冠綸)
 <i class="fa fa-envelope"></i> E-mail (Personal): 
 [lun.void52513@gmail.com](mailto:lun.void52513@gmail.com)
 <i class="fa fa-envelope"></i> E-mail (School - Master (NTUST)): 
-[M11315207@mail.ntust.edu.tw](M11315207@mail.ntust.edu.tw) / [M11315207@gapps.ntust.edu.tw](M11315207@gapps.ntust.edu.tw)
+[M11315207@mail.ntust.edu.tw](mailto:M11315207@mail.ntust.edu.tw) / [M11315207@gapps.ntust.edu.tw](mailto:M11315207@gapps.ntust.edu.tw)
 <i class="fa fa-envelope"></i> E-mail (School - Bachelor (NKUST)): 
-[C108151131@nkust.edu.tw](C108151131@nkust.edu.tw)
+[C108151131@nkust.edu.tw](mailto:C108151131@nkust.edu.tw)
 
 ### RESEARCH INTERESTS
 - Video Game
